@@ -20,7 +20,7 @@
 --   facilities ──< course_combinations ──< combination_tees ──< combination_ratings
 --                     └──< combination_stroke_indexes
 --   users ──< submissions ──< submission_sources
---   facilities/courses ──< external_ids
+--   facilities/courses/combinations ──< external_ids
 --
 -- Modeling decisions worth knowing before you read on (full rationale in
 -- docs/schema-design.md):
@@ -245,8 +245,10 @@ CREATE TABLE tees (
     CONSTRAINT uq_tees_course_name UNIQUE (course_id, name),
     -- DEFERRABLE so a reorder can swap positions inside one transaction.
     CONSTRAINT uq_tees_course_display_order UNIQUE (course_id, display_order) DEFERRABLE INITIALLY DEFERRED,
-    -- Composite-FK target so children can prove same-course membership.
-    CONSTRAINT uq_tees_id_course UNIQUE (id, course_id)
+    -- Composite-FK targets so children can prove same-course membership —
+    -- and, for combination_tees, matching units across legs.
+    CONSTRAINT uq_tees_id_course UNIQUE (id, course_id),
+    CONSTRAINT uq_tees_id_course_unit UNIQUE (id, course_id, unit)
 );
 
 CREATE TRIGGER trg_tees_updated_at BEFORE UPDATE ON tees
@@ -324,8 +326,13 @@ CREATE TABLE tee_hole_lengths (
         REFERENCES tees (id, course_id) ON DELETE CASCADE,
     CONSTRAINT fk_tee_hole_lengths_hole FOREIGN KEY (course_id, hole_number)
         REFERENCES holes (course_id, hole_number) ON DELETE CASCADE,
+    -- Deferred (not RESTRICT): course deletion must cascade through both the
+    -- holes and tees legs regardless of internal RI-trigger creation order,
+    -- and RESTRICT checks immediately even when deferrable. A bare delete of
+    -- a parent tee that a combo tee sources from is still rejected — at
+    -- COMMIT rather than statement time.
     CONSTRAINT fk_tee_hole_lengths_source_tee FOREIGN KEY (source_tee_id, course_id)
-        REFERENCES tees (id, course_id) ON DELETE RESTRICT,
+        REFERENCES tees (id, course_id) DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT chk_tee_hole_lengths_source_not_self CHECK (source_tee_id IS DISTINCT FROM tee_id)
 );
 
@@ -365,11 +372,14 @@ CREATE TABLE course_combinations (
     CONSTRAINT uq_combinations_facility_slug UNIQUE (facility_id, slug),
     -- Composite-FK target so combination_tees can prove leg membership.
     CONSTRAINT uq_combinations_id_courses UNIQUE (id, first_course_id, second_course_id),
-    -- Legs must belong to the same facility as the combination.
+    -- Legs must belong to the same facility as the combination. DEFERRABLE
+    -- so a facility merge can SET CONSTRAINTS ... DEFERRED and repoint
+    -- courses and combinations to the survivor with plain UPDATEs; the
+    -- delete-RESTRICT action itself always checks immediately.
     CONSTRAINT fk_combinations_first_course FOREIGN KEY (first_course_id, facility_id)
-        REFERENCES courses (id, facility_id) ON DELETE RESTRICT,
+        REFERENCES courses (id, facility_id) ON DELETE RESTRICT DEFERRABLE INITIALLY IMMEDIATE,
     CONSTRAINT fk_combinations_second_course FOREIGN KEY (second_course_id, facility_id)
-        REFERENCES courses (id, facility_id) ON DELETE RESTRICT
+        REFERENCES courses (id, facility_id) ON DELETE RESTRICT DEFERRABLE INITIALLY IMMEDIATE
 );
 
 CREATE INDEX idx_combinations_facility     ON course_combinations (facility_id);
@@ -400,6 +410,8 @@ CREATE TABLE combination_tees (
                             CONSTRAINT chk_combination_tees_display_order CHECK (display_order >= 1),
     first_tee_id            bigint NOT NULL,
     second_tee_id           bigint NOT NULL,
+    unit                    text   NOT NULL
+                            CONSTRAINT chk_combination_tees_unit CHECK (unit IN ('yards', 'meters')),
     published_total_length  integer
                             CONSTRAINT chk_combination_tees_published_total CHECK (published_total_length BETWEEN 100 AND 20000),
     created_at              timestamptz NOT NULL DEFAULT now(),
@@ -409,10 +421,13 @@ CREATE TABLE combination_tees (
     CONSTRAINT uq_combination_tees_display_order UNIQUE (combination_id, display_order) DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT fk_combination_tees_combination FOREIGN KEY (combination_id, first_course_id, second_course_id)
         REFERENCES course_combinations (id, first_course_id, second_course_id) ON DELETE CASCADE,
-    CONSTRAINT fk_combination_tees_first_tee FOREIGN KEY (first_tee_id, first_course_id)
-        REFERENCES tees (id, course_id) ON DELETE RESTRICT,
-    CONSTRAINT fk_combination_tees_second_tee FOREIGN KEY (second_tee_id, second_course_id)
-        REFERENCES tees (id, course_id) ON DELETE RESTRICT
+    -- Both leg FKs share the unit column, so a combination pairing a yards
+    -- tee with a meters tee is unrepresentable and published_total_length
+    -- always has an unambiguous unit.
+    CONSTRAINT fk_combination_tees_first_tee FOREIGN KEY (first_tee_id, first_course_id, unit)
+        REFERENCES tees (id, course_id, unit) ON DELETE RESTRICT,
+    CONSTRAINT fk_combination_tees_second_tee FOREIGN KEY (second_tee_id, second_course_id, unit)
+        REFERENCES tees (id, course_id, unit) ON DELETE RESTRICT
 );
 
 CREATE INDEX idx_combination_tees_first_tee  ON combination_tees (first_tee_id);
@@ -486,24 +501,26 @@ FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 -- IDENTITY & DEDUPE: external anchors for cross-referencing
 -- ============================================================================
 CREATE TABLE external_ids (
-    id           bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    facility_id  bigint REFERENCES facilities (id) ON DELETE CASCADE,
-    course_id    bigint REFERENCES courses (id) ON DELETE CASCADE,
-    namespace    text   NOT NULL
-                 CONSTRAINT chk_external_ids_namespace CHECK (char_length(namespace) BETWEEN 1 AND 50),
-    external_id  text   NOT NULL
-                 CONSTRAINT chk_external_ids_value CHECK (char_length(external_id) BETWEEN 1 AND 200),
-    created_at   timestamptz NOT NULL DEFAULT now(),
+    id              bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    facility_id     bigint REFERENCES facilities (id) ON DELETE CASCADE,
+    course_id       bigint REFERENCES courses (id) ON DELETE CASCADE,
+    combination_id  bigint REFERENCES course_combinations (id) ON DELETE CASCADE,
+    namespace       text   NOT NULL
+                    CONSTRAINT chk_external_ids_namespace CHECK (char_length(namespace) BETWEEN 1 AND 50),
+    external_id     text   NOT NULL
+                    CONSTRAINT chk_external_ids_value CHECK (char_length(external_id) BETWEEN 1 AND 200),
+    created_at      timestamptz NOT NULL DEFAULT now(),
 
     CONSTRAINT uq_external_ids UNIQUE (namespace, external_id),
-    CONSTRAINT chk_external_ids_one_target CHECK (num_nonnulls(facility_id, course_id) = 1)
+    CONSTRAINT chk_external_ids_one_target CHECK (num_nonnulls(facility_id, course_id, combination_id) = 1)
 );
 
-CREATE INDEX idx_external_ids_facility ON external_ids (facility_id) WHERE facility_id IS NOT NULL;
-CREATE INDEX idx_external_ids_course   ON external_ids (course_id)   WHERE course_id IS NOT NULL;
+CREATE INDEX idx_external_ids_facility    ON external_ids (facility_id)    WHERE facility_id IS NOT NULL;
+CREATE INDEX idx_external_ids_course      ON external_ids (course_id)      WHERE course_id IS NOT NULL;
+CREATE INDEX idx_external_ids_combination ON external_ids (combination_id) WHERE combination_id IS NOT NULL;
 
 COMMENT ON TABLE external_ids IS
-    'Anchors to external systems (namespace examples: usga_crdb, ghin, osm, golflink). Primary tool for duplicate detection and cross-referencing.';
+    'Anchors to external systems (namespace examples: usga_crdb, ghin, osm, golflink). Primary tool for duplicate detection and cross-referencing. Combinations are anchorable because official rating databases publish each 18-hole pairing as its own rated entity.';
 
 -- ============================================================================
 -- SUBMISSIONS: the community write path. A submission is an ATOMIC envelope —
@@ -517,10 +534,14 @@ CREATE TABLE submissions (
     kind            text   NOT NULL
                     CONSTRAINT chk_submissions_kind CHECK (kind IN ('facility', 'course', 'course_combination')),
     -- Target refs are NULL for brand-new entities until the approval
-    -- transaction creates the row and backfills the reference.
-    facility_id     bigint REFERENCES facilities (id) ON DELETE SET NULL,
-    course_id       bigint REFERENCES courses (id) ON DELETE SET NULL,
-    combination_id  bigint REFERENCES course_combinations (id) ON DELETE SET NULL,
+    -- transaction creates the row and backfills the reference. RESTRICT:
+    -- an entity that has ever been targeted by a submission cannot be
+    -- hard-deleted in one statement — history ("the chain of approved
+    -- submissions") must never be silently severed. Deliberate teardown
+    -- requires explicitly deleting the submissions first.
+    facility_id     bigint REFERENCES facilities (id) ON DELETE RESTRICT,
+    course_id       bigint REFERENCES courses (id) ON DELETE RESTRICT,
+    combination_id  bigint REFERENCES course_combinations (id) ON DELETE RESTRICT,
     payload         jsonb  NOT NULL,
     status          text   NOT NULL DEFAULT 'pending'
                     CONSTRAINT chk_submissions_status CHECK (status IN ('pending', 'approved', 'rejected', 'superseded')),
@@ -534,6 +555,16 @@ CREATE TABLE submissions (
     CONSTRAINT chk_submissions_review_fields CHECK (
         status NOT IN ('approved', 'rejected')
         OR (reviewed_by IS NOT NULL AND reviewed_at IS NOT NULL)
+    ),
+    -- Target columns must match the submission kind (facility_id may
+    -- accompany course/combination submissions as context). That an
+    -- APPROVED submission has its target backfilled is the approval
+    -- writer's contract — DDL cannot see it without forbidding legitimate
+    -- new-entity payloads.
+    CONSTRAINT chk_submissions_kind_targets CHECK (
+        (kind = 'facility'           AND course_id IS NULL AND combination_id IS NULL)
+        OR (kind = 'course'             AND combination_id IS NULL)
+        OR (kind = 'course_combination' AND course_id IS NULL)
     )
 );
 
@@ -631,7 +662,11 @@ SELECT
     t.display_order,
     c.hole_count,
     count(thl.hole_number)::int                                        AS holes_entered,
-    (count(thl.hole_number) = c.hole_count)                            AS is_complete,
+    -- Exact-set completeness: exactly holes 1..hole_count and nothing else.
+    -- A tee carrying an out-of-range hole row (a soft-rule breach upstream)
+    -- must surface as incomplete, not print as a "complete" card.
+    (count(thl.hole_number) FILTER (WHERE thl.hole_number <= c.hole_count) = c.hole_count
+     AND count(thl.hole_number) = c.hole_count)                        AS is_complete,
     sum(thl.length)::int                                               AS computed_total_length,
     CASE WHEN c.hole_count = 18
          THEN sum(thl.length) FILTER (WHERE thl.hole_number <= 9)::int
@@ -641,6 +676,7 @@ SELECT
     END                                                                AS in_length,
     t.published_total_length,
     (t.published_total_length IS NOT NULL
+     AND count(thl.hole_number) FILTER (WHERE thl.hole_number <= c.hole_count) = c.hole_count
      AND count(thl.hole_number) = c.hole_count
      AND t.published_total_length <> sum(thl.length))                  AS has_total_discrepancy
 FROM tees t
@@ -650,5 +686,51 @@ GROUP BY t.id, t.course_id, t.name, t.unit, t.display_order, c.hole_count, t.pub
 
 COMMENT ON VIEW v_tee_summaries IS
     'Computed OUT/IN/TOTAL per tee plus data-quality signals: is_complete gates public rendering of partial cards; has_total_discrepancy surfaces published-vs-computed mismatches (either a transcription error or a genuine misprint on the card).';
+
+-- The same totals policy for combination cards: computed totals per leg
+-- (OUT = first leg, IN = second leg, as printed), exact-set completeness of
+-- both legs, and published-vs-computed discrepancy on the combined card.
+CREATE VIEW v_combination_tee_summaries AS
+SELECT
+    ct.id            AS combination_tee_id,
+    ct.combination_id,
+    cc.facility_id,
+    cc.slug          AS combination_slug,
+    ct.name          AS tee_name,
+    ct.unit,
+    ct.display_order,
+    (c1.hole_count + c2.hole_count)::smallint          AS hole_count,
+    (l1.holes_entered + l2.holes_entered)::int          AS holes_entered,
+    (l1.is_leg_complete AND l2.is_leg_complete)         AS is_complete,
+    (l1.leg_length + l2.leg_length)::int                AS computed_total_length,
+    l1.leg_length::int                                  AS out_length,
+    l2.leg_length::int                                  AS in_length,
+    ct.published_total_length,
+    (ct.published_total_length IS NOT NULL
+     AND l1.is_leg_complete AND l2.is_leg_complete
+     AND ct.published_total_length <> l1.leg_length + l2.leg_length) AS has_total_discrepancy
+FROM combination_tees ct
+JOIN course_combinations cc ON cc.id = ct.combination_id
+JOIN courses c1 ON c1.id = cc.first_course_id
+JOIN courses c2 ON c2.id = cc.second_course_id
+CROSS JOIN LATERAL (
+    SELECT count(*)::int AS holes_entered,
+           sum(thl.length) AS leg_length,
+           (count(*) FILTER (WHERE thl.hole_number <= c1.hole_count) = c1.hole_count
+            AND count(*) = c1.hole_count) AS is_leg_complete
+    FROM tee_hole_lengths thl
+    WHERE thl.tee_id = ct.first_tee_id
+) l1
+CROSS JOIN LATERAL (
+    SELECT count(*)::int AS holes_entered,
+           sum(thl.length) AS leg_length,
+           (count(*) FILTER (WHERE thl.hole_number <= c2.hole_count) = c2.hole_count
+            AND count(*) = c2.hole_count) AS is_leg_complete
+    FROM tee_hole_lengths thl
+    WHERE thl.tee_id = ct.second_tee_id
+) l2;
+
+COMMENT ON VIEW v_combination_tee_summaries IS
+    'v_tee_summaries counterpart for combination cards: per-leg OUT/IN, combined total, exact-set completeness of both legs, and published-vs-computed misprint detection. Lengths are unambiguous: the leg FKs force both tees to share combination_tees.unit.';
 
 COMMIT;

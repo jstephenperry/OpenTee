@@ -63,6 +63,8 @@ erDiagram
     facilities ||--o{ courses : has
     facilities ||--o{ course_combinations : publishes
     facilities ||--o{ external_ids : "anchored by"
+    courses ||--o{ external_ids : "anchored by"
+    course_combinations ||--o{ external_ids : "anchored by"
     courses ||--o{ holes : has
     courses ||--o{ tees : has
     holes ||--o{ hole_pars : "par/SI per gender"
@@ -75,6 +77,10 @@ erDiagram
     courses ||--o{ course_combinations : "is leg of"
     tees ||--o{ combination_tees : "is leg tee of"
 ```
+
+(Simplified: `submissions` also carries nullable references to the facility, course, or
+combination it targets, and `facilities.merged_into_id` is a self-reference used by
+merge tombstones.)
 
 ### The physical/rating split (tees vs. tee_ratings)
 
@@ -132,7 +138,9 @@ legs, with `first_course_id = second_course_id` explicitly legal:
 
 - Trillium-style 27-hole club → three combinations (North/South, South/West, North/West),
   each with its own `combination_tees` (which physical tee is played on each leg — e.g.
-  North's Blue + South's Blue) and `combination_ratings` per gender.
+  North's Blue + South's Blue) and `combination_ratings` per gender. A combination tee
+  carries the card's `unit`, and both leg FKs include it — pairing a yards tee with a
+  meters tee is unrepresentable, so the combined total always has an unambiguous unit.
 - A nine-hole course played twice → one combination with both legs pointing at the same
   course, and the classic "White out, Yellow in" card expressed as a tee pairing.
 - `combination_stroke_indexes` holds the 18-hole SI allocation printed on the combined
@@ -198,7 +206,9 @@ envelope:
 2. A moderator approves; one transaction applies the payload to the canonical tables and
    stamps `reviewed_by`/`reviewed_at` (CHECK-enforced for approved/rejected rows).
    New-entity submissions get their `facility_id`/`course_id` backfilled by the approval
-   transaction.
+   transaction — that backfill is the approval writer's contract (a CHECK ties the
+   target columns to `kind`, but DDL cannot require a target on approval without
+   forbidding legitimate new-entity payloads).
 3. History = the chain of approved submissions per entity. Revert = re-apply an earlier
    approved payload. Attribution ("who added this course?") = query its submissions.
 
@@ -213,18 +223,32 @@ counts ("confirmed by N users"), OCR ingestion.
   (unique per facility) give stable, human URLs.
 - **Duplicates are tombstoned, not deleted:** `facilities.merged_into_id` + status
   `duplicate` turns the loser of a merge into a redirect; a CHECK ties the two together.
-  Old bookmarks keep resolving.
-- **`external_ids`** anchors entities to other systems (`usga_crdb`, `ghin`, `osm`,
-  `golf_australia`, …) with `UNIQUE (namespace, external_id)` — the primary machine
-  signal for duplicate detection.
+  Old bookmarks keep resolving. The merge itself is one transaction:
+  `SET CONSTRAINTS fk_combinations_first_course, fk_combinations_second_course DEFERRED`
+  (the two combination-leg FKs are declared `DEFERRABLE` for exactly this), repoint
+  `courses`, `course_combinations`, `external_ids`, and `submissions` to the survivor,
+  re-slug any children whose slugs collide, then tombstone the loser. The recipe is
+  exercised in `db/tests/constraint_tests.sql` against a combination-owning facility.
+- **`external_ids`** anchors facilities, courses, and combinations to other systems
+  (`usga_crdb`, `ghin`, `osm`, `golf_australia`, …) with `UNIQUE (namespace,
+  external_id)` — the primary machine signal for duplicate detection. Combinations are
+  anchorable because official rating databases publish each 18-hole pairing as its own
+  rated entity.
 - **`pg_trgm` GIN index** on facility names powers "did you mean…" during submission.
   There is deliberately no hard UNIQUE on facility names: legitimately identical names
   exist in different cities.
-- **Deletion is defensive:** `facilities → courses` is `ON DELETE RESTRICT`; cascade
-  exists only where a child is meaningless without its parent (course → holes/tees,
-  tee → ratings/lengths). Real-world "deletion" (course closed) is a `status` flip.
-  Deleting a user is RESTRICTed — contributors with history are deactivated, preserving
-  attribution.
+- **Deletion is defensive:** `facilities → courses` is `ON DELETE RESTRICT`, and any
+  facility, course, or combination that has ever been targeted by a submission is
+  RESTRICT-protected too — the approved-submission history chain can never be silently
+  severed by a single `DELETE` (deliberate teardown must remove the submissions
+  explicitly first; entities that entered outside the submission flow, such as bulk
+  imports, gain this protection only once a submission references them). Cascade exists
+  only where a child is meaningless without its parent (course → holes/tees,
+  tee → ratings/lengths); the combo-tee provenance FK (`source_tee_id`) is *deferred*
+  rather than RESTRICT so course deletion cascades independently of internal FK-trigger
+  ordering, while a bare delete of a parent tee is still rejected at commit. Real-world
+  "deletion" (course closed) is a `status` flip. Deleting a user is RESTRICTed —
+  contributors with history are deactivated, preserving attribution.
 
 ### Data-quality rails
 
@@ -249,17 +273,24 @@ Cards print OUT/IN/TOTAL — and occasionally misprint them. Policy: totals are 
 two disagree on a complete tee, `has_total_discrepancy` flags it: the mismatch is either
 a transcription error or a genuine misprint on the card, and both are worth a reviewer's
 attention. The seed data plants one such misprint (Red tees at the fictional Sandpiper
-Dunes) as a living example. `v_tee_summaries.is_complete` also gates rendering of
-partially entered tees.
+Dunes) as a living example. `v_tee_summaries.is_complete` gates rendering of partially
+entered tees using an exact-set test (exactly holes 1…hole_count — a stray out-of-range
+hole row surfaces as *incomplete* rather than faking a full card).
+`v_combination_tee_summaries` applies the same policy to combination cards: per-leg
+OUT/IN, combined totals, completeness of both legs, and misprint detection against the
+combined card's published total.
 
 ### PostgreSQL conventions
 
 `bigint GENERATED ALWAYS AS IDENTITY` keys (rejects manual-id inserts unless
 `OVERRIDING SYSTEM VALUE` — a deliberate guardrail for import scripts); `text` with
-length CHECKs instead of `varchar(n)`; `timestamptz` `created_at`/`updated_at` on every
-table with one shared trigger; every FK column indexed unless it already leads another
-index; `DEFERRABLE INITIALLY DEFERRED` uniqueness on display order so reorders swap in
-one transaction; all constraints named.
+length CHECKs instead of `varchar(n)`; `timestamptz` `created_at`/`updated_at` with one
+shared trigger on every table except the two append-only ones (`external_ids` and
+`submission_sources` carry `created_at` only); every FK column indexed unless it
+already leads another index; `DEFERRABLE INITIALLY DEFERRED` uniqueness on display
+order so reorders swap in one transaction; all CHECK, UNIQUE, and composite PK/FK
+constraints explicitly named (single-column FKs and surrogate-key PKs keep Postgres's
+descriptive auto-names like `courses_facility_id_fkey`).
 
 ## Explicitly deferred (with the extension path)
 

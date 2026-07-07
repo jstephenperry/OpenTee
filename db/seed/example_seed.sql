@@ -18,7 +18,8 @@
 --   facility 2  Trillium Creek Country Club (US)
 --     courses 3/4/5  North/South/West nines + the three 18-hole pairings as
 --                    course_combinations with their own tees, ratings, and
---                    18-hole stroke indexes — no hole entered twice
+--                    men's + women's 18-hole stroke-index allocations — no
+--                    hole entered twice
 --   facility 3  Wattle Flat Golf Club (AU)
 --     course 6  Wattle Flat      9 holes in METERS, unisex par; played twice
 --                                 as 18 ("White out, Yellow in") via a
@@ -509,18 +510,19 @@ OVERRIDING SYSTEM VALUE VALUES
     (4, 3, 'wattle-flat-18', 'Wattle Flat (18 holes)', 6, 6);
 
 -- ------------------------------------------------------- combination_tees
--- Wattle Flat's 18-hole card is the classic "White out, Yellow in".
+-- Wattle Flat's 18-hole card is the classic "White out, Yellow in". The
+-- unit column is FK-tied to both leg tees' units, so it always matches.
 INSERT INTO combination_tees (id, combination_id, first_course_id, second_course_id,
                               name, display_order, first_tee_id, second_tee_id,
-                              published_total_length)
+                              unit, published_total_length)
 OVERRIDING SYSTEM VALUE VALUES
-    (1, 1, 3, 4, 'Blue',           1,  7,  9, 6742),
-    (2, 1, 3, 4, 'White',          2,  8, 10, 6309),
-    (3, 2, 4, 5, 'Blue',           1,  9, 11, 6729),
-    (4, 2, 4, 5, 'White',          2, 10, 12, 6284),
-    (5, 3, 3, 5, 'Blue',           1,  7, 11, 6735),
-    (6, 3, 3, 5, 'White',          2,  8, 12, 6303),
-    (7, 4, 6, 6, 'White / Yellow', 1, 13, 14, 5698);
+    (1, 1, 3, 4, 'Blue',           1,  7,  9, 'yards',  6742),
+    (2, 1, 3, 4, 'White',          2,  8, 10, 'yards',  6309),
+    (3, 2, 4, 5, 'Blue',           1,  9, 11, 'yards',  6729),
+    (4, 2, 4, 5, 'White',          2, 10, 12, 'yards',  6284),
+    (5, 3, 3, 5, 'Blue',           1,  7, 11, 'yards',  6735),
+    (6, 3, 3, 5, 'White',          2,  8, 12, 'yards',  6303),
+    (7, 4, 6, 6, 'White / Yellow', 1, 13, 14, 'meters', 5698);
 
 -- ---------------------------------------------------- combination_ratings
 INSERT INTO combination_ratings (combination_tee_id, gender, course_rating, slope_rating,
@@ -538,7 +540,9 @@ INSERT INTO combination_ratings (combination_tee_id, gender, course_rating, slop
     (7, 'men',   69.0, 123, 91.2, 34.9, 125, 34.1, 121, '2022-11-30');
 
 -- ---------------------------------------------- combination_stroke_indexes
--- North/South men's 18-hole card: odd SIs on the North nine, even on South.
+-- Trillium Creek's combined 18-hole cards reallocate SI 1-18 across each
+-- pairing (odd SIs on the first nine, even on the second — a common club
+-- convention), published for men and women on all three pairings.
 INSERT INTO combination_stroke_indexes (combination_id, position, gender, stroke_index) VALUES
 
     (1,  1, 'men',  5),
@@ -550,15 +554,105 @@ INSERT INTO combination_stroke_indexes (combination_id, position, gender, stroke
     (1,  7, 'men',  3),
     (1,  8, 'men',  7),
     (1,  9, 'men', 11),
-    (1, 10, 'men',  2),
+    (1, 10, 'men',  4),
     (1, 11, 'men', 12),
     (1, 12, 'men', 16),
     (1, 13, 'men',  8),
-    (1, 14, 'men',  4),
+    (1, 14, 'men',  2),
     (1, 15, 'men', 10),
     (1, 16, 'men', 18),
     (1, 17, 'men', 14),
-    (1, 18, 'men',  6);
+    (1, 18, 'men',  6),
+    (1,  1, 'women',  9),
+    (1,  2, 'women',  1),
+    (1,  3, 'women', 17),
+    (1,  4, 'women',  5),
+    (1,  5, 'women', 13),
+    (1,  6, 'women', 15),
+    (1,  7, 'women',  3),
+    (1,  8, 'women', 11),
+    (1,  9, 'women',  7),
+    (1, 10, 'women',  2),
+    (1, 11, 'women', 10),
+    (1, 12, 'women', 18),
+    (1, 13, 'women',  8),
+    (1, 14, 'women',  4),
+    (1, 15, 'women', 12),
+    (1, 16, 'women', 16),
+    (1, 17, 'women', 14),
+    (1, 18, 'women',  6),
+    (2,  1, 'men',  3),
+    (2,  2, 'men', 11),
+    (2,  3, 'men', 15),
+    (2,  4, 'men',  7),
+    (2,  5, 'men',  1),
+    (2,  6, 'men',  9),
+    (2,  7, 'men', 17),
+    (2,  8, 'men', 13),
+    (2,  9, 'men',  5),
+    (2, 10, 'men',  8),
+    (2, 11, 'men', 14),
+    (2, 12, 'men',  2),
+    (2, 13, 'men', 18),
+    (2, 14, 'men',  6),
+    (2, 15, 'men', 12),
+    (2, 16, 'men', 16),
+    (2, 17, 'men',  4),
+    (2, 18, 'men', 10),
+    (2,  1, 'women',  1),
+    (2,  2, 'women',  9),
+    (2,  3, 'women', 17),
+    (2,  4, 'women',  7),
+    (2,  5, 'women',  3),
+    (2,  6, 'women', 11),
+    (2,  7, 'women', 15),
+    (2,  8, 'women', 13),
+    (2,  9, 'women',  5),
+    (2, 10, 'women', 12),
+    (2, 11, 'women', 14),
+    (2, 12, 'women',  2),
+    (2, 13, 'women', 18),
+    (2, 14, 'women',  6),
+    (2, 15, 'women',  8),
+    (2, 16, 'women', 16),
+    (2, 17, 'women',  4),
+    (2, 18, 'women', 10),
+    (3,  1, 'men',  5),
+    (3,  2, 'men',  1),
+    (3,  3, 'men', 17),
+    (3,  4, 'men',  9),
+    (3,  5, 'men', 13),
+    (3,  6, 'men', 15),
+    (3,  7, 'men',  3),
+    (3,  8, 'men',  7),
+    (3,  9, 'men', 11),
+    (3, 10, 'men',  8),
+    (3, 11, 'men', 14),
+    (3, 12, 'men',  2),
+    (3, 13, 'men', 18),
+    (3, 14, 'men',  6),
+    (3, 15, 'men', 12),
+    (3, 16, 'men', 16),
+    (3, 17, 'men',  4),
+    (3, 18, 'men', 10),
+    (3,  1, 'women',  9),
+    (3,  2, 'women',  1),
+    (3,  3, 'women', 17),
+    (3,  4, 'women',  5),
+    (3,  5, 'women', 13),
+    (3,  6, 'women', 15),
+    (3,  7, 'women',  3),
+    (3,  8, 'women', 11),
+    (3,  9, 'women',  7),
+    (3, 10, 'women', 12),
+    (3, 11, 'women', 14),
+    (3, 12, 'women',  2),
+    (3, 13, 'women', 18),
+    (3, 14, 'women',  6),
+    (3, 15, 'women',  8),
+    (3, 16, 'women', 16),
+    (3, 17, 'women',  4),
+    (3, 18, 'women', 10);
 
 -- Wattle Flat 18-hole card: SI 1-18 over two loops of the same nine
 -- (hole 4 is SI 1 on the way out and SI 2 as hole 13 coming in).
@@ -583,10 +677,13 @@ INSERT INTO combination_stroke_indexes (combination_id, position, gender, stroke
     (4, 18, 'unisex', 16);
 
 -- ------------------------------------------------------------ external_ids
-INSERT INTO external_ids (facility_id, course_id, namespace, external_id) VALUES
-    (1,    NULL, 'osm',       'way/123456789'),
-    (NULL, 1,    'usga_crdb', 'demo-30412'),
-    (NULL, 6,    'golf_australia', 'demo-nsw-0042');
+-- Official rating databases publish each 18-hole pairing as its own rated
+-- entity, so combinations are anchorable alongside facilities and courses.
+INSERT INTO external_ids (facility_id, course_id, combination_id, namespace, external_id) VALUES
+    (1,    NULL, NULL, 'osm',            'way/123456789'),
+    (NULL, 1,    NULL, 'usga_crdb',      'demo-30412'),
+    (NULL, 6,    NULL, 'golf_australia', 'demo-nsw-0042'),
+    (NULL, NULL, 1,    'usga_crdb',      'demo-30498-ns');
 
 -- ------------------------------------------------------------ submissions
 -- The write path: bob submitted the Dunes scorecard with photo + website

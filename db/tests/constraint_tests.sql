@@ -37,6 +37,29 @@ BEGIN
 END;
 $$;
 
+-- ----------------------------------------------------- seed data-quality views
+-- The seed plants exactly one misprint (Sandpiper Red tee) and everything
+-- else must reconcile — on plain tees and combination cards alike.
+DO $$
+DECLARE n int;
+BEGIN
+    SELECT count(*) INTO n FROM v_tee_summaries WHERE has_total_discrepancy;
+    IF n <> 1 THEN
+        RAISE EXCEPTION 'TEST FAILED: expected exactly 1 planted tee misprint, found %', n;
+    END IF;
+    SELECT count(*) INTO n FROM v_tee_summaries WHERE NOT is_complete;
+    IF n <> 0 THEN
+        RAISE EXCEPTION 'TEST FAILED: % seeded tees are incomplete', n;
+    END IF;
+    SELECT count(*) INTO n FROM v_combination_tee_summaries
+    WHERE NOT is_complete OR has_total_discrepancy;
+    IF n <> 0 THEN
+        RAISE EXCEPTION 'TEST FAILED: % combination tees incomplete or discrepant', n;
+    END IF;
+    RAISE NOTICE 'ok: seed reconciles in v_tee_summaries and v_combination_tee_summaries (1 planted misprint)';
+END;
+$$;
+
 -- ---------------------------------------------------------------- value rails
 SELECT pg_temp.assert_fails('gender must be canonical lowercase',
     $q$ INSERT INTO hole_pars (course_id, hole_number, gender, par) VALUES (2, 1, 'Male', 3) $q$);
@@ -99,8 +122,15 @@ SELECT pg_temp.assert_fails('tee from course A cannot join holes of course B',
 -- combination 1 is North(3)/South(4); tee 13 belongs to Wattle Flat (6).
 SELECT pg_temp.assert_fails('combination tee must belong to the leg course',
     $q$ INSERT INTO combination_tees
-            (combination_id, first_course_id, second_course_id, name, display_order, first_tee_id, second_tee_id)
-        VALUES (1, 3, 4, 'Gold', 9, 13, 9) $q$);
+            (combination_id, first_course_id, second_course_id, name, display_order, first_tee_id, second_tee_id, unit)
+        VALUES (1, 3, 4, 'Gold', 9, 13, 9, 'yards') $q$);
+
+-- Both leg tees are yards tees, so a 'meters' combination tee cannot
+-- reference them: units agree by construction.
+SELECT pg_temp.assert_fails('combination tee unit must match its leg tees',
+    $q$ INSERT INTO combination_tees
+            (combination_id, first_course_id, second_course_id, name, display_order, first_tee_id, second_tee_id, unit)
+        VALUES (1, 3, 4, 'Gold', 9, 7, 10, 'meters') $q$);
 
 -- Combination legs must belong to the combination's facility: facility 3
 -- (Wattle Flat) cannot pair Trillium Creek's nines.
@@ -127,6 +157,15 @@ SELECT pg_temp.assert_fails('deleting a tee used by a combination is blocked',
 SELECT pg_temp.assert_fails('submission source needs at least one piece of evidence',
     $q$ INSERT INTO submission_sources (submission_id, source_type) VALUES (3, 'other') $q$);
 
+SELECT pg_temp.assert_fails('submission targets must match its kind',
+    $q$ INSERT INTO submissions (kind, course_id, payload, submitted_by)
+        VALUES ('facility', 1, '{"schema_version": 1}', 2) $q$);
+
+-- Course 1 is targeted by submissions 2 and 3: its history chain protects
+-- it from single-statement destruction.
+SELECT pg_temp.assert_fails('course targeted by submissions cannot be hard-deleted',
+    $q$ DELETE FROM courses WHERE id = 1 $q$);
+
 -- -------------------------------------------------- flexibility must remain
 SELECT pg_temp.assert_ok('unrated tee (no rating rows) is legal',
     $q$ INSERT INTO tees (course_id, name, unit, display_order) VALUES (2, 'Forward', 'yards', 2) $q$);
@@ -148,5 +187,39 @@ SELECT pg_temp.assert_ok('tee display_order swap inside one transaction',
     $q$ UPDATE tees SET display_order = CASE id WHEN 1 THEN 2 WHEN 2 THEN 1 END WHERE id IN (1, 2) $q$);
 SET CONSTRAINTS ALL IMMEDIATE;   -- force the deferred uniqueness check now
 DO $$ BEGIN RAISE NOTICE 'ok: deferred display_order uniqueness validated'; END $$;
+
+-- Deleting a course (one with no submission history) must cascade cleanly
+-- through holes, tees, and combo-tee provenance regardless of RI-trigger
+-- creation order — this is why fk_tee_hole_lengths_source_tee is deferred.
+DO $$
+DECLARE cid bigint; t1 bigint; t2 bigint; tc bigint;
+BEGIN
+    INSERT INTO courses (facility_id, slug, name, hole_count)
+    VALUES (1, 'scratch-cascade', 'Scratch Cascade', 2) RETURNING id INTO cid;
+    INSERT INTO holes (course_id, hole_number) VALUES (cid, 1), (cid, 2);
+    INSERT INTO tees (course_id, name, unit, display_order) VALUES (cid, 'A', 'yards', 1) RETURNING id INTO t1;
+    INSERT INTO tees (course_id, name, unit, display_order) VALUES (cid, 'B', 'yards', 2) RETURNING id INTO t2;
+    INSERT INTO tees (course_id, name, unit, display_order, is_combination)
+    VALUES (cid, 'A/B', 'yards', 3, true) RETURNING id INTO tc;
+    INSERT INTO tee_hole_lengths (tee_id, course_id, hole_number, length)
+    VALUES (t1, cid, 1, 310), (t1, cid, 2, 415), (t2, cid, 1, 290), (t2, cid, 2, 390);
+    INSERT INTO tee_hole_lengths (tee_id, course_id, hole_number, length, source_tee_id)
+    VALUES (tc, cid, 1, 310, t1), (tc, cid, 2, 390, t2);
+    DELETE FROM courses WHERE id = cid;
+    RAISE NOTICE 'ok: course delete cascades cleanly through combo-tee provenance';
+END;
+$$;
+
+-- The documented facility-merge recipe must be executable with plain SQL:
+-- defer the combination-leg FKs, repoint children, tombstone the loser.
+-- Facility 2 (Trillium Creek) owns three combinations — the hard case.
+SAVEPOINT merge_test;
+SET CONSTRAINTS fk_combinations_first_course, fk_combinations_second_course DEFERRED;
+UPDATE courses             SET facility_id = 1 WHERE facility_id = 2;
+UPDATE course_combinations SET facility_id = 1 WHERE facility_id = 2;
+UPDATE facilities SET status = 'duplicate', merged_into_id = 1 WHERE id = 2;
+SET CONSTRAINTS ALL IMMEDIATE;   -- validate the deferred FK checks now
+DO $$ BEGIN RAISE NOTICE 'ok: facility merge repoint recipe works on a combination-owning facility'; END $$;
+ROLLBACK TO SAVEPOINT merge_test;
 
 ROLLBACK;
