@@ -63,7 +63,7 @@ $$;
 -- COMMUNITY: users
 -- ============================================================================
 CREATE TABLE users (
-    id            bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id            uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
     email         text   NOT NULL
                   CONSTRAINT chk_users_email_shape CHECK (email ~ '^[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+$'),
     display_name  text   NOT NULL
@@ -88,7 +88,7 @@ COMMENT ON TABLE users IS
 -- GEOGRAPHY: facilities
 -- ============================================================================
 CREATE TABLE facilities (
-    id              bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id              uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
     slug            text   NOT NULL
                     CONSTRAINT uq_facilities_slug UNIQUE
                     CONSTRAINT chk_facilities_slug_shape CHECK (slug ~ '^[a-z0-9]+(-[a-z0-9]+)*$' AND char_length(slug) <= 120),
@@ -108,7 +108,7 @@ CREATE TABLE facilities (
                     CONSTRAINT chk_facilities_website_url CHECK (website_url ~ '^https?://'),
     status          text   NOT NULL DEFAULT 'active'
                     CONSTRAINT chk_facilities_status CHECK (status IN ('active', 'closed', 'duplicate', 'removed')),
-    merged_into_id  bigint REFERENCES facilities (id) ON DELETE RESTRICT,
+    merged_into_id  uuid   REFERENCES facilities (id) ON DELETE RESTRICT,
     created_at      timestamptz NOT NULL DEFAULT now(),
     updated_at      timestamptz NOT NULL DEFAULT now(),
 
@@ -135,8 +135,8 @@ COMMENT ON COLUMN facilities.merged_into_id IS 'Set when this row was found to d
 -- COURSES: one named loop of physically distinct holes
 -- ============================================================================
 CREATE TABLE courses (
-    id           bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    facility_id  bigint NOT NULL REFERENCES facilities (id) ON DELETE RESTRICT,
+    id           uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
+    facility_id  uuid   NOT NULL REFERENCES facilities (id) ON DELETE RESTRICT,
     slug         text   NOT NULL
                  CONSTRAINT chk_courses_slug_shape CHECK (slug ~ '^[a-z0-9]+(-[a-z0-9]+)*$' AND char_length(slug) <= 120),
     name         text   NOT NULL
@@ -165,7 +165,7 @@ COMMENT ON TABLE courses IS
 -- HOLES: natural key (course_id, hole_number); carries per-hole facts
 -- ============================================================================
 CREATE TABLE holes (
-    course_id    bigint   NOT NULL REFERENCES courses (id) ON DELETE CASCADE,
+    course_id    uuid     NOT NULL REFERENCES courses (id) ON DELETE CASCADE,
     hole_number  smallint NOT NULL
                  CONSTRAINT chk_holes_number CHECK (hole_number BETWEEN 1 AND 27),
     name         text
@@ -194,7 +194,7 @@ COMMENT ON TABLE holes IS
 -- the submission UI should flag duplicates for review instead.
 -- ----------------------------------------------------------------------------
 CREATE TABLE hole_pars (
-    course_id     bigint   NOT NULL,
+    course_id     uuid     NOT NULL,
     hole_number   smallint NOT NULL,
     gender        text     NOT NULL
                   CONSTRAINT chk_hole_pars_gender CHECK (gender IN ('men', 'women', 'unisex')),
@@ -223,8 +223,8 @@ COMMENT ON COLUMN hole_pars.stroke_index IS
 -- ratings live in tee_ratings.
 -- ============================================================================
 CREATE TABLE tees (
-    id                      bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    course_id               bigint NOT NULL REFERENCES courses (id) ON DELETE CASCADE,
+    id                      uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
+    course_id               uuid   NOT NULL REFERENCES courses (id) ON DELETE CASCADE,
     name                    text   NOT NULL
                             CONSTRAINT chk_tees_name_length CHECK (char_length(name) BETWEEN 1 AND 60),
     color_name              text,        -- marker color when distinct from the name ("Palmer" tees may be black)
@@ -275,8 +275,8 @@ COMMENT ON COLUMN tees.published_total_length IS
 -- the 18-hole configuration.
 -- ----------------------------------------------------------------------------
 CREATE TABLE tee_ratings (
-    id                 bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    tee_id             bigint NOT NULL REFERENCES tees (id) ON DELETE CASCADE,
+    id                 uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
+    tee_id             uuid   NOT NULL REFERENCES tees (id) ON DELETE CASCADE,
     gender             text   NOT NULL
                        CONSTRAINT chk_tee_ratings_gender CHECK (gender IN ('men', 'women')),
     course_rating      numeric(4, 1) NOT NULL
@@ -312,12 +312,12 @@ COMMENT ON TABLE tee_ratings IS
 -- can never silently mix Pebble Beach tees with Spyglass Hill holes.
 -- ----------------------------------------------------------------------------
 CREATE TABLE tee_hole_lengths (
-    tee_id         bigint   NOT NULL,
-    course_id      bigint   NOT NULL,
+    tee_id         uuid     NOT NULL,
+    course_id      uuid     NOT NULL,
     hole_number    smallint NOT NULL,
     length         integer  NOT NULL
                    CONSTRAINT chk_tee_hole_lengths_length CHECK (length BETWEEN 20 AND 1500),
-    source_tee_id  bigint,  -- for combination tees: which parent tee this hole plays from
+    source_tee_id  uuid  ,  -- for combination tees: which parent tee this hole plays from
     created_at     timestamptz NOT NULL DEFAULT now(),
     updated_at     timestamptz NOT NULL DEFAULT now(),
 
@@ -356,14 +356,14 @@ COMMENT ON COLUMN tee_hole_lengths.source_tee_id IS
 --   position >  first.hole_count        → second course, hole = position - first.hole_count
 -- ============================================================================
 CREATE TABLE course_combinations (
-    id                bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    facility_id       bigint NOT NULL REFERENCES facilities (id) ON DELETE RESTRICT,
+    id                uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
+    facility_id       uuid   NOT NULL REFERENCES facilities (id) ON DELETE RESTRICT,
     slug              text   NOT NULL
                       CONSTRAINT chk_combinations_slug_shape CHECK (slug ~ '^[a-z0-9]+(-[a-z0-9]+)*$' AND char_length(slug) <= 120),
     name              text   NOT NULL
                       CONSTRAINT chk_combinations_name_length CHECK (char_length(name) BETWEEN 1 AND 200),
-    first_course_id   bigint NOT NULL,
-    second_course_id  bigint NOT NULL,
+    first_course_id   uuid   NOT NULL,
+    second_course_id  uuid   NOT NULL,
     status            text   NOT NULL DEFAULT 'active'
                       CONSTRAINT chk_combinations_status CHECK (status IN ('active', 'closed', 'removed')),
     created_at        timestamptz NOT NULL DEFAULT now(),
@@ -400,16 +400,16 @@ COMMENT ON TABLE course_combinations IS
 -- each tee belongs to the correct leg.
 -- ----------------------------------------------------------------------------
 CREATE TABLE combination_tees (
-    id                      bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    combination_id          bigint NOT NULL,
-    first_course_id         bigint NOT NULL,
-    second_course_id        bigint NOT NULL,
+    id                      uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
+    combination_id          uuid   NOT NULL,
+    first_course_id         uuid   NOT NULL,
+    second_course_id        uuid   NOT NULL,
     name                    text   NOT NULL
                             CONSTRAINT chk_combination_tees_name_length CHECK (char_length(name) BETWEEN 1 AND 60),
     display_order           smallint NOT NULL
                             CONSTRAINT chk_combination_tees_display_order CHECK (display_order >= 1),
-    first_tee_id            bigint NOT NULL,
-    second_tee_id           bigint NOT NULL,
+    first_tee_id            uuid   NOT NULL,
+    second_tee_id           uuid   NOT NULL,
     unit                    text   NOT NULL
                             CONSTRAINT chk_combination_tees_unit CHECK (unit IN ('yards', 'meters')),
     published_total_length  integer
@@ -444,8 +444,8 @@ FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 -- split (its legs), verbatim.
 -- ----------------------------------------------------------------------------
 CREATE TABLE combination_ratings (
-    id                 bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    combination_tee_id bigint NOT NULL REFERENCES combination_tees (id) ON DELETE CASCADE,
+    id                 uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
+    combination_tee_id uuid   NOT NULL REFERENCES combination_tees (id) ON DELETE CASCADE,
     gender             text   NOT NULL
                        CONSTRAINT chk_combination_ratings_gender CHECK (gender IN ('men', 'women')),
     course_rating      numeric(4, 1) NOT NULL
@@ -481,7 +481,7 @@ FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 -- course's hole_pars.
 -- ----------------------------------------------------------------------------
 CREATE TABLE combination_stroke_indexes (
-    combination_id  bigint   NOT NULL REFERENCES course_combinations (id) ON DELETE CASCADE,
+    combination_id  uuid     NOT NULL REFERENCES course_combinations (id) ON DELETE CASCADE,
     position        smallint NOT NULL
                     CONSTRAINT chk_combination_si_position CHECK (position BETWEEN 1 AND 18),
     gender          text     NOT NULL
@@ -501,10 +501,10 @@ FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 -- IDENTITY & DEDUPE: external anchors for cross-referencing
 -- ============================================================================
 CREATE TABLE external_ids (
-    id              bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    facility_id     bigint REFERENCES facilities (id) ON DELETE CASCADE,
-    course_id       bigint REFERENCES courses (id) ON DELETE CASCADE,
-    combination_id  bigint REFERENCES course_combinations (id) ON DELETE CASCADE,
+    id              uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
+    facility_id     uuid   REFERENCES facilities (id) ON DELETE CASCADE,
+    course_id       uuid   REFERENCES courses (id) ON DELETE CASCADE,
+    combination_id  uuid   REFERENCES course_combinations (id) ON DELETE CASCADE,
     namespace       text   NOT NULL
                     CONSTRAINT chk_external_ids_namespace CHECK (char_length(namespace) BETWEEN 1 AND 50),
     external_id     text   NOT NULL
@@ -530,7 +530,7 @@ COMMENT ON TABLE external_ids IS
 -- approved data; history and revert = the chain of approved submissions.
 -- ============================================================================
 CREATE TABLE submissions (
-    id              bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id              uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
     kind            text   NOT NULL
                     CONSTRAINT chk_submissions_kind CHECK (kind IN ('facility', 'course', 'course_combination')),
     -- Target refs are NULL for brand-new entities until the approval
@@ -539,14 +539,14 @@ CREATE TABLE submissions (
     -- hard-deleted in one statement — history ("the chain of approved
     -- submissions") must never be silently severed. Deliberate teardown
     -- requires explicitly deleting the submissions first.
-    facility_id     bigint REFERENCES facilities (id) ON DELETE RESTRICT,
-    course_id       bigint REFERENCES courses (id) ON DELETE RESTRICT,
-    combination_id  bigint REFERENCES course_combinations (id) ON DELETE RESTRICT,
+    facility_id     uuid   REFERENCES facilities (id) ON DELETE RESTRICT,
+    course_id       uuid   REFERENCES courses (id) ON DELETE RESTRICT,
+    combination_id  uuid   REFERENCES course_combinations (id) ON DELETE RESTRICT,
     payload         jsonb  NOT NULL,
     status          text   NOT NULL DEFAULT 'pending'
                     CONSTRAINT chk_submissions_status CHECK (status IN ('pending', 'approved', 'rejected', 'superseded')),
-    submitted_by    bigint NOT NULL REFERENCES users (id) ON DELETE RESTRICT,
-    reviewed_by     bigint REFERENCES users (id) ON DELETE RESTRICT,
+    submitted_by    uuid   NOT NULL REFERENCES users (id) ON DELETE RESTRICT,
+    reviewed_by     uuid   REFERENCES users (id) ON DELETE RESTRICT,
     review_note     text,
     created_at      timestamptz NOT NULL DEFAULT now(),
     reviewed_at     timestamptz,
@@ -591,8 +591,8 @@ COMMENT ON COLUMN submissions.payload IS
 -- ratings expire, so the artifacts users transcribe are dated.
 -- ----------------------------------------------------------------------------
 CREATE TABLE submission_sources (
-    id              bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    submission_id   bigint NOT NULL REFERENCES submissions (id) ON DELETE CASCADE,
+    id              uuid   PRIMARY KEY DEFAULT gen_random_uuid(),
+    submission_id   uuid   NOT NULL REFERENCES submissions (id) ON DELETE CASCADE,
     source_type     text   NOT NULL
                     CONSTRAINT chk_submission_sources_type CHECK (source_type IN
                         ('scorecard_image', 'rating_sticker_image', 'course_website', 'official_rating_db', 'in_person', 'other')),

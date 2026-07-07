@@ -282,8 +282,13 @@ combined card's published total.
 
 ### PostgreSQL conventions
 
-`bigint GENERATED ALWAYS AS IDENTITY` keys (rejects manual-id inserts unless
-`OVERRIDING SYSTEM VALUE` — a deliberate guardrail for import scripts); `text` with
+`uuid PRIMARY KEY DEFAULT gen_random_uuid()` surrogate keys on every table that has
+one — globally unique identifiers mean records are non-enumerable, safe to mint
+client-side, and immune to the sequence-desync and id-collision problems that plague
+imports, merges, and any future federation between OpenTee instances (the trade-off —
+16 bytes vs 8 and random-v4 index locality — is acceptable at this scale; if write
+volume ever makes it matter, switch the default to a time-ordered UUIDv7, which
+PostgreSQL 18 provides natively and applications can generate today); `text` with
 length CHECKs instead of `varchar(n)`; `timestamptz` `created_at`/`updated_at` with one
 shared trigger on every table except the two append-only ones (`external_ids` and
 `submission_sources` carry `created_at` only); every FK column indexed unless it
@@ -316,7 +321,10 @@ SELECT hole_number, hole_name, tee_name, length,
 FROM v_scorecards
 WHERE course_slug = 'dunes'
   AND facility_id = (SELECT id FROM facilities WHERE slug = 'sandpiper-dunes-golf-resort')
-  AND tee_id IN (2, 3, 5)          -- custom card: any subset, by stable id
+  -- custom card: any subset of tees, selected by stable uuid (seed ids shown)
+  AND tee_id IN ('00000000-0000-4000-8000-000400000002',   -- Blue
+                 '00000000-0000-4000-8000-000400000003',   -- White
+                 '00000000-0000-4000-8000-000400000005')   -- Red
 ORDER BY hole_number, display_order;
 ```
 
@@ -326,7 +334,7 @@ OUT/IN/TOTAL, completeness, and misprint detection:
 SELECT tee_name, out_length, in_length, computed_total_length,
        published_total_length, has_total_discrepancy, is_complete
 FROM v_tee_summaries
-WHERE course_id = 1
+WHERE course_id = '00000000-0000-4000-8000-000300000001'   -- Dunes (seed id)
 ORDER BY display_order;
 ```
 
@@ -385,7 +393,11 @@ psql -v ON_ERROR_STOP=1 -d opentee_dev -f db/tests/constraint_tests.sql
 ```
 
 The seed data is entirely fictional but structurally realistic, and exercises every
-feature above: dual-gender ratings over single length sets, a men-only rated tee, an
+feature above. Its cross-referenced rows use fixed, readable UUIDs in the pattern
+`00000000-0000-4000-8000-TTTTNNNNNNNN` (TTTT tags the entity type — 0001 users, 0002
+facilities, 0003 courses, 0004 tees, 0005 combinations, 0006 combination tees, 0007
+submissions — and N is a sequence number); real application inserts should omit ids
+and take the `gen_random_uuid()` default. Feature coverage: dual-gender ratings over single length sets, a men-only rated tee, an
 unrated par-3 nine, a metric course, unisex par rows, a within-course combo tee, a
 27-hole club's three pairings, a nine played twice with different tees per loop, the
 submission/evidence trail, and one planted misprint. The test suite runs in a
