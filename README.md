@@ -35,6 +35,7 @@ The schema is built around how golf data actually works, including the awkward c
 | --- | --- |
 | `db/schema.sql` | Canonical PostgreSQL 16 schema (documented inline) |
 | `db/seed/example_seed.sql` | Fictional demo data exercising every schema feature |
+| `db/data/arlington_tx.sql` | Real course data: Arlington, TX public courses, transcribed from cited public sources (awaiting verification against official cards) |
 | `db/tests/constraint_tests.sql` | Self-rolling-back test suite for the integrity rails |
 | `docs/schema-design.md` | Full design rationale, ERD, decisions, example queries |
 

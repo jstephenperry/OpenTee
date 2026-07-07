@@ -45,20 +45,37 @@ $$;
 
 -- ----------------------------------------------------- seed data-quality views
 -- The seed plants exactly one misprint (Sandpiper Red tee) and everything
--- else must reconcile — on plain tees and combination cards alike.
+-- else must reconcile — on plain tees and combination cards alike. Scoped
+-- to the example-seed facilities so real-world data files (db/data/) with
+-- legitimately incomplete tees can coexist in the same database.
 DO $$
-DECLARE n int;
+DECLARE
+    seed_facilities text[] := ARRAY['sandpiper-dunes-golf-resort',
+                                    'trillium-creek-country-club',
+                                    'wattle-flat-golf-club'];
+    n int;
 BEGIN
-    SELECT count(*) INTO n FROM v_tee_summaries WHERE has_total_discrepancy;
+    SELECT count(*) INTO n
+    FROM v_tee_summaries s
+    JOIN courses c ON c.id = s.course_id
+    JOIN facilities f ON f.id = c.facility_id
+    WHERE f.slug = ANY (seed_facilities) AND s.has_total_discrepancy;
     IF n <> 1 THEN
         RAISE EXCEPTION 'TEST FAILED: expected exactly 1 planted tee misprint, found %', n;
     END IF;
-    SELECT count(*) INTO n FROM v_tee_summaries WHERE NOT is_complete;
+    SELECT count(*) INTO n
+    FROM v_tee_summaries s
+    JOIN courses c ON c.id = s.course_id
+    JOIN facilities f ON f.id = c.facility_id
+    WHERE f.slug = ANY (seed_facilities) AND NOT s.is_complete;
     IF n <> 0 THEN
         RAISE EXCEPTION 'TEST FAILED: % seeded tees are incomplete', n;
     END IF;
-    SELECT count(*) INTO n FROM v_combination_tee_summaries
-    WHERE NOT is_complete OR has_total_discrepancy;
+    SELECT count(*) INTO n
+    FROM v_combination_tee_summaries s
+    JOIN facilities f ON f.id = s.facility_id
+    WHERE f.slug = ANY (seed_facilities)
+      AND (NOT s.is_complete OR s.has_total_discrepancy);
     IF n <> 0 THEN
         RAISE EXCEPTION 'TEST FAILED: % combination tees incomplete or discrepant', n;
     END IF;
