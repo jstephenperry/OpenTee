@@ -37,6 +37,7 @@ The schema is built around how golf data actually works, including the awkward c
 | `db/seed/example_seed.sql` | Fictional demo data exercising every schema feature |
 | `db/data/arlington_tx.sql` | Real course data: Arlington, TX public courses, transcribed from cited public sources (awaiting verification against official cards) |
 | `db/tests/constraint_tests.sql` | Self-rolling-back test suite for the integrity rails |
+| `app/OpenTee.Scorecard/` | Avalonia desktop app: search courses, pick tees, print custom scorecards |
 | `docs/schema-design.md` | Full design rationale, ERD, decisions, example queries |
 
 ## Quick start
@@ -62,9 +63,28 @@ ORDER BY hole_number, display_order;
 See [docs/schema-design.md](docs/schema-design.md) for the entity model and more
 involved queries (custom tee subsets, 27-hole combination cards, fuzzy dedupe search).
 
+## Scorecard app
+
+`app/OpenTee.Scorecard` is a cross-platform Avalonia desktop app (.NET 8) that
+searches the database, lets you pick a course and any subset of its tees, previews
+the card, and produces a print-ready PDF (landscape Letter) with per-hole yardages,
+par and stroke-index rows per published gender, OUT/IN/TOT columns, blank player
+rows, and the ratings/unit footer. Avalonia has no cross-platform print API, so
+"print" hands the PDF to your viewer's print dialog. Incomplete tees (per-hole data
+not yet in the database) are shown but not printable.
+
+```bash
+cd app/OpenTee.Scorecard
+export OPENTEE_DB="Host=localhost;Database=opentee_dev;Username=postgres"  # default
+dotnet run                                        # the GUI
+dotnet run -- --pdf texas-rangers                 # headless: PDF for a course slug
+dotnet run -- --pdf dunes --tees Blue,White,Red   # headless: custom tee subset
+```
+
 ## Status
 
-Early days: the database schema is designed, validated, and tested; the API and web
+Early days: the database schema is designed, validated, and tested, and a desktop
+scorecard app covers the primary read path; the community submission API and web
 application are not built yet. Contributions and design feedback are welcome.
 
 ## License
