@@ -1,0 +1,6508 @@
+[
+ {
+  "facility": {
+   "name": "Harbor Lakes Golf Club",
+   "address": "2100 Clubhouse Dr",
+   "city": "Granbury",
+   "state_province": "TX",
+   "postal_code": "76048",
+   "country": "United States",
+   "website_url": "https://www.harborlakes.com/"
+  },
+  "courses": [
+   {
+    "name": "Harbor Lakes",
+    "hole_count": 18,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       5,
+       4,
+       3,
+       5,
+       4,
+       4,
+       3,
+       4,
+       4,
+       5,
+       3,
+       4,
+       5,
+       3,
+       4,
+       4,
+       4
+      ],
+      "stroke_index": [
+       10,
+       4,
+       12,
+       8,
+       6,
+       18,
+       2,
+       16,
+       14,
+       7,
+       5,
+       13,
+       17,
+       1,
+       9,
+       15,
+       3,
+       11
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Tournament",
+      "unit": "yards",
+      "published_total": 7239
+     },
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 6927,
+      "lengths": [
+       391,
+       577,
+       401,
+       210,
+       551,
+       350,
+       430,
+       151,
+       385,
+       420,
+       570,
+       190,
+       380,
+       554,
+       207,
+       385,
+       425,
+       350
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 74.8,
+        "slope": 133
+       }
+      ]
+     },
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 6448,
+      "lengths": [
+       372,
+       565,
+       360,
+       180,
+       526,
+       325,
+       392,
+       138,
+       365,
+       390,
+       535,
+       165,
+       355,
+       525,
+       175,
+       340,
+       400,
+       340
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 72,
+        "slope": 131
+       }
+      ]
+     },
+     {
+      "name": "Black/Silver",
+      "unit": "yards",
+      "published_total": 6088,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 70.5,
+        "slope": 130
+       }
+      ]
+     },
+     {
+      "name": "Silver",
+      "unit": "yards",
+      "published_total": 5790,
+      "lengths": [
+       321,
+       521,
+       323,
+       148,
+       486,
+       290,
+       345,
+       126,
+       320,
+       355,
+       490,
+       135,
+       325,
+       485,
+       145,
+       310,
+       360,
+       305
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.2,
+        "slope": 128
+       },
+       {
+        "gender": "women",
+        "rating": 74.3,
+        "slope": 132
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 5148,
+      "lengths": [
+       290,
+       481,
+       283,
+       112,
+       451,
+       270,
+       305,
+       95,
+       283,
+       318,
+       470,
+       105,
+       290,
+       450,
+       110,
+       260,
+       305,
+       270
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 66,
+        "slope": 106
+       },
+       {
+        "gender": "women",
+        "rating": 71.2,
+        "slope": 124
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/14923-harbor-lakes-golf-club",
+    "note": "GolfPass - primary source. Full per-hole grid for Gold/Black/Silver/Blue plus tee list with ratings. Two different rating sets appear on this page (see notes)."
+   },
+   {
+    "type": "other",
+    "url": "https://18birdies.com/golf-courses/club/8b69a150-86ac-11e4-8c28-020000005b00/harbor-lakes-golf-club",
+    "note": "18Birdies - independent confirmation of Gold per-hole yardages, par, handicap, OUT 3446 / IN 3481 / TOTAL 6927, and Gold rating 74.8/133."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.harborlakes.com/course-information/",
+    "note": "Official course-information page. States 7,051 total yardage, Dick Phelps 2003, TifEagle greens. No scorecard table or scorecard PDF/image published."
+   },
+   {
+    "type": "other",
+    "url": "https://golfscorekeeper.com/view_course.cfm?State=TX&Course=24342&Country=210",
+    "note": "GolfScorekeeper - tee totals only (Gold/Black 6872, Silver 6216, Blue 5373) with different ratings. Yardages do not match current card; judged outdated and NOT used."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC VERIFIED: all four per-hole tees sum exactly to their published totals. Gold 3446+3481=6927; Black 3223+3225=6448; Silver 2880+2910=5790; Blue 2570+2578=5148. Par 36+36=72. Stroke index is a complete 1-18 permutation (front nine all even, back nine all odd) - transcribed as published. GolfPass and 18Birdies independently agree hole-for-hole on the Gold line, which is strong corroboration for the whole grid.\n\nRATING CONFLICT (unresolved, disclosed): the GolfPass page carries TWO rating sets. The inline scorecard-grid labels give Gold M 74.8/133, Black M 72.0/131, Black/Silver M 70.5/130, Silver M 69.2/128 & W 74.3/132, Blue M 66.0/106 & W 71.2/124. The separate 'course facts' tee table on the same page gives Gold 73.5/130, Black 71.4/128, Silver M 68.3/116 & W 73.3/127, Blue M 65.7/110 & W 69.8/112. I used the scorecard-grid set because 18Birdies independently reports Gold 74.8/133, matching it. A third source (golflink search summary) quotes 74.9/132 at 7,239 yds, which would be the Tournament tee. Treat the facts-table numbers as a plausible alternative vintage.\n\nOMISSIONS: 'Tournament' (7,239 yds) is published as a total only - no per-hole yardages found anywhere, and no rating; lengths deliberately omitted rather than reconstructed. 'Black/Silver' is a published combination tee (OUT 3,048 / IN 3,040 / TOTAL 6,088) with its own rating but no per-hole line - totals kept, lengths omitted. The card shows a single undifferentiated par/handicap row, so gender is recorded as unisex. Greenskeeper.org has no page for this course (404 on both capitalisation variants). Hole19 returned obviously corrupt data (a single 'blue 4706 yds' tee) and was discarded. The club's own site publishes no scorecard."
+ },
+ {
+  "facility": {
+   "name": "Grand Oaks Golf Club",
+   "address": "3502 Country Club Dr",
+   "city": "Grand Prairie",
+   "state_province": "TX",
+   "postal_code": "75052",
+   "country": "United States",
+   "website_url": "https://www.grandoaksgc.com"
+  },
+  "courses": [
+   {
+    "name": "Grand Oaks",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       5,
+       4,
+       3,
+       4,
+       3,
+       5,
+       3,
+       4,
+       5,
+       4,
+       5,
+       3,
+       4,
+       3,
+       4,
+       4,
+       4,
+       4
+      ],
+      "stroke_index": [
+       11,
+       1,
+       15,
+       7,
+       9,
+       5,
+       17,
+       13,
+       3,
+       2,
+       6,
+       10,
+       12,
+       18,
+       14,
+       16,
+       4,
+       8
+      ]
+     },
+     "women": {
+      "par": [
+       5,
+       4,
+       3,
+       4,
+       3,
+       5,
+       3,
+       4,
+       5,
+       4,
+       5,
+       3,
+       4,
+       3,
+       4,
+       4,
+       4,
+       4
+      ],
+      "stroke_index": [
+       3,
+       7,
+       11,
+       13,
+       15,
+       1,
+       17,
+       9,
+       5,
+       6,
+       2,
+       12,
+       10,
+       18,
+       14,
+       16,
+       8,
+       4
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 6953,
+      "lengths": [
+       583,
+       434,
+       166,
+       443,
+       192,
+       554,
+       145,
+       374,
+       665,
+       422,
+       526,
+       247,
+       429,
+       192,
+       332,
+       351,
+       492,
+       406
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 73.1,
+        "slope": 125
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6497,
+      "lengths": [
+       539,
+       413,
+       152,
+       401,
+       182,
+       525,
+       138,
+       354,
+       592,
+       418,
+       508,
+       204,
+       384,
+       181,
+       316,
+       342,
+       456,
+       392
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71,
+        "slope": 122
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5951,
+      "lengths": [
+       497,
+       401,
+       133,
+       354,
+       172,
+       460,
+       130,
+       336,
+       499,
+       390,
+       485,
+       164,
+       352,
+       160,
+       302,
+       332,
+       428,
+       356
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69,
+        "slope": 118
+       },
+       {
+        "gender": "women",
+        "rating": 77.5,
+        "slope": 133
+       }
+      ]
+     },
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 5429,
+      "lengths": [
+       476,
+       368,
+       111,
+       343,
+       145,
+       418,
+       123,
+       314,
+       419,
+       319,
+       456,
+       149,
+       335,
+       144,
+       295,
+       322,
+       379,
+       313
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 66.3,
+        "slope": 110
+       },
+       {
+        "gender": "women",
+        "rating": 71.9,
+        "slope": 126
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 5045,
+      "lengths": [
+       418,
+       274,
+       106,
+       328,
+       139,
+       393,
+       110,
+       295,
+       411,
+       275,
+       408,
+       118,
+       315,
+       150,
+       288,
+       329,
+       375,
+       313
+      ],
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 69.1,
+        "slope": 122
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/grand_oaks_golf_club/scorecard.cfm",
+    "note": "Greenskeeper.org - primary source. Full 18-hole grid for all five tees, separate men's and women's par and handicap rows, and the ratings/slope table. Address and phone match the assigned facility."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/12710-grand-oaks-golf-club",
+    "note": "GolfPass - independent second source. Per-hole yardages for all five tees match Greenskeeper digit-for-digit, as do all OUT/IN/TOTAL values and every rating/slope pair."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/grand-prairie/grand-oaks-golf-club",
+    "note": "Not fetched (blocked). Search summary confirms 18 holes, total par 71, Don January design 1972, 6,953 yds from the back, tee range 5,045-6,953."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC VERIFIED: every one of the five tees sums exactly to its published total. Black 3556+3397=6953; Blue 3296+3201=6497; White 2982+2969=5951; Gold 2717+2712=5429; Red 2474+2571=5045. Two fully independent sources (Greenskeeper.org and GolfPass) reproduce all 90 per-hole numbers identically, so confidence here is very high.\n\nPAR CONFLICT RESOLVED: GolfPass's par row prints hole 17 as par 5 and totals IN 36 / TOTAL 72, which is internally inconsistent with its own tee table (par 71 on every tee). Greenskeeper's par row prints hole 17 as par 4, giving OUT 36 / IN 35 / TOTAL 71, which agrees with both sites' tee tables and with an independent search confirmation that the course's total par is 71. I used par 4 at hole 17; GolfPass's par row appears to contain a transcription error.\n\nGENDER HANDLING: the card prints separate men's and women's par and handicap rows, so both are supplied. The par values happen to be identical between genders; the stroke indexes differ. Both index sets are complete 1-18 permutations (men: odd front / even back; women: odd front / even back). Ratings are per tee per gender over one set of yardages - White and Gold each carry a men's and a women's rating, Black and Blue are men-only, Red is women-only, exactly as published. Facility was formerly Grand Prairie Country Club; the Greenskeeper record is filed under the current Grand Oaks name at the correct 3502 Country Club Drive address."
+ },
+ {
+  "facility": {
+   "name": "Prairie Lakes Golf Course",
+   "address": "3202 SE 14th St",
+   "city": "Grand Prairie",
+   "state_province": "TX",
+   "postal_code": "75052",
+   "country": "United States",
+   "website_url": "https://www.prairielakesgolf.com/"
+  },
+  "courses": [
+   {
+    "name": "Blue Course",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       4,
+       4,
+       3,
+       5,
+       3,
+       4,
+       5,
+       4
+      ],
+      "stroke_index": [
+       15,
+       11,
+       7,
+       13,
+       1,
+       17,
+       9,
+       5,
+       3
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 3360,
+      "lengths": [
+       400,
+       445,
+       365,
+       190,
+       555,
+       160,
+       295,
+       520,
+       430
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 3125,
+      "lengths": [
+       360,
+       390,
+       350,
+       170,
+       530,
+       140,
+       280,
+       495,
+       410
+      ]
+     },
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 2825,
+      "lengths": [
+       322,
+       337,
+       310,
+       133,
+       490,
+       130,
+       260,
+       473,
+       370
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 2525,
+      "lengths": [
+       285,
+       285,
+       270,
+       95,
+       450,
+       120,
+       240,
+       450,
+       330
+      ]
+     },
+     {
+      "name": "Green",
+      "unit": "yards",
+      "published_total": 1345
+     }
+    ]
+   },
+   {
+    "name": "Red Course",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       5,
+       4,
+       4,
+       5,
+       3,
+       4,
+       3,
+       4,
+       4
+      ],
+      "stroke_index": [
+       3,
+       9,
+       13,
+       1,
+       11,
+       17,
+       7,
+       5,
+       15
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 3350,
+      "lengths": [
+       510,
+       380,
+       420,
+       540,
+       165,
+       400,
+       210,
+       340,
+       385
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 3095,
+      "lengths": [
+       480,
+       360,
+       385,
+       495,
+       150,
+       375,
+       170,
+       320,
+       360
+      ]
+     },
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 2754,
+      "lengths": [
+       435,
+       322,
+       342,
+       445,
+       125,
+       325,
+       140,
+       300,
+       320
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 2416,
+      "lengths": [
+       390,
+       285,
+       300,
+       395,
+       100,
+       276,
+       110,
+       280,
+       280
+      ]
+     },
+     {
+      "name": "Green",
+      "unit": "yards",
+      "published_total": 1285
+     }
+    ]
+   },
+   {
+    "name": "White Course",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       5,
+       4,
+       4,
+       4,
+       3,
+       4,
+       4,
+       3,
+       4
+      ],
+      "stroke_index": [
+       13,
+       9,
+       11,
+       15,
+       5,
+       1,
+       3,
+       7,
+       17
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 3115,
+      "lengths": [
+       480,
+       390,
+       395,
+       365,
+       195,
+       365,
+       365,
+       190,
+       370
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 2900,
+      "lengths": [
+       445,
+       375,
+       365,
+       325,
+       180,
+       340,
+       350,
+       170,
+       350
+      ]
+     },
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 2572,
+      "lengths": [
+       410,
+       315,
+       335,
+       290,
+       155,
+       290,
+       310,
+       132,
+       335
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 2255,
+      "lengths": [
+       375,
+       255,
+       305,
+       255,
+       130,
+       240,
+       270,
+       105,
+       320
+      ]
+     },
+     {
+      "name": "Green",
+      "unit": "yards",
+      "published_total": 1235
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/2966-prairie-lakes-golf-course-blue-course",
+    "note": "GolfPass Blue Course - per-hole grid for four tees, par and handicap rows, and the Blue/Red 18-hole combination ratings."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/2967-prairie-lakes-golf-course-red-course",
+    "note": "GolfPass Red Course - per-hole grid for four tees, par and handicap rows, and the Red/White 18-hole combination ratings."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/2970-prairie-lakes-golf-course-white-course",
+    "note": "GolfPass White Course - per-hole grid for four tees, par and handicap rows, and the White/Blue 18-hole combination ratings."
+   },
+   {
+    "type": "scorecard_image",
+    "url": "https://www.prairielakesgolf.com/course/scorecard/",
+    "note": "OFFICIAL scorecard page. Confirms the three nines are named Red, White and Blue, but publishes only 27 hole-diagram JPEGs (red-course-01..09, white-course-01..09, blue-course-01..09 under /wp-content/uploads/sites/7801/2018/10/). No machine-readable table. FLAGGED FOR HUMAN TRANSCRIPTION - the images may carry official tee names and per-tee yardages that would settle the tee-naming question below."
+   },
+   {
+    "type": "other",
+    "url": "https://18birdies.com/golf-courses/club/8b6b9d20-86ac-11e4-8c28-020000005b00/prairie-lakes-golf-club",
+    "note": "18Birdies - publishes the White+Blue 18-hole pairing (6,475 from the back tee, par 71). Its holes 1-9 match the White Course line and holes 10-18 match the Blue Course line exactly, independently confirming both nines."
+   },
+   {
+    "type": "other",
+    "url": "https://golfscorekeeper.com/view_course.cfm?State=TX&Course=24269&Country=210",
+    "note": "GolfScorekeeper Red/White combination - tee totals only, and its OUT figures (3,350 / 3,095) match the Red nine's back two tees. Useful only as corroboration that the longest tee is called 'Blue' here; its IN figures are stale."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC VERIFIED, and then cross-verified between courses. Each of the twelve per-hole tee lines sums exactly to its published nine-hole total: Blue nine 3360/3125/2825/2525; Red nine 3350/3095/2754/2416; White nine 3115/2900/2572/2255. Beyond that, each GolfPass nine also prints an 18-hole combination total at the right of every row, and EVERY one of those decomposes exactly into the sum of two of my transcribed nines - Red+White 6465/5995/5326/4671, White+Blue 6475/6025/5397/4780, Blue+Red 6710/6220/5579/4941. That twelve-way cross-check makes accidental mis-transcription essentially impossible. Par: Red 36, White 35, Blue 36, giving Red/White 71, White/Blue 71, Blue/Red 72 - all three match the published combination pars. 18Birdies independently reproduces the White and Blue nines hole-for-hole.\n\nRATINGS DELIBERATELY OMITTED - THIS IS THE IMPORTANT CAVEAT. Every rating published for this facility is an 18-HOLE COMBINATION rating (values in the 62-79 range attached to ~4,700-6,700 yard totals), not a rating of the individual nine. Attaching them to a 9-hole record would overstate each nine by roughly a factor of two, so the ratings arrays are left empty. The published combination ratings, recorded here for later use: RED/WHITE (par 71, 6465 yds back tee) Blue M 71.4/126 W 77.8/138, White M 68.7/119 W 74.8/128, Black M 65.2/109 W 70.6/123, Red M 62.3/104 W 67.0/113. WHITE/BLUE (par 71, 6475) Blue M 71.1/124 W 77.7/137, White M 69.0/119 W 74.9/131, Black M 65.6/109 W 70.8/121, Red M 63.2/105 W 67.3/113. BLUE/RED (par 72, 6710) Blue M 72.5/128 W 79.1/140, White M 69.9/123 W 76.1/133, Black M 66.6/113 W 72.0/130, Red M 63.5/108 W 68.5/116. No 9-hole-only rating was found in any accessible source.\n\nTEE-NAME UNCERTAINTY (disclosed): GolfPass shows two conflicting name orderings for the same five yardage sets. Its inline scorecard-grid labels read Blue > White > Black > Red (longest to shortest); its separate course-facts tee table reads Black > White > Blue > Red > Green. The yardages and ratings are identical under both, only the Blue/Black labels swap. I used the scorecard-grid order (Blue longest) because GolfScorekeeper independently calls the 3,350/3,095 pair 'Blue tees' and 'White tees'. If the official scorecard images are ever transcribed, verify this. The fifth tee, 'Green' (1,285 / 1,235 / 1,345 yds), is published as a total only with no per-hole line and no rating - lengths omitted rather than invented.\n\nSTROKE INDEX: each nine is indexed with the odd numbers 1-17 only (nine distinct values per nine), which is how a 27-hole facility indexes nines intended to be played as the front half of a combination. Transcribed exactly as published rather than renumbered 1-9. Par and handicap print as single undifferentiated rows, so gender is unisex. Greenskeeper.org has a page for this course but explicitly states no scorecard has been submitted."
+ },
+ {
+  "facility": {
+   "name": "Riverside Golf Club",
+   "address": "3000 Riverside Pkwy",
+   "city": "Grand Prairie",
+   "state_province": "TX",
+   "postal_code": "75050",
+   "country": "United States",
+   "website_url": "https://playriversidetx.com/"
+  },
+  "courses": [
+   {
+    "name": "Riverside",
+    "hole_count": 18,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       5,
+       4,
+       4,
+       3,
+       5,
+       4,
+       3,
+       4,
+       4,
+       5,
+       4,
+       3,
+       5,
+       4,
+       3,
+       4,
+       4
+      ],
+      "stroke_index": [
+       13,
+       15,
+       11,
+       5,
+       17,
+       3,
+       1,
+       9,
+       7,
+       6,
+       12,
+       18,
+       10,
+       14,
+       4,
+       8,
+       16,
+       2
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 6957,
+      "lengths": [
+       442,
+       504,
+       377,
+       462,
+       212,
+       543,
+       434,
+       198,
+       450,
+       402,
+       544,
+       355,
+       181,
+       545,
+       325,
+       179,
+       366,
+       438
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 74.1,
+        "slope": 131
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6389,
+      "lengths": [
+       392,
+       472,
+       358,
+       402,
+       154,
+       512,
+       404,
+       175,
+       411,
+       371,
+       506,
+       320,
+       155,
+       515,
+       320,
+       168,
+       343,
+       411
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.2,
+        "slope": 128
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5784,
+      "lengths": [
+       352,
+       422,
+       327,
+       371,
+       121,
+       486,
+       279,
+       155,
+       394,
+       337,
+       474,
+       292,
+       123,
+       490,
+       317,
+       141,
+       320,
+       383
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69,
+        "slope": 120
+       },
+       {
+        "gender": "women",
+        "rating": 75.2,
+        "slope": 126
+       }
+      ]
+     },
+     {
+      "name": "Silver",
+      "unit": "yards",
+      "published_total": 5426,
+      "lengths": [
+       340,
+       410,
+       295,
+       320,
+       100,
+       471,
+       275,
+       140,
+       382,
+       290,
+       440,
+       275,
+       110,
+       480,
+       315,
+       98,
+       310,
+       375
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 67,
+        "slope": 118
+       },
+       {
+        "gender": "women",
+        "rating": 72.4,
+        "slope": 122
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 5247,
+      "lengths": [
+       330,
+       407,
+       276,
+       300,
+       84,
+       463,
+       270,
+       134,
+       376,
+       286,
+       427,
+       263,
+       96,
+       471,
+       313,
+       92,
+       296,
+       363
+      ],
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 70.8,
+        "slope": 120
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/2972-riverside-golf-club",
+    "note": "GolfPass - primary source. Full 18-hole grid for all five tees plus par and handicap rows, and two rating sets (see notes)."
+   },
+   {
+    "type": "scorecard_image",
+    "url": "https://www.playriversidetx.com/images/TXRiversideScorecard9-22.png",
+    "note": "OFFICIAL scorecard, published only as a PNG image (filename dates it to September 2022) and linked from https://www.playriversidetx.com/course/scorecard. Cannot be read by this pipeline - FLAGGED FOR HUMAN TRANSCRIPTION. This is the authoritative card and should be used to settle the rating discrepancy below."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/grand-prairie/riverside-golf-club",
+    "note": "Not fetched (blocked). Search summary quotes 7,025 yds from the longest tees, par 72, rating 72.5 / slope 132 - both figures disagree with the current GolfPass card and were NOT used."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC VERIFIED: all five tees sum exactly to their published totals. Black 3622+3335=6957; Blue 3280+3109=6389; White 2907+2877=5784; Silver 2733+2693=5426; Red 2640+2607=5247. Par 36+36=72. Stroke index is a complete 1-18 permutation (odd front, even back).\n\nONE-YARD SOURCE INCONSISTENCY: the White tee sums to 5,784 and the scorecard row itself prints 5,784, but GolfPass's separate tee-facts table prints 5,783. I kept 5,784 because it is both the row total and the arithmetic sum; the 5,783 is a one-yard rounding difference in the facts table. Values kept as read, not adjusted.\n\nRATING CONFLICT (disclosed): as with Harbor Lakes, GolfPass carries two rating sets. I used the inline scorecard-grid values - Black M 74.1/131, Blue M 71.2/128, White M 69.0/120 & W 75.2/126, Silver M 67.0/118 & W 72.4/122, Red W 70.8/120 - for consistency with the grid the yardages came from. The separate facts table differs on the three men's back tees: Black 74.4/132, Blue 71.5/126, White 68.4/119 (its Silver and Red values are identical to the grid). A third figure, 72.5/132 at 7,025 yds, appears in golflink search summaries and matches neither; it looks like a pre-2022 card, since the current official scorecard image is dated 9-22 and the course now measures 6,957 from the Black. The official PNG should be transcribed to settle this.\n\nGENDER HANDLING: one undifferentiated par/handicap row is printed, so gender is unisex. Ratings are per tee per gender over a single set of yardages - Black and Blue are men-only, White and Silver carry both, Red is women-only, exactly as published; the Red tee is not duplicated. Greenskeeper.org has no page for this course. The very short forward yardages (Red 84 yds at hole 5, Silver 98 / Red 92 at hole 16) are as published and were re-read to confirm."
+ },
+ {
+  "facility": {
+   "name": "Tangle Ridge Golf Club",
+   "address": "818 Tangle Ridge Dr",
+   "city": "Grand Prairie",
+   "state_province": "TX",
+   "postal_code": "75052",
+   "country": "USA",
+   "website_url": "https://www.tangleridge.com/"
+  },
+  "courses": [
+   {
+    "name": "Tangle Ridge",
+    "hole_count": 18,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       4,
+       4,
+       3,
+       5,
+       4,
+       4,
+       5,
+       3,
+       4,
+       4,
+       3,
+       5,
+       4,
+       4,
+       4,
+       3,
+       5
+      ],
+      "stroke_index": [
+       7,
+       9,
+       13,
+       17,
+       5,
+       11,
+       3,
+       1,
+       15,
+       12,
+       14,
+       18,
+       8,
+       4,
+       2,
+       10,
+       16,
+       6
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 6835,
+      "lengths": [
+       469,
+       407,
+       378,
+       132,
+       545,
+       313,
+       444,
+       575,
+       152,
+       438,
+       338,
+       168,
+       501,
+       384,
+       457,
+       424,
+       189,
+       521
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 73.6,
+        "slope": 136
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6337,
+      "lengths": [
+       429,
+       376,
+       330,
+       111,
+       514,
+       293,
+       406,
+       550,
+       129,
+       399,
+       319,
+       141,
+       476,
+       368,
+       422,
+       403,
+       172,
+       499
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.2,
+        "slope": 131
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5969,
+      "lengths": [
+       392,
+       353,
+       309,
+       105,
+       492,
+       270,
+       383,
+       529,
+       120,
+       370,
+       297,
+       120,
+       455,
+       353,
+       405,
+       377,
+       153,
+       486
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.3,
+        "slope": 128
+       },
+       {
+        "gender": "women",
+        "rating": 74.5,
+        "slope": 136
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 5187,
+      "lengths": [
+       349,
+       301,
+       261,
+       83,
+       453,
+       228,
+       326,
+       468,
+       105,
+       341,
+       254,
+       101,
+       377,
+       314,
+       371,
+       292,
+       136,
+       427
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 65.8,
+        "slope": 121
+       },
+       {
+        "gender": "women",
+        "rating": 70.1,
+        "slope": 127
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/Tangle_Ridge_Golf_Club/scorecard.cfm",
+    "note": "Greenskeeper.org full per-hole grid (4 tees), par and men's handicap rows, plus a tee summary with ratings. Primary source for the per-hole yardages."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/2969-tangle-ridge-golf-club",
+    "note": "GolfPass full 18-column scorecard. Per-hole yardages, par and HCP rows agree digit-for-digit with Greenskeeper. Source used for the gendered ratings/slopes adopted here."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.tangleridge.com/scorecard/",
+    "note": "Official scorecard page currently displays only 'Scorecard Coming Soon!' - no data published."
+   },
+   {
+    "type": "official_rating_db",
+    "url": "https://course.bluegolf.com/bluegolf/course/course/tangleridge/index.htm",
+    "note": "BlueGolf course profile. Not fetchable (405), but a search-result summary quoted its ladies' ratings as White L 74.5/136 and Red L 70.1/127 - an exact match for the GolfPass women's ratings, which is why the GolfPass rating set was preferred over Greenskeeper's."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC: all four tees verified hole-by-hole against their published totals. Gold 3415+3420=6835 OK; Blue 3138+3199=6337 OK; White 2953+3016=5969 OK; Red 2574+2613=5187 OK. Par row sums 36+36=72 OK. Stroke index is a clean permutation of 1-18. Per-hole yardages are identical between Greenskeeper and GolfPass, so confidence in the grid is high.\n\nPAR GENDER: Greenskeeper renders a 'Men's Par' row, a 'Men's HDCP' row and a 'Women's Par' row, but its women's par row is corrupt - it prints 0 at hole 15 (an impossible par), and no women's handicap row is published anywhere. GolfPass prints a SINGLE undifferentiated Par row and a single HCP row, matching Greenskeeper's men's rows exactly, with hole 15 = par 4. Because the only clean, complete rows available are undifferentiated, par/SI is recorded as 'unisex' rather than fabricating a women's row from a corrupt source. Men's and women's par appear to be identical on every hole.\n\nRATING CONFLICT (unresolved, values NOT averaged): Greenskeeper's tee summary gives Gold 73.4/133, Blue 70.8/128, White 69.0/125, Red 66.3/108, White-Ladies 74.8/138, Red-Ladies 70.6/125. GolfPass gives Gold M 73.6/136, Blue M 71.2/131, White M 69.3/128 / W 74.5/136, Red M 65.8/121 / W 70.1/127. The GolfPass figures are reported here because BlueGolf independently corroborates the two ladies' values (74.5/136 and 70.1/127) and because Greenskeeper's Red men's slope of 108 is an outlier against every other source. The Greenskeeper numbers are likely an older rating revision. A human should confirm against the current USGA/NTPGA rating sticker.\n\nNote Greenskeeper lists 'White-Ladies' and 'Red-Ladies' as separate tee rows with yardages identical to White and Red; these were correctly collapsed into one set of yardages carrying two gendered ratings, not duplicated as extra tees."
+ },
+ {
+  "facility": {
+   "name": "Cowboys Golf Club",
+   "address": "1600 Fairway Dr",
+   "city": "Grapevine",
+   "state_province": "TX",
+   "postal_code": "76051",
+   "country": "USA",
+   "website_url": "https://www.cowboysgolfclub.com/"
+  },
+  "courses": [
+   {
+    "name": "Cowboys Golf Club",
+    "hole_count": 18,
+    "pars": {
+     "unisex": {
+      "par": [
+       5,
+       4,
+       3,
+       4,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       4,
+       4,
+       5,
+       4,
+       3,
+       4,
+       3,
+       5
+      ],
+      "stroke_index": [
+       5,
+       17,
+       11,
+       15,
+       1,
+       13,
+       3,
+       7,
+       9,
+       18,
+       6,
+       10,
+       2,
+       16,
+       14,
+       4,
+       8,
+       12
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 7017,
+      "lengths": [
+       533,
+       376,
+       176,
+       366,
+       479,
+       163,
+       468,
+       520,
+       441,
+       361,
+       439,
+       441,
+       594,
+       333,
+       159,
+       455,
+       194,
+       519
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 74.7,
+        "slope": 140
+       }
+      ]
+     },
+     {
+      "name": "Silver",
+      "unit": "yards",
+      "published_total": 6563,
+      "lengths": [
+       510,
+       347,
+       148,
+       352,
+       469,
+       140,
+       441,
+       492,
+       390,
+       333,
+       401,
+       418,
+       555,
+       327,
+       140,
+       425,
+       176,
+       499
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 72.7,
+        "slope": 137
+       },
+       {
+        "gender": "women",
+        "rating": 79,
+        "slope": 145
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6182,
+      "lengths": [
+       495,
+       326,
+       135,
+       336,
+       415,
+       131,
+       414,
+       481,
+       372,
+       316,
+       368,
+       408,
+       518,
+       313,
+       135,
+       413,
+       117,
+       489
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 70.8,
+        "slope": 134
+       },
+       {
+        "gender": "women",
+        "rating": 76.9,
+        "slope": 141
+       }
+      ]
+     },
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 4702,
+      "lengths": [
+       401,
+       254,
+       95,
+       211,
+       292,
+       108,
+       367,
+       386,
+       262,
+       255,
+       291,
+       296,
+       391,
+       165,
+       98,
+       328,
+       91,
+       411
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 64.2,
+        "slope": 120
+       },
+       {
+        "gender": "women",
+        "rating": 68.7,
+        "slope": 120
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/cowboys_golf_club_dallas/scorecard.cfm",
+    "note": "Greenskeeper.org full per-hole grid for all 4 tees, par row, and separate men's/women's handicap rows (values identical). Primary source for per-hole yardages."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/16187-cowboys-golf-club",
+    "note": "GolfPass per-tee scorecard tables. Per-hole yardages, par and HCP match Greenskeeper exactly. Sole source giving explicitly gendered M/W ratings per tee; used for the ratings adopted here."
+   },
+   {
+    "type": "other",
+    "url": "https://golfscorekeeper.com/view_course.cfm?State=TX&Course=24400&Country=210",
+    "note": "Golfscorekeeper tee totals only (no per-hole grid). Confirms the four tee totals 7017/6563/6182/4702 but gives a conflicting rating set and calls the forward tee 'Red' rather than 'Gold'."
+   },
+   {
+    "type": "official_rating_db",
+    "url": "https://course.bluegolf.com/bluegolf/course/course/cowboysgc/actual.htm",
+    "note": "BlueGolf course profile - not fetchable (405 Method Not Allowed). A search-result summary quoted its ladies' ratings as Black L 81.4/155, Silver L 78.7/147, Blue L 76.5/142, Gold L 68.6/121."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC: all four tees verified hole-by-hole. Black 3522+3495=7017 OK; Silver 3289+3274=6563 OK; Blue 3105+3077=6182 OK; Gold 2376+2326=4702 OK. Par sums 36+36=72 OK. Stroke index is a clean permutation of 1-18. Greenskeeper and GolfPass agree digit-for-digit on all 72 yardage cells.\n\nPAR/HANDICAP GENDER: the card prints one undifferentiated Par row. Greenskeeper renders a men's and a women's handicap row whose values are IDENTICAL hole for hole, and GolfPass prints a single HCP row with the same values, so this is recorded as 'unisex' - no gender-specific information is lost.\n\nRATING CONFLICT (important, unresolved): three sources disagree. Greenskeeper: Black 74.7/138, Silver 72.6/135, Blue 70.9/131, Gold 68.9/114 (no genders given). Golfscorekeeper: Black 74.0/140, Silver 71.0/130, Blue 69.0/127, Red 68.0/114. GolfPass (adopted here): Black M 74.7/140, Silver M 72.7/137 W 79.0/145, Blue M 70.8/134 W 76.9/141, Gold M 64.2/120 W 68.7/120. GolfPass was preferred for two reasons: (1) it is the only source that labels gender, and (2) the ungendered Gold figure of 68.9/114 carried by Greenskeeper is internally impossible as a men's rating - it would mean 1,480 yards less than the Blue tee for only a 2.0-stroke drop. GolfPass resolves this as Gold M 64.2 / W 68.7, and BlueGolf independently reports Gold ladies 68.6/121, confirming that the ~68.7 figure is the WOMEN'S rating that other databases had mislabeled. GolfPass itself is inconsistent on the Black slope (its summary field says 138, its scorecard table says 140); 140 is reported here as it matches Golfscorekeeper. BlueGolf also lists a Black ladies rating of 81.4/155 that GolfPass omits - not included here since it could not be fetched directly. All ratings on this facility warrant human verification against the on-course rating plate."
+ },
+ {
+  "facility": {
+   "name": "Grapevine Golf Course",
+   "address": "3800 Fairway Dr",
+   "city": "Grapevine",
+   "state_province": "TX",
+   "postal_code": "76051",
+   "country": "USA",
+   "website_url": "https://grapevinegc.com/"
+  },
+  "courses": [
+   {
+    "name": "Bluebonnet Nine",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       5,
+       4,
+       4,
+       3,
+       5,
+       4,
+       4,
+       3,
+       4
+      ],
+      "stroke_index": [
+       11,
+       5,
+       1,
+       7,
+       13,
+       9,
+       15,
+       17,
+       3
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 3439,
+      "lengths": [
+       552,
+       389,
+       456,
+       220,
+       506,
+       414,
+       303,
+       178,
+       421
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 3196,
+      "lengths": [
+       524,
+       360,
+       431,
+       196,
+       478,
+       382,
+       285,
+       152,
+       388
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 2977,
+      "lengths": [
+       502,
+       326,
+       408,
+       178,
+       453,
+       361,
+       265,
+       129,
+       355
+      ]
+     },
+     {
+      "name": "Purple",
+      "unit": "yards",
+      "published_total": 2522,
+      "lengths": [
+       452,
+       305,
+       316,
+       91,
+       374,
+       327,
+       226,
+       110,
+       321
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Mockingbird Nine",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       3,
+       4,
+       4,
+       5,
+       4,
+       3,
+       4,
+       5
+      ],
+      "stroke_index": [
+       1,
+       15,
+       7,
+       3,
+       5,
+       13,
+       17,
+       11,
+       9
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 3391,
+      "lengths": [
+       445,
+       228,
+       386,
+       411,
+       524,
+       319,
+       181,
+       382,
+       515
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 3188,
+      "lengths": [
+       427,
+       183,
+       367,
+       388,
+       508,
+       304,
+       159,
+       362,
+       490
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 2959,
+      "lengths": [
+       400,
+       153,
+       348,
+       370,
+       492,
+       286,
+       137,
+       342,
+       431
+      ]
+     },
+     {
+      "name": "Purple",
+      "unit": "yards",
+      "published_total": 2432,
+      "lengths": [
+       352,
+       120,
+       277,
+       319,
+       431,
+       221,
+       120,
+       232,
+       360
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Pecan Nine",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       4,
+       3,
+       5
+      ],
+      "stroke_index": [
+       9,
+       17,
+       3,
+       7,
+       5,
+       1,
+       13,
+       15,
+       11
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 3571,
+      "lengths": [
+       429,
+       168,
+       426,
+       578,
+       405,
+       442,
+       370,
+       184,
+       569
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 3342,
+      "lengths": [
+       405,
+       158,
+       397,
+       549,
+       386,
+       412,
+       342,
+       157,
+       536
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 3117,
+      "lengths": [
+       396,
+       144,
+       371,
+       499,
+       365,
+       387,
+       311,
+       141,
+       503
+      ]
+     },
+     {
+      "name": "Purple",
+      "unit": "yards",
+      "published_total": 2679,
+      "lengths": [
+       339,
+       116,
+       327,
+       440,
+       280,
+       355,
+       295,
+       109,
+       418
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "scorecard_image",
+    "url": "https://grapevinegc.com/wp-content/uploads/2024/08/gv-scorecard-compressed.pdf",
+    "note": "OFFICIAL scorecard PDF linked from grapevinegc.com. It is a scanned image (no text layer - pdftotext returns nothing), so it was rendered to PNG at 150 dpi and read visually. Page 1 carries all three nines' per-hole yardage/par/handicap grids; page 2 carries the rating/slope tables. This is the authoritative source for everything reported here."
+   },
+   {
+    "type": "course_website",
+    "url": "https://grapevinegc.com/course/",
+    "note": "HTML tee tables for the three 18-hole combinations. Used as an independent cross-check: every combination total it publishes equals the sum of the two nine-hole totals transcribed from the PDF."
+   },
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/grapevine_golf_course_texas/scorecard.cfm",
+    "note": "Greenskeeper page exists but carries no scorecard data for this facility ('Scorecard (No)')."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "STRUCTURE: 27-hole muni transcribed as three 9-hole courses, because the official scorecard publishes a complete per-hole grid for each NAMED nine. Ratings, however, are published only for the three 18-hole pairings, so no rating is attached to any individual nine (see below).\n\nARITHMETIC: all 12 tee/nine combinations verified hole-by-hole against their printed totals - Bluebonnet 3439/3196/2977/2522, Mockingbird 3391/3188/2959/2432, Pecan 3571/3342/3117/2679, all exact. Cross-check against the course website's 18-hole combination totals is also exact on all 12 pairings: Black BB+MB 3439+3391=6830, PC+MB 3571+3391=6962, PC+BB 3571+3439=7010; Blue 6384/6530/6538; White 5936/6076/6094; Purple 4954/5111/5201. Every par row sums to 36.\n\nTWO-NUMBER CELLS (resolved by arithmetic, not by guessing): the card prints two tee positions in three cells. Mockingbird hole 7 Black reads '181/174'; only 181 reconciles to the printed 3391 total, so 181 is recorded. Pecan hole 1 White reads '396/371' and hole 5 White reads '365/342'; the printed total of 3117 leaves exactly 761 for those two holes, and only 396+365=761 works, so 396 and 365 are recorded. The alternate tee positions (174, 371, 342) are printed on the card and available for later human capture.\n\nSTROKE INDEX: the card prints paired handicaps per hole (e.g. Bluebonnet hole 1 = '11/12'), the standard 27-hole odd/even allocation - the odd number applies when the nine plays as the front nine, the even when it plays as the back. The ODD value is recorded as stroke_index, giving each nine a valid 1/3/5/7/9/11/13/15/17 allocation. Nothing was invented; the even partner is always the odd value plus one.\n\nRATINGS (deliberately omitted from the tee records): the scorecard rates only 18-hole combinations, so these figures belong to no single nine and were left off rather than misattributed. Recorded verbatim here for later use - Bluebonnet & Mockingbird: Black 6830 M 73.5/133 W 80.5/137, Blue 6384 M 71.4/127 W 78.0/133, White 5936 M 69.5/123 W 75.5/128, Purple 4954 M 64.9/114 W 70.1/115. Pecan & Mockingbird: Black 6962 M 74.3/136 W 81.6/140, Blue 6530 M 72.1/131 W 79.2/136, White 6076 M 70.2/127 W 76.7/131, Purple 5111 M 65.7/118 W 71.3/118. Pecan & Bluebonnet: Black 7010 M 74.4/133 W 81.3/139, Blue 6538 M 72.1/128 W 78.6/134, White 6094 M 70.3/123 W 76.2/128, Purple 5201 M 66.2/115 W 71.2/117. Caution: the grapevinegc.com /course/ page reprints the Purple tee ratings using the WOMEN'S figures while labelling the other three tees with men's figures (it shows Purple 4954 as 70.1/115, which is the W value, not the M value of 64.9/114); the PDF is correct and was used.\n\nHole names are not printed on the card - only the three nine names."
+ },
+ {
+  "facility": {
+   "name": "Wright Park Golf Course",
+   "address": "5403 Business Highway 69 S",
+   "city": "Greenville",
+   "state_province": "TX",
+   "postal_code": "75402",
+   "country": "USA",
+   "website_url": "https://greenvilletx.fun/35/Wright-Park-Golf-Course"
+  },
+  "courses": [
+   {
+    "name": "Wright Park",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       5,
+       3,
+       4,
+       4,
+       4,
+       3,
+       4,
+       4,
+       5
+      ],
+      "stroke_index": [
+       5,
+       1,
+       15,
+       7,
+       17,
+       9,
+       3,
+       11,
+       13
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 3040,
+      "lengths": [
+       501,
+       173,
+       300,
+       336,
+       272,
+       196,
+       429,
+       391,
+       442
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 70.7,
+        "slope": 121
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 2803,
+      "lengths": [
+       475,
+       151,
+       275,
+       308,
+       246,
+       186,
+       377,
+       367,
+       418
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.2,
+        "slope": 117
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 2549,
+      "lengths": [
+       428,
+       126,
+       239,
+       268,
+       228,
+       175,
+       359,
+       337,
+       389
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 66.1,
+        "slope": 111
+       }
+      ]
+     },
+     {
+      "name": "Yellow",
+      "unit": "yards",
+      "published_total": 2212,
+      "lengths": [
+       389,
+       106,
+       213,
+       268,
+       202,
+       95,
+       293,
+       289,
+       357
+      ],
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 66.1,
+        "slope": 105
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/2976-wright-park-golf-course",
+    "note": "GolfPass scorecard table - the only source found with a per-hole grid for all four tees, plus par and handicap rows and per-tee rating/slope with gender. Primary source."
+   },
+   {
+    "type": "other",
+    "url": "https://18birdies.com/golf-courses/club/8b703100-86ac-11e4-8c28-020000005b00/wright-park-municipal-golf-course",
+    "note": "18Birdies. Independently confirms the Black tee per-hole yardages, the par row and the handicap row exactly. Its tee-total list and rating set conflict with GolfPass (see notes)."
+   },
+   {
+    "type": "course_website",
+    "url": "https://greenvilletx.fun/35/Wright-Park-Golf-Course",
+    "note": "City of Greenville Parks & Rec page. No scorecard or PDF - narrative only, and its narrative conflicts with the transcribed card (see notes)."
+   },
+   {
+    "type": "other",
+    "url": "https://m-beta360.skygolf.com/courses/course/15571/Wright_Park_Golf_Course.html",
+    "note": "SkyGolf listing - returned HTTP 503, not usable."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC: all four tees verified hole-by-hole. Black 3040 OK, Blue 2803 OK, White 2549 OK, Yellow 2212 OK; each also matches its source's doubled 18-hole figure exactly (6080/5606/5098/4424). Par row sums to 36. Stroke index is a clean 9-hole odd allocation (1,3,5,7,9,11,13,15,17). The Black tee grid, par row and handicap row are confirmed digit-for-digit by two independent sources (GolfPass and 18Birdies), so confidence there is high; the Blue/White/Yellow grids come from GolfPass alone but each sums exactly to its stated total.\n\nPAR DISPUTE (three different published values): the per-hole par row transcribed here sums to 36 (par 3s at holes 2 and 6, par 5s at holes 1 and 9), and this is corroborated by 18Birdies. However GolfPass's own summary field says par 37, GolfLink says par 35, and the City of Greenville page says par 35 described as 'three par 3s and four par 4s sandwiched between two par 5s'. Only the 36 figure is backed by an actual hole-by-hole row that adds up, so 36 is what is recorded. Worth a phone call to the pro shop.\n\nThe city's narrative also cites hole 1 at 486 yards, hole 5 as a 218-yard par 3, hole 9 at 437 yards, and a longest-tee total of 2,878 - none of which match the transcribed card (501 / 272 par 4 / 442, longest 3,040). That blurb is syndicated boilerplate that appears verbatim on GolfLink and GolfPass too and may describe the pre-2002-renovation layout. It was NOT merged into the data.\n\nTEE-NAME CONFLICT: 18Birdies lists four tees at 18-hole totals of 6080/5846/5756/5606 (i.e. nine-hole 3040/2923/2878/2803) while GolfPass lists 3040/2803/2549/2212. Both agree Black = 3040, and 18Birdies' shortest value (2803) equals GolfPass's Blue - the tee naming appears shifted between the two databases. The internally consistent GolfPass set is used; a human should confirm the tee names on the actual card.\n\nRATINGS ARE 18-HOLE, NOT 9-HOLE: every source publishes this 9-hole course's ratings on a two-loop 18-hole basis (hence values near 66-71 rather than the ~33-35 a true 9-hole rating would show). They are reported as published - do NOT store them as nine-hole ratings without halving/re-deriving. Sources also conflict: 18Birdies gives Black M 71.6/120 W 74.2/131, Blue M 69.8/119 W 73.0/128, White M 68.1/117 W 72.5/127, Yellow M 70.5/121 W 71.7/125. That set is internally inconsistent (its Yellow men's rating of 70.5 exceeds its White men's rating of 68.1 despite Yellow being far shorter), so the monotonic GolfPass set was preferred. Rating data for this facility is the weakest element of this record."
+ },
+ {
+  "facility": {
+   "name": "The Bridges Golf Club",
+   "address": "2400 Fred Couples Dr, Gunter, TX 75058",
+   "city": "Gunter",
+   "state_province": "TX",
+   "postal_code": "75058",
+   "country": "USA",
+   "website_url": "https://www.bridgestexasgolf.com/"
+  },
+  "courses": [
+   {
+    "name": "The Bridges",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       3,
+       5,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4,
+       4,
+       4,
+       4,
+       4,
+       5,
+       3,
+       4,
+       3,
+       5
+      ],
+      "stroke_index": [
+       11,
+       17,
+       1,
+       9,
+       3,
+       13,
+       7,
+       15,
+       5,
+       12,
+       10,
+       8,
+       14,
+       4,
+       18,
+       6,
+       16,
+       2
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       3,
+       5,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4,
+       4,
+       4,
+       4,
+       4,
+       5,
+       3,
+       4,
+       3,
+       5
+      ],
+      "stroke_index": [
+       11,
+       17,
+       1,
+       9,
+       3,
+       13,
+       7,
+       15,
+       5,
+       12,
+       10,
+       8,
+       14,
+       4,
+       18,
+       6,
+       16,
+       2
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 7612,
+      "lengths": [
+       446,
+       207,
+       581,
+       447,
+       523,
+       330,
+       458,
+       242,
+       514,
+       411,
+       430,
+       434,
+       404,
+       626,
+       201,
+       510,
+       203,
+       645
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 77.7,
+        "slope": 139
+       }
+      ]
+     },
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 7021,
+      "lengths": [
+       410,
+       179,
+       545,
+       416,
+       482,
+       283,
+       444,
+       199,
+       478,
+       388,
+       406,
+       407,
+       385,
+       572,
+       185,
+       471,
+       164,
+       607
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 75,
+        "slope": 134
+       }
+      ]
+     },
+     {
+      "name": "Members",
+      "unit": "yards",
+      "published_total": 6692,
+      "lengths": [
+       403,
+       179,
+       466,
+       416,
+       482,
+       283,
+       417,
+       175,
+       448,
+       388,
+       406,
+       386,
+       385,
+       543,
+       159,
+       471,
+       130,
+       555
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 73.4,
+        "slope": 131
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6487,
+      "lengths": [
+       403,
+       156,
+       466,
+       389,
+       453,
+       252,
+       417,
+       175,
+       448,
+       354,
+       382,
+       386,
+       368,
+       543,
+       159,
+       451,
+       130,
+       555
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 72.5,
+        "slope": 128
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5991,
+      "lengths": [
+       370,
+       135,
+       459,
+       352,
+       423,
+       212,
+       408,
+       144,
+       420,
+       326,
+       343,
+       317,
+       357,
+       522,
+       140,
+       434,
+       99,
+       530
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 70.5,
+        "slope": 120
+       },
+       {
+        "gender": "women",
+        "rating": 75.7,
+        "slope": 140
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 5193,
+      "lengths": [
+       293,
+       83,
+       401,
+       333,
+       337,
+       180,
+       370,
+       95,
+       371,
+       313,
+       291,
+       272,
+       275,
+       494,
+       120,
+       421,
+       95,
+       449
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 66.8,
+        "slope": 113
+       },
+       {
+        "gender": "women",
+        "rating": 70.8,
+        "slope": 122
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/the_bridges_golf_club_dallas/scorecard.cfm",
+    "note": "Greenskeeper.org - PRIMARY source for the full per-hole grid (all 6 tees), par row, stroke index and ratings. Note the URL slug is 'the_bridges_golf_club_dallas', not 'The_Bridges_Golf_Club'."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/18360-the-bridges-golf-club",
+    "note": "GolfPass - independent confirmation of tee sheet (totals, ratings, slopes, per-gender), plus par row and stroke index. Ratings match Greenskeeper exactly. Source of the tee NAMES used here."
+   },
+   {
+    "type": "other",
+    "url": "https://www.hole19golf.com/courses/the-bridges-golf-club-gunter-us",
+    "note": "Hole19 - third independent confirmation of the par row and stroke index. Also publishes an unnamed 6,954-yard tee set not used here (see notes)."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/gunter/the-bridges-golf-club",
+    "note": "GolfLink - NOT fetched (blocked); used only via WebSearch result summary, which supplied the tee name 'Members' for the 6,692-yard tee and an older/alternate rating set."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC VERIFIED: all six tees' per-hole yardages were summed by hand and each matches its published total EXACTLY - Black 3748+3864=7612; Gold 3436+3585=7021; Members 3269+3423=6692; Blue 3159+3328=6487; White 2923+3068=5991; Red 2463+2730=5193. Par row sums 36+36=72 as printed. Stroke index validated: front nine holds exactly the odd numbers 1-17, back nine exactly the evens 2-18.\n\nPAR ANOMALY (verified, not an error): hole 9 plays 514 yds from Black and hole 16 plays 510 yds from Black, yet BOTH are printed as par 4. I flagged this as implausible and checked three independent sources - Greenskeeper, GolfPass and Hole19 - and all three print the identical par row (4-3-5-4-5-4-4-3-4 / 4-4-4-4-5-3-4-3-5, out 36 in 36). The course has only four par 5s (3, 5, 14, 18) and four par 3s (2, 8, 15, 17), which is arithmetically required for par 72; that is consistent with the 7,612 yd / 77.7 / 139 championship setup. Recorded as published. Worth a human eyeball against the physical card.\n\nTEE NAME CONFLICT (unresolved - flagged): the yardage sets and ratings are cross-confirmed, but sources disagree on what the middle tees are CALLED. Greenskeeper labels them Black/Blue/Green/White/Gold/Red (its 'Blue'=7021, 'Green'=6692, 'White'=6487, 'Gold'=5991). GolfPass and GolfLink both label them Black/Gold/(Members)/Blue/White/Red (Gold=7021, Members=6692, Blue=6487, White=5991). I adopted the GolfPass/GolfLink naming (2 sources vs 1, and GolfPass is the designated tee-sheet authority), mapping each name to its tee by TOTAL YARDAGE, which is unambiguous since all six totals are distinct and independently verified. The geometry and ratings are correct regardless of label; only the color names need confirming against the physical card. Greenskeeper's 'Gold' and GolfPass's 'Gold' are DIFFERENT tees - do not merge on name.\n\nRATINGS: Greenskeeper and GolfPass agree exactly on every rating/slope (77.7/139, 75.0/134, 72.5/128, 70.5/120 M and 75.7/140 W, 66.8/113 M and 70.8/122 W). The 6,692 tee's 73.4/131 comes from Greenskeeper only. GolfLink's summary carries an older, slightly different set (74.8/135, 72.7/126, 72.4/130, 70.2/125, 66.1/115) which I did NOT use - it appears to predate a re-rating. Women's ratings exist only for the White and Red tees; the four longer tees carry men's ratings only, so no women's entries were fabricated for them.\n\nNOT PUBLISHED: Hole19 also prints a complete, internally consistent 6,954-yard set (3425+3529=6954) whose total matches none of the six rated tees. It is an unnamed/intermediate or superseded tee with no rating attached, so I omitted it rather than guess which named tee it belongs to.\n\nGEOGRAPHY: hint confirmed - Gunter is in Grayson County (Sherman-Denison MSA), outside the DFW MSA proper but inside the DFW-Sherman-Denison CSA."
+ },
+ {
+  "facility": {
+   "name": "Heath Golf & Yacht Club",
+   "address": "1500 Clubhouse Dr, Heath, TX 75032",
+   "city": "Heath",
+   "state_province": "TX",
+   "postal_code": "75032",
+   "country": "USA",
+   "website_url": "https://www.heath-countryclub.com/"
+  },
+  "courses": [
+   {
+    "name": "Heath Championship Course",
+    "hole_count": 18,
+    "tees": [
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 7068,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 74.6,
+        "slope": 139
+       },
+       {
+        "gender": "women",
+        "rating": 82.1,
+        "slope": 149
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6580,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.8,
+        "slope": 136
+       },
+       {
+        "gender": "women",
+        "rating": 79.4,
+        "slope": 143
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5939,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69,
+        "slope": 117
+       },
+       {
+        "gender": "women",
+        "rating": 74.9,
+        "slope": 129
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 5267,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 65.3,
+        "slope": 110
+       },
+       {
+        "gender": "women",
+        "rating": 70.8,
+        "slope": 123
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/38961-heath-golf-yacht-club-1st-nine",
+    "note": "GolfPass '1st Nine' - source of the tee sheet (18-hole totals + both genders' ratings) and of a complete, arithmetically verified NINE-hole grid."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/38962-heath-golf-yacht-club-2nd-nine",
+    "note": "GolfPass '2nd Nine' - returns data IDENTICAL to the 1st Nine page (same yardages, par, handicaps, ratings). This is a duplication artifact in GolfPass, not a real second nine. Back nine remains unobtained."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.heath-countryclub.com/golf-information/",
+    "note": "Club's own site - confirms '18-hole championship golf course' designed by Roy Bechtol, but publishes NO scorecard, no yardages and no ratings. Members-only tee-time portal behind login."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/heath/heath-golf-yacht-club",
+    "note": "GolfLink - NOT fetched (blocked); via WebSearch summary only. Supplies conflicting totals (7,169 total; nines of 3,613 and 3,556; also quoted as 3,669 and 3,635)."
+   },
+   {
+    "type": "other",
+    "url": "https://course.bluegolf.com/bluegolf/course/course/heathgyachtc/detailedscorecard.htm",
+    "note": "BlueGolf detailed scorecard - NOT fetched (405 blocked). Recorded for later human transcription; the sibling 'actual.htm' URL is an 'Add Actual Scorecard' stub, implying BlueGolf has no verified card either."
+   }
+  ],
+  "data_tier": "tee_sheet",
+  "collection_notes": "REPORTED AS tee_sheet DELIBERATELY. I have a complete and perfectly self-consistent NINE-hole grid but only 9 of the 18 holes, so per the exactly-hole_count rule I omitted all per-hole arrays rather than pad or reconstruct the back nine. Tee totals and ratings are published below and are trustworthy.\n\nTHE VERIFIED NINE (recorded here for a human to merge once the back nine is obtained - NOT published as data because it is half a course): par 4-4-4-5-3-4-4-3-5 = 36; stroke index 5-11-17-7-15-1-3-13-9; Gold 422-421-297-523-186-406-464-212-575 = 3,506; Blue 397-372-276-498-156-373-434-185-548 = 3,239; White 371-337-243-460-132-340-378-152-515 = 2,928; Red 341-299-218-428-104-301-303-115-487 = 2,596. I summed all four rows by hand and every one matches its stated nine-hole total exactly. The stroke index uses only ODD numbers 1-17, which proves this is the FRONT nine of an 18-hole allocation (a standalone 9-hole course would run 1-9).\n\nGOLFPASS DUPLICATION BUG: the '1st Nine' and '2nd Nine' GolfPass pages return byte-identical hole data. Both are the front nine. The back nine is genuinely unpublished anywhere I could reach.\n\nRATING INTERPRETATION: GolfPass presents these confusingly, pairing a nine-hole yardage with an eighteen-hole rating and tagging rows 'Men'/'Women'. I resolved it as follows: a rating of 74.6 cannot be a nine-hole rating (nine-hole ratings run ~30-38), so 74.6/139 is the MEN'S 18-hole rating from Gold and 82.1/149 is the WOMEN'S 18-hole rating from the same Gold tee - one tee, two gender ratings, not two tees. Independent support: a separate search summary quotes the course's headline rating as 71.8/136, which is exactly the men's Blue figure here. Women's ratings from the long tees are high (82.1, 79.4) but in range and normal for women rated off championship tees.\n\nTOTAL YARDAGE CONFLICT (unresolved): GolfPass gives 7,068 (par 72). GolfLink's summary gives 7,169 with nines of 3,613/3,556, and elsewhere 3,669/3,635 (which sum to 7,304). None reconcile with each other, and 2 x 3,506 = 7,012 does not match either. I published GolfPass's 7,068 set because it is the only source whose tee totals and ratings form a coherent, internally consistent family. Treat the totals as provisional.\n\nACCESS / HINT: the facility's hint flags this for resolution. Corroborating what I found - the club's own site publishes no card, the tee-time system is login-walled, and one directory lists it as a PRIVATE club in a golf/yacht residential community. DO NOT PUBLISH AS PUBLIC without the phone call the hint requires. Opening year also conflicts across sources (2019, 2020, and one stray 2008); groundbreaking was Jan 2018 per Blue Ribbon News, so 2019-2020 is the credible window."
+ },
+ {
+  "facility": {
+   "name": "Irving Golf Club",
+   "address": "2000 E Shady Grove Rd, Irving, TX 75060",
+   "city": "Irving",
+   "state_province": "TX",
+   "postal_code": "75060",
+   "country": "USA",
+   "website_url": "https://www.irvinggolfclub.org"
+  },
+  "courses": [
+   {
+    "name": "Irving Golf Club",
+    "hole_count": 18,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       4,
+       4,
+       5,
+       3,
+       4,
+       4,
+       3,
+       5,
+       4,
+       4,
+       3,
+       4,
+       5,
+       4,
+       3,
+       5,
+       3
+      ],
+      "stroke_index": [
+       5,
+       1,
+       13,
+       11,
+       15,
+       17,
+       3,
+       7,
+       9,
+       2,
+       10,
+       16,
+       12,
+       8,
+       4,
+       14,
+       18,
+       6
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 6632,
+      "lengths": [
+       381,
+       458,
+       346,
+       520,
+       189,
+       303,
+       426,
+       233,
+       538,
+       422,
+       376,
+       154,
+       374,
+       563,
+       446,
+       183,
+       547,
+       173
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.8,
+        "slope": 127
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6141,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.4,
+        "slope": 120
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5767,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 67.5,
+        "slope": 116
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 4948,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 63.8,
+        "slope": 109
+       },
+       {
+        "gender": "women",
+        "rating": 68.4,
+        "slope": 112
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3057-irving-golf-club",
+    "note": "GolfPass - PRIMARY and only usable source. Supplied the full tee sheet (4 tees, totals, ratings, slopes, gender) AND a complete hole-by-hole grid for the Black tee (yards, par, handicap)."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.irvinggolfclub.org",
+    "note": "Club's own site - the /course/ page returned HTTP 403 to WebFetch. Not readable; may hold a scorecard for a human with a browser."
+   },
+   {
+    "type": "other",
+    "url": "https://course.bluegolf.com/bluegolf/course/course/twinwellsgc/detailedscorecard.htm",
+    "note": "BlueGolf detailed scorecard under the legacy 'twinwellsgc' slug - NOT fetched (405 blocked). Recorded for later human transcription; likely holds the remaining three tees' per-hole yardages."
+   },
+   {
+    "type": "other",
+    "url": "https://golfscorekeeper.com/view_course.cfm?State=TX&Course=13316&Country=210",
+    "note": "GolfScorekeeper 'Twin Wells Municipal Golf Course' - DELIBERATELY NOT USED. This is the pre-2019 Twin Wells layout that was demolished; its numbers would be wrong for the rebuilt course. Listed only to warn against merging it."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC VERIFIED: Black tee front nine 381+458+346+520+189+303+426+233+538 = 3,394 (matches printed OUT); back nine 422+376+154+374+563+446+183+547+173 = 3,238 (matches printed IN); total 6,632 (matches published total). Par 36+35 = 71, matching the published par. Every par is consistent with its yardage - the four par 5s are holes 4 (520), 9 (538), 14 (563) and 17 (547), and the four par 3s are holes 5 (189), 8 (233), 12 (154) and 16 (183); no implausible pairings. Stroke index validated: front nine carries exactly the odd numbers 1-17, back nine exactly the evens 2-18.\n\nPER-HOLE COVERAGE IS ONE TEE ONLY. Only the Black tee has published hole-by-hole yardages. I set lengths to null for Blue, White and Red and kept their published totals and ratings rather than scaling or interpolating the Black numbers. Those three tees' per-hole grids are the main thing still missing.\n\nPAR/HANDICAP GENDER: the source prints a single undifferentiated par row and a single handicap row, so I recorded them as 'unisex' per the rules rather than duplicating them into men's and women's rows the card does not actually distinguish.\n\nGENDER-LABEL CAVEAT ON THE WHITE TEE: GolfPass tags White (5,767) as 'Men's/Women's' but shows only ONE rating, 67.5/116. I recorded that as the men's rating only and did NOT invent a women's rating for it. The Red tee is unambiguous - it is listed twice, 63.8/109 for men and 68.4/112 for women, which I correctly collapsed into one tee carrying two gender ratings rather than two separate tees.\n\nIDENTITY: hint confirmed. This is the former Twin Wells Golf Course / Twin Wells Municipal, closed by the City of Irving, redesigned by Ault, Clark & Associates and reopened in 2019 as Irving Golf Club; it remains a public municipal course. Legacy databases still index it under the 'twinwellsgc' slug and under the Twin Wells name - any record carrying the OLD Twin Wells layout data must not be merged into this one, since the course was rebuilt."
+ },
+ {
+  "facility": {
+   "name": "The Nelson Golf & Sports Club",
+   "address": "4150 N MacArthur Blvd, Irving, TX 75038",
+   "city": "Irving",
+   "state_province": "TX",
+   "postal_code": "75038",
+   "country": "USA",
+   "website_url": "https://www.thenelsongolfandsportsclub.com"
+  },
+  "courses": [
+   {
+    "name": "Cottonwood Valley",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       3,
+       5,
+       4,
+       4,
+       4,
+       4,
+       4,
+       3,
+       4,
+       5,
+       3,
+       4,
+       4,
+       4,
+       5,
+       3,
+       4
+      ],
+      "stroke_index": [
+       3,
+       17,
+       15,
+       7,
+       1,
+       9,
+       13,
+       5,
+       11,
+       4,
+       14,
+       12,
+       8,
+       10,
+       2,
+       18,
+       16,
+       6
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 7120,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 74.9,
+        "slope": 136
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6410,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.2,
+        "slope": 134
+       }
+      ]
+     },
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 6260,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 70.3,
+        "slope": 132
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5940,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.3,
+        "slope": 130
+       },
+       {
+        "gender": "women",
+        "rating": 75.5,
+        "slope": 137
+       }
+      ]
+     },
+     {
+      "name": "Diamond",
+      "unit": "yards",
+      "published_total": 5560,
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 72.8,
+        "slope": 127
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 5265,
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 71.2,
+        "slope": 125
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "TPC Las Colinas",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       3,
+       4,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       4,
+       4,
+       4,
+       3,
+       4,
+       4,
+       5,
+       3,
+       4
+      ],
+      "stroke_index": [
+       13,
+       15,
+       1,
+       5,
+       17,
+       9,
+       11,
+       3,
+       7,
+       6,
+       12,
+       4,
+       18,
+       2,
+       8,
+       16,
+       14,
+       10
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       3,
+       4,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       4,
+       4,
+       4,
+       3,
+       4,
+       4,
+       5,
+       3,
+       4
+      ],
+      "stroke_index": [
+       13,
+       15,
+       1,
+       5,
+       17,
+       9,
+       11,
+       3,
+       7,
+       6,
+       12,
+       4,
+       18,
+       2,
+       8,
+       16,
+       14,
+       10
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 7166,
+      "lengths": [
+       458,
+       221,
+       528,
+       431,
+       174,
+       448,
+       542,
+       461,
+       427,
+       435,
+       323,
+       455,
+       180,
+       406,
+       504,
+       546,
+       198,
+       429
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 76,
+        "slope": 142
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6548,
+      "lengths": [
+       425,
+       191,
+       464,
+       415,
+       148,
+       412,
+       482,
+       432,
+       404,
+       394,
+       290,
+       423,
+       160,
+       371,
+       443,
+       517,
+       176,
+       401
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 73.2,
+        "slope": 136
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5866,
+      "lengths": [
+       370,
+       141,
+       412,
+       369,
+       128,
+       365,
+       461,
+       427,
+       348,
+       342,
+       249,
+       389,
+       149,
+       346,
+       410,
+       441,
+       153,
+       366
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.8,
+        "slope": 127
+       },
+       {
+        "gender": "women",
+        "rating": 76.8,
+        "slope": 145
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 5030,
+      "lengths": [
+       343,
+       123,
+       380,
+       333,
+       91,
+       294,
+       421,
+       365,
+       257,
+       333,
+       201,
+       331,
+       114,
+       296,
+       303,
+       409,
+       132,
+       304
+      ],
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 71.5,
+        "slope": 135
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://greenskeeper.org/texas/Dallas_Fort_Worth/tpc_four_seasons_las_colinas/scorecard.cfm",
+    "note": "Greenskeeper.org - PRIMARY source for the TPC Las Colinas per-hole grid (4 tees), par row, per-gender stroke index and all ratings. Published under the pre-rebrand 'TPC Four Seasons Las Colinas' name."
+   },
+   {
+    "type": "other",
+    "url": "https://www.allgolfholes.com/courses/texas/tpc-at-four-seasons-resort-las-colinas-course",
+    "note": "AllGolfHoles - INDEPENDENT confirmation of the TPC per-hole yardages and, critically, the par row. Agrees exactly on the Black (7,166) and White (5,866) tees; differs by one hole each on Blue and Red (see notes)."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/12713-the-sports-club-at-four-seasons-resort-cottonwood-valley",
+    "note": "GolfPass - source of the Cottonwood Valley tee sheet (6 tees with per-gender ratings) and of its per-hole par and stroke index. Its per-hole YARDAGES were rejected as rounded (see notes)."
+   },
+   {
+    "type": "other",
+    "url": "https://www.hole19golf.com/courses/four-seasons-resort-club-cottonwood-valley",
+    "note": "Hole19 - independent confirmation of the Cottonwood Valley per-hole PAR row. Its yardage set belongs to an unmatched 5,860-yard tee and its stroke index conflicts with GolfPass."
+   },
+   {
+    "type": "other",
+    "url": "https://course.bluegolf.com/bluegolf/course/course/cottonwoodvalley/detailedscorecard.htm",
+    "note": "BlueGolf detailed scorecard for Cottonwood Valley - NOT fetched (405 blocked). Recorded for later human transcription; this is the most likely home of the real per-hole yardages that are still missing."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "36-hole facility, rebranded from TPC Four Seasons Las Colinas; attached to The Ritz-Carlton Dallas, Las Colinas. Kept as two separate 18-hole courses. Tier 'full' is earned by TPC Las Colinas; Cottonwood Valley is weaker (see below).\n\n=== TPC LAS COLINAS (strong) ===\nARITHMETIC VERIFIED on all four tees: Black 3,690+3,476 = 7,166; Blue 3,373+3,175 = 6,548; White 3,021+2,845 = 5,866; Red 2,607+2,423 = 5,030. Every one matches its published total exactly. Par 35+35 = 70, matching the published par. Stroke index validated (front = odds 1-17, back = evens 2-18); the card prints identical men's and women's par and handicap rows, so both genders are recorded as the rules require.\n\nPAR ANOMALY (investigated and confirmed): hole 3 measures 528 yds from Black yet is printed PAR 4. I refused to accept this on one source and checked AllGolfHoles independently - it prints the same par row, the same 528, and states outright that the par 3s are holes 2/5/13/17 and the par 5s are only holes 7 and 16. The arithmetic also forces it: par 70 with four par 3s permits exactly two par 5s. Recorded as published, but a 528-yard par 4 deserves human confirmation against the physical card.\n\nMINOR SOURCE CONFLICTS (2 holes): Greenskeeper and AllGolfHoles disagree on exactly two cells. Hole 15 Blue: 443 (Greenskeeper) vs 445 (AllGolfHoles), giving Blue totals of 6,548 vs 6,550. Hole 10 Red: 333 vs 323, giving Red totals of 5,030 vs 5,020. Both sources are internally self-consistent (each sums to its own stated total). I adopted Greenskeeper's values throughout for internal consistency and flag the two cells here. Black and White agree perfectly between the two sources.\n\nRATINGS: I used Greenskeeper's, which are coherent - White carries men's 69.8/127 AND women's 76.8/145 over one set of yardages, and Red carries women's 71.5/135. AllGolfHoles mis-attributes the White women's rating (76.8/145) to the Red tee; I did not propagate that error. Red has no published men's rating and none was invented.\n\n=== COTTONWOOD VALLEY (par and stroke index only - NO per-hole yardages published) ===\nPER-HOLE YARDAGES DELIBERATELY OMITTED. GolfPass does print a Black-tee hole-by-hole row, but I rejected it: every one of the 18 values is a multiple of 5 (470, 170, 580, 440...), which is the signature of a rounded/approximated card, and it sums to 7,060 against a published Black total of 7,120 - a 60-yard shortfall. Rather than publish numbers that are both rounded and non-reconciling, I set lengths to null and kept the published totals. The rejected set is preserved here for a human to check against the real card: front 470-170-580-440-440-390-385-395-185 (3,455), back 435-550-200-410-420-425-530-200-435 (3,605).\n\nPER-HOLE PAR IS TRUSTWORTHY and is published. Two fully independent sources (GolfPass and Hole19) print the identical par row - 4-3-5-4-4-4-4-4-3 / 4-5-3-4-4-4-5-3-4, out 35 in 36, total 71 - with par 3s at holes 2/9/12/17 and par 5s at 3/11/16. That is arithmetically consistent with the published par 71 (4x3 + 3x5 + 11x4 = 71).\n\nSTROKE INDEX CONFLICT (flagged): GolfPass gives 3-17-15-7-1-9-13-5-11 / 4-14-12-8-10-2-18-16-6; Hole19 gives 5-15-17-3-1-11-13-9-7 / 10-14-12-8-4-2-18-16-6. Both are structurally valid (odds front, evens back) but they disagree on several holes. I published the GolfPass allocation because it arrives paired with the tee sheet whose ratings match the published figures, and I am flagging the disagreement rather than hiding it.\n\nUNMATCHED TEE (not published): Hole19's per-hole yardages sum correctly to 5,860 (2,802+3,058) but 5,860 matches NONE of the six rated tees (7,120/6,410/6,260/5,940/5,560/5,265). Hole19 labels it 'Blue', but the published Blue is 6,410, so the label is wrong. I did not attach these lengths to any named tee.\n\nGENDER PAR SPLIT: men's par is 71 and women's par is 72 at Cottonwood (the White, Diamond and Red women's rows are all par 72). I have only the men's par array, so only 'men' is recorded; the hole that plays as an extra par 5 for women is unidentified. White is correctly recorded as ONE tee (5,940) carrying both a men's (69.3/130) and a women's (75.5/137) rating; Diamond and Red are women's-rated only.\n\nOTHER CONFLICTS: sources variously give Cottonwood as par 70 / 6,899 yds and par 71 / 7,120 yds, and its rating as 73.5/135, 74.3/137 or 74.9/136. I used the GolfPass tee-sheet family (par 71, Black 7,120, 74.9/136) as the only internally coherent set. Design/opening attribution also conflicts - Robert Trent Jones Jr. (1982) per the facility hint and golfcourse.wiki, vs Jay Morrish (2007) per GolfLink; the 2007-2008 dates across both courses likely reflect a renovation, not original construction.\n\nACCESS: per the hint, play is limited to members and Ritz-Carlton resort guests for both courses - retained under the resort-courses clause, but the access restriction should be carried on the record."
+ },
+ {
+  "facility": {
+   "name": "Mountain Valley Country Club",
+   "address": "391 Clubhouse Dr, Joshua, TX 76058",
+   "city": "Joshua",
+   "state_province": "TX",
+   "postal_code": "76058",
+   "country": "USA",
+   "website_url": "https://www.mountainvalleycc.com/"
+  },
+  "courses": [
+   {
+    "name": "Mountain Valley",
+    "hole_count": 18,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       5,
+       3,
+       4,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4,
+       4,
+       5,
+       4,
+       3,
+       4,
+       4,
+       3,
+       4
+      ],
+      "stroke_index": [
+       11,
+       13,
+       3,
+       1,
+       9,
+       15,
+       7,
+       17,
+       5,
+       2,
+       8,
+       16,
+       14,
+       18,
+       6,
+       4,
+       10,
+       12
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "lengths": [
+       416,
+       535,
+       225,
+       398,
+       338,
+       472,
+       382,
+       338,
+       183,
+       430,
+       390,
+       532,
+       349,
+       179,
+       440,
+       350,
+       200,
+       385
+      ],
+      "published_total": 6542,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 70.4,
+        "slope": 118
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "lengths": [
+       387,
+       450,
+       191,
+       387,
+       324,
+       460,
+       369,
+       327,
+       144,
+       415,
+       376,
+       519,
+       334,
+       166,
+       423,
+       334,
+       170,
+       356
+      ],
+      "published_total": 6132,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 68.7,
+        "slope": 113
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "lengths": [
+       336,
+       430,
+       148,
+       282,
+       297,
+       342,
+       290,
+       283,
+       108,
+       347,
+       307,
+       446,
+       320,
+       115,
+       407,
+       315,
+       121,
+       270
+      ],
+      "published_total": 5164,
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 68.5,
+        "slope": 113
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "course_website",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3062-mountain-valley-country-club",
+    "note": "GolfPass course page. Primary source: supplied the complete per-hole grid (par row, handicap row, and Blue/White/Red yardage rows) plus the tee sheet with ratings/slopes. Also states 'This golf course is closed for business in 05/2023' and gives address 391 Clubhouse Drive, Joshua, TX 76058, Johnson County; built 1964, par 71, semi-private."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.texasgolf.com/golfcourses/mountain-valley-country-club",
+    "note": "TexasGolf.com profile. Corroborates Blue 6,542 yds / par 71 / rating 70.4 / slope 118. Lists address as 'Lakeside Dr, Joshua' and opening year 1965 (conflicts with GolfPass's 1964 and the assigned Clubhouse Dr address). No per-hole grid."
+   },
+   {
+    "type": "other",
+    "url": "https://golfscorekeeper.com/view_course.cfm?State=TX&Course=7652&Country=210",
+    "note": "GolfScorekeeper. Confirms Out 3,287 / In 3,255 / Total 6,542 and Out par 36 / In par 35 / total 71 for the 'Championship' tee, which matches the Blue tee transcribed here. Gives rating 70.0 (vs 70.4 elsewhere), slope 118. Per-hole detail only behind an interactive HTML/PDF selector."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.mountainvalleycc.com/",
+    "note": "Official site. No scorecard or yardage data remains: the property is now described as 'a thriving permaculture ecological institution', confirming the golf operation has ceased. Only historical narrative (founded 1964) is published."
+   },
+   {
+    "type": "other",
+    "url": "https://18birdies.com/golf-courses/club/8bbd66a0-86ac-11e4-8c28-020000005b00/mountain-valley-country-club",
+    "note": "18Birdies listing titled 'CLOSED - Mountain Valley Country Club'. Independent second confirmation of closure. Not fetched for scorecard data."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/joshua/mountain-valley-country-club",
+    "note": "GolfLink (blocked to WebFetch; used only via search-result summary). Publishes a CONFLICTING rating set: Blue 122/70.6 M and 136/76.7 W; White 117/68.7 M and 129/73.7 W; Red 102/63.7 M and 117/68.4 W. Not adopted - see collection_notes."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "STATUS: this golf course is CLOSED. GolfPass states it closed for business in 05/2023 and 18Birdies lists it as CLOSED; the official mountainvalleycc.com domain now presents the property as a permaculture institution with no golf content. The data below is therefore a historical record of the card as last published.\n\nARITHMETIC SELF-CHECK - all three tees verified against their published totals, every one exact:\n- Blue: front 416+535+225+398+338+472+382+338+183 = 3,287 (card Out 3,287); back 430+390+532+349+179+440+350+200+385 = 3,255 (card In 3,255); total 6,542 = published 6,542.\n- White: front = 3,039 (card Out 3,039); back = 3,093 (card In 3,093); total 6,132 = published 6,132.\n- Red: front = 2,516 (card Out 2,516); back = 2,648 (card In 2,648); total 5,164 = published 5,164.\nPar row sums: Out 36, In 35, total 71 - matches. Stroke index validates: front nine carries the nine odd indexes 1-17, back nine the nine even indexes 2-18, all eighteen distinct.\n\nPAR/HANDICAP GENDER: the source prints a SINGLE undifferentiated par row and a single handicap row, so both are recorded as 'unisex'. Caveat worth flagging for a human: the GolfPass tee table separately labels the Red tee as par 72 for women while the printed par row totals 71. That implies one hole (most likely the 342-yard 6th, which is par 5 from the back tees) played as a par 5 for women. Because no women's par row is actually published, I did not create one rather than guess which hole differs.\n\nRATING CONFLICT (unresolved): three sources disagree.\n- GolfPass + TexasGolf.com agree on Blue 70.4/118 - adopted for Blue.\n- GolfPass supplies White 68.7/113 (men) and Red 68.5/113 (women) - adopted.\n- GolfScorekeeper gives 70.0/118 for the back tee (rating differs by 0.4).\n- GolfLink (search summary only) gives a different arrangement entirely, including men's ratings off the Red tee and women's ratings off Blue/White, with slopes that disagree with GolfPass on the same tees (e.g. White men 68.7/117 vs 68.7/113 - identical rating, different slope). Because that set is internally inconsistent with the others and came from a site that blocks fetching, I did not merge it in. A human transcribing the physical card should treat all ratings as needing confirmation, though the yardage grid itself is solid.\n\nMISSING: no women's ratings for the Blue or White tees and no men's rating for the Red tee are reliably published; those tee/gender combinations are omitted rather than filled from the conflicting GolfLink set."
+ },
+ {
+  "facility": {
+   "name": "Sky Creek Ranch Golf Club",
+   "address": "600 Promontory Dr, Keller, TX 76248",
+   "city": "Keller",
+   "state_province": "TX",
+   "postal_code": "76248",
+   "country": "USA",
+   "website_url": "https://www.skycreekranch.com/"
+  },
+  "courses": [
+   {
+    "name": "Sky Creek Ranch",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       4,
+       4,
+       3,
+       5,
+       4,
+       5,
+       3,
+       4,
+       4,
+       3,
+       5,
+       4,
+       3,
+       5,
+       4,
+       3,
+       5
+      ],
+      "stroke_index": [
+       11,
+       3,
+       1,
+       15,
+       7,
+       9,
+       5,
+       17,
+       13,
+       10,
+       16,
+       8,
+       2,
+       4,
+       12,
+       6,
+       14,
+       18
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       4,
+       4,
+       3,
+       5,
+       4,
+       5,
+       3,
+       4,
+       4,
+       3,
+       5,
+       4,
+       3,
+       5,
+       4,
+       3,
+       5
+      ],
+      "stroke_index": [
+       11,
+       3,
+       1,
+       15,
+       7,
+       9,
+       5,
+       17,
+       13,
+       10,
+       16,
+       8,
+       2,
+       4,
+       12,
+       6,
+       14,
+       18
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Professional",
+      "unit": "yards",
+      "lengths": [
+       413,
+       440,
+       407,
+       169,
+       534,
+       371,
+       556,
+       171,
+       424,
+       400,
+       196,
+       524,
+       424,
+       212,
+       526,
+       433,
+       228,
+       525
+      ],
+      "published_total": 6953,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 73.4,
+        "slope": 136
+       }
+      ]
+     },
+     {
+      "name": "Championship",
+      "unit": "yards",
+      "lengths": [
+       384,
+       420,
+       364,
+       148,
+       496,
+       349,
+       515,
+       134,
+       390,
+       383,
+       171,
+       505,
+       381,
+       191,
+       482,
+       394,
+       183,
+       477
+      ],
+      "published_total": 6367,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 70.8,
+        "slope": 127
+       }
+      ]
+     },
+     {
+      "name": "Club",
+      "unit": "yards",
+      "lengths": [
+       362,
+       398,
+       340,
+       136,
+       470,
+       317,
+       489,
+       116,
+       370,
+       335,
+       160,
+       483,
+       344,
+       174,
+       463,
+       371,
+       162,
+       450
+      ],
+      "published_total": 5940,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 68.4,
+        "slope": 120
+       },
+       {
+        "gender": "women",
+        "rating": 76,
+        "slope": 148
+       }
+      ]
+     },
+     {
+      "name": "Forward",
+      "unit": "yards",
+      "lengths": [
+       321,
+       373,
+       321,
+       120,
+       449,
+       260,
+       474,
+       88,
+       342,
+       295,
+       113,
+       437,
+       318,
+       130,
+       442,
+       348,
+       139,
+       420
+      ],
+      "published_total": 5390,
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 72.8,
+        "slope": 132
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/sky_creek_ranch_golf_club_texas/scorecard.cfm",
+    "note": "Greenskeeper.org scorecard - PRIMARY SOURCE, adopted in full. Supplies all four tee rows hole by hole (Professional, Championship, Club, Club-Ladies, Forward-Ladies), separate men's and women's par rows, separate men's and women's handicap rows, and per-tee rating/slope. Every one of the four tees sums exactly to its published total, which is the reason this source was preferred over the alternatives."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.golfpass.com/travel-advisor/courses/12714-sky-creek-ranch-golf-club",
+    "note": "GolfPass course page. Publishes a DIFFERENT, also internally-consistent measurement: back tee 7,029 yds (front 3,527 / back 3,502) with ratings Pro M 74.8/138, Champ M 72.6/133, Club M 70.7/128 & W 76.5/144, Forward M 68.6/117 & W 73.4/135, and a different handicap ordering. Not adopted - see collection_notes."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.skycreekranch.com/course/history",
+    "note": "Official Sky Creek Ranch site, 'Design & History' page. Confirms Robert Trent Jones II design. It has a 'Scorecard' section heading but the scorecard is published only as an IMAGE with no machine-readable text - flagged for human transcription, which would definitively settle the 6,953 vs 7,029 measurement question below."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/keller/sky-creek-ranch-golf-club",
+    "note": "GolfLink (blocked to WebFetch; search-summary evidence only). Confirms the headline figures 6,953 yds / par 72 / rating 73.4 / slope 136 that match the greenskeeper card, but elsewhere quotes the 74.8/138 rating family and a 6,995 back-tee number - a third distinct total."
+   },
+   {
+    "type": "other",
+    "url": "https://course.bluegolf.com/bluegolf/course/course/skycreekranchgc/actual.htm",
+    "note": "BlueGolf course profile - returned HTTP 405 to WebFetch, no data retrieved. Recorded only so a human knows it was attempted."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC SELF-CHECK - all four tees recomputed hole by hole against their published totals, every one exact:\n- Professional: front 413+440+407+169+534+371+556+171+424 = 3,485; back 400+196+524+424+212+526+433+228+525 = 3,468; total 6,953 = published 6,953.\n- Championship: front 3,200; back 3,167; total 6,367 = published 6,367.\n- Club: front 2,998; back 2,942; total 5,940 = published 5,940.\n- Forward: front 2,748; back 2,642; total 5,390 = published 5,390.\nNote on the source rendering: greenskeeper's Out/In cells came back as 3,885 and 3,868 for the Professional row, which is 400 too high in each half and sums to 7,753 - clearly a column mis-alignment in the page extraction, not a data problem, because the eighteen individual holes sum to exactly 6,953. I kept the per-hole numbers and discarded the malformed subtotals.\nPar sums: men Out 36 / In 36 / 72, women identical - matches. Stroke index validates on both genders: odd indexes 1-17 on the front nine, even indexes 2-18 on the back, all eighteen distinct.\n\nMEASUREMENT CONFLICT (documented, not silently resolved): this course has been re-measured and re-rated at least once and the directories are split across eras.\n- Set A (adopted, greenskeeper): 6,953 / 6,367 / 5,940 / 5,390 with ratings Pro 73.4/136, Champ 70.8/127, Club M 68.4/120 & W 76.0/148, Forward W 72.8/132.\n- Set B (GolfPass + GolfLink): back tee 7,029 (its own per-hole grid also sums correctly to 7,029) with ratings Pro M 74.8/138, Champ M 72.6/133, Club M 70.7/128 & W 76.5/144, Forward M 68.6/117 & W 73.4/135. GolfLink additionally quotes a 6,995 back-tee figure - a third number.\nI adopted Set A entirely and did not mix the two, because Set A's four tees each reconcile to the totals (6,953/6,367/5,940/5,390) that the course itself and every directory headline quote, and mixing rating families across measurement eras would produce a card that is wrong in a way nobody could detect later. A human with the official scorecard image should confirm which era is current.\n\nTEE STRUCTURE: greenskeeper prints 'Club' and 'Club - Ladies' as two rows carrying IDENTICAL yardages. Per the one-tee-two-ratings rule these are collapsed into a single 'Club' tee with both a men's (68.4/120) and a women's (76.0/148) rating rather than duplicated. 'Forward - Ladies' is recorded as tee 'Forward' with a women's rating only; Set B's men's Forward rating (68.6/117) was not merged in for the era reason above. Professional and Championship carry men's ratings only.\n\nHANDICAP CONFLICT: greenskeeper gives front 11,3,1,15,7,9,5,17,13 / back 10,16,8,2,4,12,6,14,18. GolfPass gives a different valid permutation (front 9,7,1,15,13,5,11,17,3 / back 6,16,8,2,10,14,4,12,18). Both are internally legal; greenskeeper's was taken with the rest of Set A. Par is identical in both sources, and both print men's and women's par as the same values, so both genders are supplied as required."
+ },
+ {
+  "facility": {
+   "name": "Indian Oaks Golf Course",
+   "address": "7574 Lee Ln, Kemp, TX 75143",
+   "city": "Kemp",
+   "state_province": "TX",
+   "postal_code": "75143",
+   "country": "USA"
+  },
+  "courses": [
+   {
+    "name": "Blue Nine",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       4,
+       4,
+       3,
+       4,
+       4,
+       3,
+       5,
+       4
+      ],
+      "stroke_index": [
+       10,
+       12,
+       8,
+       2,
+       4,
+       6,
+       18,
+       16,
+       14
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "lengths": [
+       332,
+       250,
+       286,
+       165,
+       300,
+       239,
+       138,
+       422,
+       254
+      ],
+      "published_total": 2386
+     }
+    ]
+   },
+   {
+    "name": "Red Nine",
+    "hole_count": 9,
+    "tees": [
+     {
+      "name": "Championship",
+      "unit": "yards",
+      "published_total": 2583
+     },
+     {
+      "name": "Middle",
+      "unit": "yards",
+      "published_total": 2212
+     },
+     {
+      "name": "Forward",
+      "unit": "yards",
+      "published_total": 1736
+     }
+    ]
+   },
+   {
+    "name": "White Nine",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       5,
+       4,
+       3,
+       3,
+       4,
+       4,
+       5,
+       4
+      ],
+      "stroke_index": [
+       2,
+       18,
+       10,
+       8,
+       12,
+       14,
+       4,
+       6,
+       16
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 2742,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 65.1,
+        "slope": 109
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "lengths": [
+       326,
+       340,
+       288,
+       144,
+       150,
+       226,
+       224,
+       417,
+       299
+      ],
+      "published_total": 2414,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 64.9,
+        "slope": 105
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 2062,
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 64.1,
+        "slope": 101
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "course_website",
+    "url": "https://www.golfpass.com/travel-advisor/courses/22880-indian-oaks-golf-course-white-course",
+    "note": "GolfPass 'Indian Oaks Golf Course - White Course' - PRIMARY source for the White nine. 9 holes, par 36. Full tee table (Blue 2,742 65.1/109; White 2,414 64.9/105; Red(W) 2,062 64.1/101) plus a complete per-hole White-tee grid with par and handicap. The White-tee row sums exactly to 2,414. Ken Andrews, opened 2009."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.golfpass.com/travel-advisor/courses/12715-indian-oaks-golf-course-blue-course",
+    "note": "GolfPass 'Indian Oaks Golf Course - Blue Course' - source for the Blue nine. Presented as an 18-hole pairing (grid sums to 4,930, par 70). Its FRONT nine sums to exactly 2,386 with par 35, which independently matches GolfLink's published Blue-nine total, so that front nine is transcribed as the Blue Nine. The page's own tee table (Blue 4,723 63.9/103; White 4,521 63.1/99; Red 4,419 62.1/79) is an 18-hole-pairing rating and contradicts its own 4,930 grid total - not used."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3067-indian-oaks-golf-course-red-course",
+    "note": "GolfPass 'Indian Oaks Golf Course - Red Course' - source for the Red nine TEE TOTALS ONLY. 9 holes; tee table reads Championship par 35 / 2,583 yds, Middle par 35 / 2,212 yds, Forward (W) par 35 / 1,736 yds, ratings and slopes both listed N/A. Its per-hole grid was REJECTED as corrupt - see collection_notes. Also confirms the facility has '3 different 9 hole courses' (Blue, White, Red)."
+   },
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/indian_oaks_golf_course_blue/scorecard.cfm",
+    "note": "Greenskeeper 'Indian Oaks Golf Club (Blue 18)'. An 18-hole composite: front 2,742/par 36 + back 2,466/par 35 = 5,208/par 71, rating 68.2 slope 115. The front nine (352,447,375,164,175,226,239,431,333) matches the White nine on total, par total and par pattern - a candidate Blue-tee grid for the White nine, held back pending human confirmation. Its back nine disagrees with GolfPass on holes 7-9 of the Blue nine. The page also mis-states the venue as having '21 holes'."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/kemp/indian-oaks-golf-club",
+    "note": "GolfLink (blocked to WebFetch; search-summary evidence only). Independently confirms Blue nine = 2,386 yds par 35 (Ken Andrews, 1990) - the key corroboration for the Blue Nine total - and lists White nine as 2,221 yds par 35 opened 2019, which conflicts with GolfPass's White nine (par 36, 2,742/2,414/2,062, opened 2009)."
+   },
+   {
+    "type": "other",
+    "url": "https://www.hole19golf.com/courses/indian-oaks-golf-course-kemp",
+    "note": "Hole19. A FOURTH distinct 18-hole composite: front 2,338/par 35 + back 2,586/par 36, stated total 4,923 (the holes actually sum to 4,924 - off by one). Internally near-consistent but reconcilable to none of the published nine totals; recorded as a conflicting source, not used."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.texasgolf.com/golfcourses/indian-oaks-golf-course",
+    "note": "TexasGolf.com. Facility-level only: 27 holes across Blue/White/Red, 5,208 yds par 71 from the back tees, phone 903-498-3564. Explicitly publishes no per-nine breakdown."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "This 27-hole facility is poorly and contradictorily documented - FOUR mutually inconsistent 18-hole composite cards are in circulation (greenskeeper 5,208/par 71; GolfPass Blue Course 4,930/par 70; Hole19 4,923/par 71; and the 5,208/par 71 figure every directory quotes as the facility headline). I resolved it by preferring GolfPass's three per-nine pages, which are the only sources that publish the nines as nines, and by cross-checking each against an independent total.\n\nWHAT IS VERIFIED:\n- WHITE NINE: par 36. White-tee row 326+340+288+144+150+226+224+417+299 = 2,414, exactly the published White total. Par row sums to 36. Stroke index 2,18,10,8,12,14,4,6,16 = the nine even indexes 2-18, all distinct (normal for a nine within a 27-hole facility). Ratings for all three tees published.\n- BLUE NINE: par 35. Row 332+250+286+165+300+239+138+422+254 = 2,386, which independently equals GolfLink's separately-published Blue-nine total of 2,386 par 35. Two unrelated sources agreeing on the total is what gave me confidence to lift this nine out of GolfPass's 18-hole pairing. Par sums to 35; stroke index 10,12,8,2,4,6,18,16,14 = the even indexes 2-18, all distinct.\n\nDELIBERATE OMISSIONS (data withheld rather than guessed):\n1. White nine, BLUE tee lengths. Greenskeeper's 18-hole card has a front nine (352,447,375,164,175,226,239,431,333) that sums to exactly 2,742 - matching the White nine's published Blue-tee total - with par 36 and the identical par pattern 4,5,4,3,3,4,4,5,4, and hole 6 identical at 226. The attribution is very likely correct. I still did NOT record it, because that same greenskeeper card's back nine contradicts GolfPass on holes 7-9 of the Blue nine (greenskeeper 400/330/164 par 5,4,3 vs GolfPass 138/422/254 par 3,5,4), which proves the source's hole ordering for this facility is unreliable. Attaching a real grid to the wrong nine is undetectable later, so the Blue tee keeps only its published total and rating. This grid is the single highest-value item for a human to verify on site.\n2. Red nine, ALL per-hole data. GolfPass's Red Course page prints a par row (4,4,4,3,4,4,3,5,4) and handicap row (10,12,8,2,4,6,18,16,14) that are byte-identical to the Blue nine's - a clear data-duplication bug - and a yardage row summing to 1,905, which matches none of its own three published tee totals (2,583 / 2,212 / 1,736). The whole grid was therefore discarded; only the three tee totals and par 35 survive. The Red nine is effectively tee-sheet quality inside an otherwise 'full' facility.\n3. Blue nine ratings. GolfPass's only rating figures for Blue are attached to the 18-hole pairing, not the standalone nine, so none are recorded. GolfLink shows rating 0.0 / slope 0 for both the Blue and White nines, i.e. unrated placeholders, not real values.\n\nOTHER CAVEATS: the published 9-hole ratings for the White nine (65.1, 64.9, 64.1) are in the 18-hole-equivalent range rather than the ~32 range of a true 9-hole rating, so they appear to be ratings for playing the nine twice - recorded as published. GolfPass files this facility under the locality 'Peeltown, TX 75143' (Kaufman County) rather than Kemp; same Lee Ln address. Facility phone 903-498-3564. No official website was verified - a search summary referenced indianoaksgolfcourse.com but I could not confirm it, so the field is left empty rather than populated with an unverified domain. GolfLink dates the White nine to 2019 and GolfPass to 2009; the Blue and Red nines are consistently dated 1990 (Ken Andrews)."
+ },
+ {
+  "facility": {
+   "name": "Kings Creek Country Club",
+   "address": "6025 Club Dr, Kemp, TX 75143",
+   "city": "Kemp",
+   "state_province": "TX",
+   "postal_code": "75143",
+   "country": "USA",
+   "website_url": "https://playkingscreek.com/"
+  },
+  "courses": [
+   {
+    "name": "Kings Creek",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       4,
+       3,
+       4,
+       4,
+       3,
+       5,
+       3,
+       5,
+       4,
+       3,
+       5,
+       4,
+       4,
+       4,
+       4,
+       3,
+       5
+      ],
+      "stroke_index": [
+       3,
+       15,
+       1,
+       5,
+       11,
+       17,
+       13,
+       7,
+       9,
+       4,
+       18,
+       2,
+       6,
+       12,
+       10,
+       14,
+       16,
+       8
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       4,
+       3,
+       4,
+       4,
+       3,
+       5,
+       3,
+       5,
+       3,
+       4,
+       5,
+       4,
+       4,
+       4,
+       4,
+       3,
+       5
+      ],
+      "stroke_index": [
+       1,
+       7,
+       17,
+       3,
+       5,
+       15,
+       11,
+       9,
+       13,
+       10,
+       16,
+       4,
+       8,
+       14,
+       6,
+       12,
+       18,
+       2
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "lengths": [
+       351,
+       340,
+       200,
+       393,
+       360,
+       164,
+       515,
+       209,
+       567,
+       443,
+       151,
+       576,
+       415,
+       387,
+       394,
+       276,
+       191,
+       575
+      ],
+      "published_total": 6507,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 72,
+        "slope": 124
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "lengths": [
+       328,
+       317,
+       175,
+       377,
+       339,
+       137,
+       492,
+       189,
+       544,
+       405,
+       131,
+       544,
+       386,
+       362,
+       373,
+       251,
+       164,
+       510
+      ],
+      "published_total": 6024,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.4,
+        "slope": 118
+       }
+      ]
+     },
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 64.6,
+        "slope": 109
+       },
+       {
+        "gender": "women",
+        "rating": 70.2,
+        "slope": 120
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "lengths": [
+       305,
+       293,
+       100,
+       348,
+       321,
+       122,
+       337,
+       147,
+       335,
+       282,
+       105,
+       403,
+       285,
+       249,
+       278,
+       205,
+       101,
+       484
+      ],
+      "published_total": 4700,
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 68,
+        "slope": 113
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/kings_creek_golf_club/scorecard.cfm",
+    "note": "Greenskeeper.org scorecard - PRIMARY SOURCE, adopted for the entire grid. Address confirmed as '6025 Club Dr. Kemp, TX 75143', so this is the correct Kings Creek. Supplies Blue/White/Red-Ladies rows hole by hole, SEPARATE men's and women's par rows, separate men's and women's handicap rows, and the tee table Blue 6,507 72.0/124, White 6,024 69.4/118, Red-Ladies 4,700 68.0/113. All three tees sum exactly to those totals."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3069-kings-creek-country-club",
+    "note": "GolfPass. Ratings agree exactly with greenskeeper (Blue 72.0/124, White 69.4/118, Red 68.0/113) and it is the ONLY source for the Gold tee (M 64.6/109, W 70.2/120) - adopted for that tee's ratings. Its per-hole grid, however, is an older/shorter measurement (Blue 6,314, White 5,951, Gold 5,106, Red 4,587); each row is internally consistent but none matches the current published totals, so those lengths were not used."
+   },
+   {
+    "type": "course_website",
+    "url": "https://playkingscreek.com/",
+    "note": "Official Kings Creek site. Confirms address 6025 Club Dr. Kemp, TX 75143 and phone 903.498.8888, par 71, 179 acres, lit driving range, semi-private with public rates ($40 weekday / $40-55 weekend). Its scorecard is behind a pop-up viewer and yielded no machine-readable per-hole text; the page's loose '~5,000 yards' prose is marketing copy, not a tee measurement."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.texasgolf.com/golfcourses/7701",
+    "note": "TexasGolf.com. Independent confirmation of the back-tee figures used here: 18 holes, semi-private, 6,507 yards, slope 124, opened 1980, Bermuda greens and fairways. No per-hole grid."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/kemp/king-s-creek-golf-club",
+    "note": "GolfLink (blocked to WebFetch; search-summary evidence only). Third confirmation of 6,507 yds / par 71 / rating 72 / slope 124; credits the design to Rick Mai, 1980."
+   },
+   {
+    "type": "other",
+    "url": "https://golftraxx.com/full-layout?coursename=Kings+Creek+Country+Club&zipcode=75143&city=Kemp&state=TX&static=true",
+    "note": "GolfTraxx - returned HTTP 403 to WebFetch, no data retrieved. Recorded only so a human knows it was attempted."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC SELF-CHECK - all three transcribed tees recomputed hole by hole, every one exact against the independently published total:\n- Blue: front 351+340+200+393+360+164+515+209+567 = 3,099; back 443+151+576+415+387+394+276+191+575 = 3,408; total 6,507 = published 6,507 (a figure separately confirmed by TexasGolf.com and GolfLink).\n- White: front 2,898; back 3,126; total 6,024 = published 6,024.\n- Red: front 2,308; back 2,392; total 4,700 = published 4,700.\nPar sums: men Out 35 / In 36 / 71; women Out 35 / In 36 / 71 - both match. Stroke index validates on both genders: men front = odd 1-17, men back = even 2-18; women front = odd 1-17, women back = even 2-18; all eighteen distinct in each set.\n\nMEASUREMENT CONFLICT (resolved on evidence): GolfPass carries a complete alternative grid whose four rows each sum correctly to their own subtotals (Blue 6,314 = 3,001+3,313; White 5,951; Gold 5,106; Red 4,587) but which reconcile to NO published total for this course - GolfPass's own tee table on the same page says Blue 6,507, White 6,024, Red 4,700, contradicting its grid by 193, 73 and 113 yards. Greenskeeper's grid, by contrast, lands on 6,507 / 6,024 / 4,700 to the yard. Greenskeeper is therefore the current measurement and was adopted wholesale; the GolfPass grid appears to be a superseded card. Note that both sources' par and men's handicap rows are IDENTICAL, which is good evidence the two grids describe the same routing at different lengths rather than a different course.\n\nANOMALY IN THE WOMEN'S PAR ROW - transcribed as printed, flagged for human review: the source prints women's par 3 on hole 10 and par 4 on hole 11, the reverse of the men's row (4 then 3). This is almost certainly wrong on the ground: the Red tee plays 282 yards on hole 10 and 105 yards on hole 11, so women's par should read 4 then 3. I re-fetched the page and targeted those two cells specifically to rule out a transcription slip on my side; the source renders 3 and 4 consistently on both reads, and the women's In total of 36 is unaffected either way. I have recorded exactly what is published rather than silently correcting it. Every other hole's women's par is identical to the men's.\n\nGOLD TEE - partial by design: GolfPass lists a fourth 'Gold' tee with men's 64.6/109 and women's 70.2/120 ratings, but its length is given only as 'varies' and greenskeeper's card omits the tee entirely. I recorded the Gold tee with its ratings and NO lengths and NO published total. I specifically declined to import GolfPass's 5,106-yard Gold row, because that row belongs to the superseded measurement and grafting it onto the current Blue/White/Red set would produce an impossible card - its Gold hole 1 is 306 yards against the current Red tee's 305, which cannot be right for a tee that should sit between White (328) and Red (305).\n\nGENDER ASSIGNMENT: Blue and White carry men's ratings only, Red carries a women's rating only ('Red - Ladies' on the card), and Gold carries both; no tee was duplicated to hold a second gender."
+ },
+ {
+  "facility": {
+   "name": "Country View Golf Course",
+   "address": "240 W Beltline Rd",
+   "city": "Lancaster",
+   "state_province": "TX",
+   "postal_code": "75146",
+   "country": "USA",
+   "website_url": "https://countryviewgolfcourse.com/"
+  },
+  "courses": [
+   {
+    "name": "Country View",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       4,
+       4,
+       5,
+       4,
+       3,
+       4,
+       3,
+       4,
+       4,
+       4,
+       4,
+       5,
+       3,
+       4,
+       3,
+       4,
+       4
+      ],
+      "stroke_index": [
+       4,
+       2,
+       11,
+       15,
+       7,
+       17,
+       3,
+       18,
+       16,
+       5,
+       13,
+       12,
+       9,
+       8,
+       14,
+       10,
+       1,
+       6
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       4,
+       4,
+       5,
+       4,
+       3,
+       4,
+       3,
+       4,
+       4,
+       4,
+       4,
+       5,
+       3,
+       4,
+       3,
+       4,
+       4
+      ],
+      "stroke_index": [
+       4,
+       2,
+       11,
+       15,
+       7,
+       17,
+       3,
+       18,
+       16,
+       5,
+       13,
+       12,
+       9,
+       8,
+       14,
+       10,
+       1,
+       6
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 6461,
+      "lengths": [
+       396,
+       402,
+       349,
+       532,
+       385,
+       181,
+       431,
+       155,
+       400,
+       372,
+       484,
+       382,
+       474,
+       184,
+       325,
+       150,
+       434,
+       425
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71,
+        "slope": 128
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 5806,
+      "lengths": [
+       363,
+       361,
+       320,
+       491,
+       348,
+       152,
+       403,
+       140,
+       377,
+       331,
+       393,
+       302,
+       435,
+       155,
+       295,
+       145,
+       409,
+       386
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.2,
+        "slope": 122
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5297,
+      "lengths": [
+       334,
+       310,
+       299,
+       468,
+       315,
+       125,
+       380,
+       120,
+       346,
+       289,
+       366,
+       276,
+       393,
+       130,
+       255,
+       130,
+       409,
+       352
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 67.4,
+        "slope": 111
+       },
+       {
+        "gender": "women",
+        "rating": 69.7,
+        "slope": 122
+       }
+      ]
+     },
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 4857,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 65.6,
+        "slope": 106
+       },
+       {
+        "gender": "women",
+        "rating": 68.1,
+        "slope": 118
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 4686,
+      "lengths": [
+       310,
+       272,
+       275,
+       408,
+       275,
+       100,
+       334,
+       100,
+       309,
+       249,
+       322,
+       264,
+       351,
+       95,
+       232,
+       115,
+       357,
+       318
+      ],
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 67.7,
+        "slope": 116
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/Country_View_Golf_Club/scorecard.cfm",
+    "note": "Greenskeeper.org full per-hole grid (Black/Blue/White/Red yardages, par, men's and women's handicap rows). Primary source for all per-hole data. Note the URL slug is 'Country_View_Golf_Club', not 'Country_View_Golf_Course'."
+   },
+   {
+    "type": "course_website",
+    "url": "https://countryviewgolfcourse.com/course-details/",
+    "note": "Club's own tee table: Black 6,389/70.5/126; Blue 5,806/69.2/122; White 5,297/67.4/111; Red 4,686/67.7/116. No per-hole grid in HTML; the page links a scorecard photo 'back_of_scorecard-1.jpg' which cannot be read by text fetch."
+   },
+   {
+    "type": "official_rating_db",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3088-country-view-golf-club",
+    "note": "Current tee sheet with per-gender ratings. Used for Blue/White/Gold/Red ratings and for the Gold tee's existence and total. Lists Black at 6,389 / 70.5 / 126."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC: all four per-hole tee sets sum exactly to their Greenskeeper-published totals - Black 3231+3230=6461; Blue 2955+2851=5806; White 2697+2600=5297; Red 2383+2303=4686. Par sums 35+35=70 as published. Men's stroke index is a complete, non-repeating 1-18 set. CONFLICT (important): Greenskeeper's per-hole grid is an older measurement of the Black tee. Its Black column sums to 6,461, but both the club's own website and GolfPass currently publish Black at 6,389 (70.5/126). Blue, White and Red totals are identical across all three sources, so only the Black tee is affected. I kept the Black lengths with published_total 6,461 and paired them with Greenskeeper's contemporaneous 71.0/128 rating rather than splicing a 6,389-era rating onto a 6,461-yard grid; a re-measure of the Black tee (72 yards shorter) is the likely explanation. For Blue/White/Red I used the current GolfPass ratings, which match the club's own table exactly. RATING VINTAGE: Greenskeeper also lists an older rating set (Blue 69.8/122, White men 68.0/116, White ladies 70.0/120, Red men 67.8/110, Red ladies 68.2/113) - superseded, not used. GOLD TEE: GolfPass publishes a Gold tee at 4,857 (men 65.6/106, women 68.1/118) that does not appear on the club's own four-tee table; included with total and ratings only, no per-hole lengths published anywhere I could reach. The club's site also assigns Red 67.7/116 with no gender label; GolfPass identifies that as the women's rating, which is how it is recorded here. GENDER ROWS: Greenskeeper rendered separate men's and women's par and handicap rows with identical values; both are recorded as instructed. Confidence that these are genuine separate rows is raised by SugarTree, where the same source rendered genuinely different men's and women's handicap rows. Facility is also published as 'Country View Golf Club' (city-owned, KemperSports-managed)."
+ },
+ {
+  "facility": {
+   "name": "Lake Park Golf Club",
+   "address": "6 Lake Park Rd",
+   "city": "Lewisville",
+   "state_province": "TX",
+   "postal_code": "75057",
+   "country": "USA",
+   "website_url": "https://arcisgolf.com/clubs/lake_park_golf_club/home"
+  },
+  "courses": [
+   {
+    "name": "Lake Park Championship Course",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       5,
+       3,
+       4,
+       3,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       4,
+       4,
+       5,
+       3,
+       4,
+       3,
+       4
+      ],
+      "stroke_index": [
+       4,
+       16,
+       12,
+       14,
+       2,
+       6,
+       10,
+       8,
+       18,
+       13,
+       11,
+       7,
+       1,
+       17,
+       3,
+       15,
+       9,
+       5
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       5,
+       3,
+       4,
+       3,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       4,
+       4,
+       5,
+       3,
+       4,
+       3,
+       4
+      ],
+      "stroke_index": [
+       4,
+       16,
+       12,
+       14,
+       2,
+       6,
+       10,
+       8,
+       18,
+       13,
+       11,
+       7,
+       1,
+       17,
+       3,
+       15,
+       9,
+       5
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6135,
+      "lengths": [
+       405,
+       500,
+       160,
+       340,
+       180,
+       395,
+       150,
+       350,
+       505,
+       360,
+       360,
+       410,
+       430,
+       510,
+       185,
+       330,
+       155,
+       410
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 68.3,
+        "slope": 108
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5740,
+      "lengths": [
+       380,
+       475,
+       140,
+       320,
+       165,
+       375,
+       130,
+       320,
+       475,
+       340,
+       345,
+       395,
+       390,
+       490,
+       165,
+       310,
+       140,
+       385
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 66.5,
+        "slope": 102
+       },
+       {
+        "gender": "women",
+        "rating": 73.4,
+        "slope": 121
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 4960,
+      "lengths": [
+       345,
+       430,
+       110,
+       280,
+       115,
+       310,
+       115,
+       270,
+       430,
+       300,
+       325,
+       300,
+       355,
+       410,
+       110,
+       290,
+       115,
+       350
+      ],
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 68.6,
+        "slope": 111
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Lake Park Executive Course",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       3,
+       3,
+       3,
+       4,
+       3,
+       3,
+       3,
+       3,
+       3
+      ],
+      "stroke_index": [
+       11,
+       17,
+       5,
+       1,
+       3,
+       7,
+       13,
+       15,
+       9
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 1537,
+      "lengths": [
+       160,
+       118,
+       152,
+       350,
+       183,
+       154,
+       146,
+       130,
+       144
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 1724
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 1249,
+      "lengths": [
+       120,
+       87,
+       125,
+       264,
+       173,
+       118,
+       126,
+       108,
+       128
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/lake_park_golf_club_texas/scorecard.cfm",
+    "note": "Greenskeeper.org full per-hole grid for the Championship course (Blue/White/Red yardages, par, men's and women's handicap rows). Primary source for the 18-hole per-hole data."
+   },
+   {
+    "type": "official_rating_db",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3101-lake-park-golf-course-championship-course",
+    "note": "Championship course tee sheet with per-gender ratings: Blue 6,135 men 68.3/108; White 5,740 men 66.5/102; White(W) 73.4/121; Red(W) 4,960 68.6/111. Used to correct a Greenskeeper rating mis-assignment."
+   },
+   {
+    "type": "official_rating_db",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3099-lake-park-golf-course-executive-course",
+    "note": "Executive course: per-hole par and handicap, Blue and Red per-hole yardages, and tee totals (Blue 1,537; White 1,724; Red 1,249). Only source reached with an executive-course per-hole grid that self-checks."
+   },
+   {
+    "type": "other",
+    "url": "https://www.hole19golf.com/courses/lake-park-golf-club-executive",
+    "note": "CONFLICTING executive-course data: same par pattern (par 28, hole 4 the lone par 4) but different blue yardages summing to 1,406, and a 1-9 handicap set. Not used; recorded as evidence of the conflict."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "CHAMPIONSHIP COURSE - high confidence. All three tees sum exactly to their published totals: Blue 2985+3150=6135; White 2780+2960=5740; Red 2405+2555=4960. Par 35+35=70. Stroke index is a clean split - evens 2-18 on the front nine, odds 1-17 on the back - complete and non-repeating. RATING CORRECTION: Greenskeeper listed the Blue tee as 73.4/121, which is actually the women's White rating duplicated onto the Blue row (its own table repeats 73.4/121 for 'White - Ladies'). GolfPass gives the correct men's Blue rating of 68.3/108, consistent with a 6,135-yard par-70 layout; 73.4 would be implausible for that length. GolfPass values used for all ratings. Men's and women's handicap rows were rendered identically by the source and are recorded for both genders. EXECUTIVE COURSE - lower confidence, flagged. GolfPass's per-hole grid self-checks on two of three tees: Blue 160+118+152+350+183+154+146+130+144 = 1,537 exactly matching its stated Blue total, and Red = 1,249 exactly matching its stated Red total. The White column it displayed was a verbatim duplicate of Blue yet carried a 1,724 total, so it is internally false; I dropped White's per-hole lengths and kept only its published total. Stroke index 11,17,5,1,3,7,13,15,9 is a valid odd-numbered 9-hole set. PAR DISCREPANCY: the per-hole par row totals 28 (eight par 3s plus one par 4 at hole 4), but the figure published nearly everywhere - GolfPass's own summary, GolfLink, Arcis marketing - is 'par 29, 1,724 yards'. The 1,724/par-29 combination corresponds to the White tee row and implies a par configuration I could not find published per hole, so I recorded par 28 from the only per-hole row that exists and left White without lengths. Hole19 independently shows par 28 with the same shape but different yardages (blue total 1,406), so at least two distinct executive-course measurement sets are in circulation. Executive-course ratings were omitted deliberately: GolfPass rendered them as 'Blue 58.0/90' and 'Red 56.0/88 to 57.1/90' with no gender labels and an obviously garbled White entry ('29.0', which is the par), so the gender assignment could not be established. The executive course has its own address (102 Lake Park Road) and pro shop (972-436-3113); facility address recorded is the main complex."
+ },
+ {
+  "facility": {
+   "name": "SugarTree Golf Club",
+   "address": "251 SugarTree Dr",
+   "city": "Lipan",
+   "state_province": "TX",
+   "postal_code": "76462",
+   "country": "USA",
+   "website_url": "https://sugartreegolf.com/"
+  },
+  "courses": [
+   {
+    "name": "SugarTree",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       3,
+       5,
+       5,
+       4,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4
+      ],
+      "stroke_index": [
+       3,
+       15,
+       1,
+       5,
+       9,
+       13,
+       17,
+       11,
+       7,
+       10,
+       12,
+       14,
+       16,
+       2,
+       8,
+       4,
+       18,
+       6
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       3,
+       5,
+       5,
+       4,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4
+      ],
+      "stroke_index": [
+       3,
+       17,
+       13,
+       1,
+       15,
+       9,
+       11,
+       7,
+       5,
+       4,
+       16,
+       12,
+       8,
+       2,
+       14,
+       10,
+       18,
+       6
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 6810,
+      "lengths": [
+       405,
+       185,
+       550,
+       456,
+       471,
+       388,
+       182,
+       403,
+       511,
+       412,
+       398,
+       210,
+       355,
+       524,
+       338,
+       400,
+       180,
+       442
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 74,
+        "slope": 137
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6372,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.9,
+        "slope": 135
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5988,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 70.4,
+        "slope": 131
+       },
+       {
+        "gender": "women",
+        "rating": 76.3,
+        "slope": 139
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 5305,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 67.9,
+        "slope": 125
+       },
+       {
+        "gender": "women",
+        "rating": 71.9,
+        "slope": 128
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://18birdies.com/golf-courses/club/8c737030-86ac-11e4-8c28-020000005b00/sugartree-golf-club",
+    "note": "Complete current Gold-tee card: per-hole yardage, par and handicap, OUT 3,551 / IN 3,259 / TOTAL 6,810, par 37+35=72. Primary source for the Gold tee grid."
+   },
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/sugartree_golf_club_/scorecard.cfm",
+    "note": "Older par-70 card. Its back-nine Gold yardages and both men's and women's handicap rows match the current card exactly; its front nine differs at holes 4 and 9 only. Sole source for the women's stroke index."
+   },
+   {
+    "type": "official_rating_db",
+    "url": "https://www.golfpass.com/travel-advisor/courses/2876-sugartree-golf-club",
+    "note": "Current per-gender tee sheet: Gold 6,810 men 74.0/137; Blue 6,372 men 71.9/135; White 5,988 men 70.4/131 and women 76.3/139; Red 5,305 men 67.9/125 and women 71.9/128. Used for all ratings and for the Blue/White/Red totals."
+   },
+   {
+    "type": "scorecard_image",
+    "url": "https://sugartreegolf.com/wp-content/uploads/2021/02/03e3a834cc56434bea321358f1ede398zy837NHZm8nRFCXl-0.webp",
+    "note": "Club's own scorecard published as four .webp images only (also ...-1.webp, and 63c661c0f650451ee025812fea9ea728FezruRS6FEG978lA-0.webp / -1.webp under the same upload path). NOT readable by text fetch - flagged for human transcription; this is the route to the missing Blue/White/Red per-hole yardages."
+   },
+   {
+    "type": "course_website",
+    "url": "https://sugartreegolf.com/",
+    "note": "States 'Four sets of tee boxes, ranging from 5,305 to 6,810 yards', which corroborates the GolfPass Gold and Red totals against the older Greenskeeper figures."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "GOLD TEE - high confidence, triangulated three ways. 18Birdies publishes the full card: front 405+185+550+456+471+388+182+403+511 = 3,551 and back 412+398+210+355+524+338+400+180+442 = 3,259, total 6,810, matching both GolfPass and the club's own 'up to 6,810' statement. Par 37+35 = 72. STALE-CARD RESOLUTION: Greenskeeper serves an obsolete par-70 version whose Gold column sums to 6,659 - exactly 151 short. The entire deficit is holes 4 and 9, which Greenskeeper lists as 415 and 401 (both par 4) versus the current 456 and 511 (both par 5): 41 + 110 = 151, and the back nine is byte-identical between the two sources. That arithmetic reconciliation, plus 18Birdies' independent men's handicap row matching Greenskeeper's exactly, is why I trust the merged Gold card and the carried-over stroke indices. Both Greenskeeper tees that failed their own self-check did so by exactly 20 (Blue column sums to 6,197 against a stated 6,177; Red sums to 5,220 against a stated 5,200), further marking that page as unreliable - which is the main reason I did not publish its Blue/White/Red per-hole columns. Those three tees carry published totals and ratings only; no per-hole lengths for them are published in any text source I could reach. STROKE INDEX: men and women differ genuinely here (men front 3,15,1,5,9,13,17,11,7 vs women 3,17,13,1,15,9,11,7,5), both valid odd-front/even-back 1-18 sets. Only one par row is printed, so the same par is recorded under both genders. RATINGS: three conflicting sets exist. 18Birdies and Greenskeeper share one set (Gold 73.3/142, Blue 71.1/135, White 69.5/129) but 18Birdies pairs it with current yardages while Greenskeeper pairs it with the old shorter ones - i.e. 18Birdies spliced old ratings onto the new card. I used GolfPass, which is self-consistent with current yardages and is corroborated for the Blue tee by BlueGolf ('Blue-Championship M 71.9/135'). 18Birdies also gives Red as 5,239, against 5,305 from both GolfPass and the club's own website; I used 5,305. BlueGolf additionally references a 'Blue-Island' rating (M 70.6/133), suggesting an alternate routing exists - not recorded, insufficient detail."
+ },
+ {
+  "facility": {
+   "name": "The Pinnacle Golf Club at Cedar Creek Lake",
+   "address": "200 Pinnacle Club Dr",
+   "city": "Mabank",
+   "state_province": "TX",
+   "postal_code": "75156",
+   "country": "USA",
+   "website_url": "https://pinnaclegolfclub.com/"
+  },
+  "courses": [
+   {
+    "name": "Pinnacle",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       3,
+       5,
+       4,
+       3,
+       4,
+       4,
+       5,
+       3,
+       4,
+       5,
+       4,
+       4
+      ],
+      "stroke_index": [
+       5,
+       17,
+       15,
+       9,
+       13,
+       3,
+       11,
+       7,
+       1,
+       18,
+       14,
+       12,
+       8,
+       10,
+       2,
+       4,
+       16,
+       6
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       3,
+       5,
+       4,
+       3,
+       4,
+       4,
+       5,
+       3,
+       4,
+       5,
+       4,
+       4
+      ],
+      "stroke_index": [
+       5,
+       17,
+       15,
+       9,
+       13,
+       3,
+       11,
+       7,
+       1,
+       18,
+       14,
+       12,
+       8,
+       10,
+       2,
+       4,
+       16,
+       6
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6349,
+      "lengths": [
+       377,
+       125,
+       296,
+       494,
+       323,
+       387,
+       208,
+       531,
+       403,
+       165,
+       385,
+       345,
+       460,
+       175,
+       400,
+       494,
+       381,
+       400
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.8,
+        "slope": 132
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 5850,
+      "lengths": [
+       350,
+       110,
+       282,
+       473,
+       309,
+       359,
+       164,
+       506,
+       380,
+       150,
+       353,
+       326,
+       415,
+       150,
+       373,
+       461,
+       326,
+       363
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.5,
+        "slope": 126
+       },
+       {
+        "gender": "women",
+        "rating": 76,
+        "slope": 141
+       }
+      ]
+     },
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 5116,
+      "lengths": [
+       324,
+       99,
+       253,
+       427,
+       275,
+       319,
+       117,
+       462,
+       290,
+       120,
+       318,
+       276,
+       399,
+       130,
+       318,
+       390,
+       310,
+       289
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 67.9,
+        "slope": 122
+       },
+       {
+        "gender": "women",
+        "rating": 71.2,
+        "slope": 131
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/pinnacle_golf_club_dallas/scorecard.cfm",
+    "note": "Full per-hole grid (Blue/White/Gold yardages, par, men's and women's handicap rows) plus per-gender ratings. Primary source for all per-hole data. URL slug is 'pinnacle_golf_club_dallas'."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/mabank/pinnacle-golf-club",
+    "note": "Corroborates the Blue tee independently: 6,349 yards, par 72, rating 71.8, slope 132, Don January design opened 1988. Evidence via search-result summary only - GolfLink is not fetchable."
+   },
+   {
+    "type": "official_rating_db",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3130-pinnacle-golf-club",
+    "note": "CONFLICTING four-tee sheet: Blue 6,608 71.0/122; White 6,021 men 69.2/120 and women 74.6/128; Gold 5,760 men 67.4/118 and women 72.5/123; Red 5,196 men 66.0/115 and women 70.8/120. Not used - see collection notes."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC - all three tees reconcile exactly to their published totals: Blue 3144+3205 = 6,349; White 2933+2917 = 5,850; Gold 2566+2550 = 5,116. Par 36+36 = 72. Men's stroke index is a clean odd-front/even-back split, complete and non-repeating 1-18. CAUTION ON SUB-TOTALS: the Greenskeeper page's rendered OUT/IN cells (Blue 3,344/3,605) and its bottom 'totals' block (Blue 6,949, White 6,150, Gold 5,316) do NOT match the per-hole columns and are wrong; the per-hole values themselves sum precisely to the tee-table totals of 6,349/5,850/5,116, so I discarded the sub-total row and kept the hole data. This is exactly the case the arithmetic self-check is meant to catch. SOURCE CONFLICT: GolfPass publishes a materially different four-tee sheet (Blue 6,608 at 71.0/122, plus a Red tee at 5,196) that shares no yardage with the Greenskeeper set. I went with the Greenskeeper/GolfLink figures because two independent sources agree on Blue 6,349 / 71.8 / 132, because those totals reconcile to a real per-hole grid, and because GolfPass's ratings run implausibly low for its own stated lengths (71.0 for 6,608 yards). It is possible the tees were renamed and re-rated - GolfPass's Red at 5,196 is close to Greenskeeper's Gold at 5,116 - so this facility is a good candidate for on-site verification; a fourth (Red) tee may exist that is absent from the recorded grid. The club's own site pinnaclegolfclub.com returns 403 to automated fetch, so the authoritative card could not be checked. One soft inconsistency worth noting: a course description says the par-3 10th plays about 180 yards over a finger of Cedar Creek Lake, while the card gives it 165 from the Blue tee. Men's and women's par and handicap rows were rendered identically by the source and are recorded for both genders. Facility is also published as Pinnacle Golf & Boat Club and simply Pinnacle Golf Club."
+ },
+ {
+  "facility": {
+   "name": "Mansfield National Golf Club",
+   "address": "3750 National Pkwy",
+   "city": "Mansfield",
+   "state_province": "TX",
+   "postal_code": "76063",
+   "country": "USA",
+   "website_url": "https://mansfield-national.com/"
+  },
+  "courses": [
+   {
+    "name": "Mansfield National",
+    "hole_count": 18,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       4,
+       5,
+       4,
+       3,
+       5,
+       4,
+       3,
+       4,
+       3,
+       4,
+       4,
+       5,
+       3,
+       4,
+       5,
+       4,
+       4
+      ],
+      "stroke_index": [
+       7,
+       15,
+       17,
+       9,
+       1,
+       5,
+       3,
+       13,
+       11,
+       14,
+       6,
+       10,
+       12,
+       18,
+       8,
+       4,
+       16,
+       2
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue (Back)",
+      "unit": "yards",
+      "published_total": 6850,
+      "lengths": [
+       403,
+       386,
+       488,
+       402,
+       233,
+       545,
+       454,
+       160,
+       369,
+       199,
+       418,
+       354,
+       503,
+       166,
+       397,
+       554,
+       396,
+       423
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 72.7,
+        "slope": 128
+       }
+      ]
+     },
+     {
+      "name": "White (Middle)",
+      "unit": "yards",
+      "published_total": 6232,
+      "lengths": [
+       363,
+       355,
+       456,
+       367,
+       200,
+       502,
+       415,
+       136,
+       323,
+       171,
+       372,
+       327,
+       478,
+       128,
+       367,
+       523,
+       352,
+       397
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.4,
+        "slope": 119
+       },
+       {
+        "gender": "women",
+        "rating": 76.8,
+        "slope": 130
+       }
+      ]
+     },
+     {
+      "name": "Red (Forward)",
+      "unit": "yards",
+      "published_total": 5207,
+      "lengths": [
+       296,
+       309,
+       387,
+       316,
+       127,
+       411,
+       353,
+       103,
+       280,
+       100,
+       332,
+       264,
+       415,
+       82,
+       320,
+       464,
+       287,
+       361
+      ],
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 70.2,
+        "slope": 116
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/mansfield_national_golf_club/scorecard.cfm",
+    "note": "Greenskeeper.org - primary source. Full per-hole grid for all three tees, par row, Men's HCP row, and tee ratings/slopes."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/16373-mansfield-national-golf-club/scorecard",
+    "note": "GolfPass scorecard page - independently confirms the White/Middle (6,232) and Red (5,207) per-hole yardages, par and handicap rows digit-for-digit."
+   },
+   {
+    "type": "other",
+    "url": "https://18birdies.com/golf-courses/club/8c821630-86ac-11e4-8c28-020000005b00/mansfield-national-golf-course",
+    "note": "18Birdies - publishes a DIFFERENT, apparently newer 5-tee configuration and re-rated values (see collection_notes). Not used for the transcribed grid."
+   },
+   {
+    "type": "course_website",
+    "url": "https://arcisgolf.com/clubs/mansfield_national_golf_club/home",
+    "note": "Official site. mansfield-national.com 301-redirects here (Arcis Golf operates the city-owned course). No HTML scorecard table published."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC VERIFIED - all three tees sum exactly to their published totals. Blue: 3,440 out + 3,410 in = 6,850 (published 6,850). White/Middle: 3,117 + 3,115 = 6,232 (published 6,232). Red/Forward: 2,582 + 2,625 = 5,207 (published 5,207). Par 36+36=72. Stroke index is a complete 1-18 permutation (odds on the front nine, evens on the back). Greenskeeper and GolfPass agree digit-for-digit on every per-hole yardage, par and handicap value, so confidence in the grid is high.\n\nTOTAL CONFLICT RESOLVED (forward tee): the assignment hint and the GolfPass course-overview page both state 5,263 for the forward tee, but the GolfPass *scorecard* page and Greenskeeper both publish 5,207, and the per-hole yardages sum to exactly 5,207. 5,263 appears to be a stale marketing figure; 5,207 is used here.\n\nPAR/HANDICAP GENDER: recorded as \"unisex\". Greenskeeper labels the handicap row \"Men's HCP\" but publishes no separate women's row (its template does render one for other courses, e.g. Oak Hollow and Mesquite), and GolfPass shows a single undifferentiated HCP row. Per the one-undifferentiated-row rule this is unisex; a human transcribing the physical card should check whether a women's handicap row exists.\n\nUNRESOLVED RATING GENERATION CONFLICT: two rating sets are in circulation and I could not determine which is current. (A) Greenskeeper + GolfPass, used above and matching the 6,850/6,232/5,207 yardages exactly: Back 72.7/128 men; Middle 69.4/119 men and 76.8/130 women; Forward 70.2/116 women. (B) 18Birdies publishes a five-tee, fully re-rated set: Black 6,877 (men 73.7/129, women 80.1/140), Gold 6,232 (men 70.5/122, women 76.5/133), Silver 5,753 (men 68.2/117, women 74.0/127), Silver/Red 5,448 (no ratings given), Red 5,207 (men 65.8/112, women 70.8/121). Note set B's Gold and Red totals equal set A's Middle and Forward exactly, so those two tees are the same boxes re-rated - likely a WHS re-rating - while the back tee has been lengthened 6,850 -> 6,877 (18Birdies' front nine is 3,467 vs. 3,440; the back nine is identical at 3,410). I kept set A because it pairs tee-for-tee with the per-hole yardages I actually transcribed; pairing a 6,850 grid with a 6,877 rating would be internally inconsistent. The two Silver tees (5,753 and 5,448) are omitted entirely - no per-hole yardages are published for them anywhere I could reach. A human should reconcile against the USGA/Texas Golf Association rating database."
+ },
+ {
+  "facility": {
+   "name": "Oak Hollow Golf Course",
+   "address": "3005 N McDonald St",
+   "city": "McKinney",
+   "state_province": "TX",
+   "postal_code": "75071",
+   "country": "USA",
+   "website_url": "https://www.oakhollowgolf.com/"
+  },
+  "courses": [
+   {
+    "name": "Oak Hollow",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       3,
+       4,
+       4,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4,
+       3,
+       4,
+       4,
+       4,
+       3,
+       4,
+       4,
+       5
+      ],
+      "stroke_index": [
+       17,
+       7,
+       9,
+       13,
+       3,
+       5,
+       11,
+       1,
+       15,
+       12,
+       10,
+       18,
+       2,
+       16,
+       4,
+       6,
+       14,
+       8
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       3,
+       4,
+       4,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4,
+       3,
+       4,
+       4,
+       4,
+       3,
+       4,
+       4,
+       5
+      ],
+      "stroke_index": [
+       17,
+       7,
+       9,
+       13,
+       3,
+       5,
+       11,
+       1,
+       15,
+       12,
+       10,
+       18,
+       2,
+       16,
+       4,
+       6,
+       14,
+       8
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6679,
+      "lengths": [
+       363,
+       203,
+       406,
+       412,
+       444,
+       555,
+       363,
+       421,
+       168,
+       405,
+       170,
+       393,
+       435,
+       378,
+       204,
+       419,
+       396,
+       544
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.6,
+        "slope": 116
+       },
+       {
+        "gender": "women",
+        "rating": 77.4,
+        "slope": 138
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 6077,
+      "lengths": [
+       328,
+       180,
+       354,
+       371,
+       369,
+       537,
+       321,
+       386,
+       148,
+       374,
+       142,
+       354,
+       432,
+       349,
+       187,
+       384,
+       354,
+       507
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 68.6,
+        "slope": 113
+       },
+       {
+        "gender": "women",
+        "rating": 74.2,
+        "slope": 131
+       }
+      ]
+     },
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 5155,
+      "lengths": [
+       315,
+       150,
+       325,
+       345,
+       315,
+       440,
+       265,
+       285,
+       95,
+       345,
+       125,
+       305,
+       355,
+       205,
+       160,
+       335,
+       325,
+       465
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 65,
+        "slope": 108
+       },
+       {
+        "gender": "women",
+        "rating": 69.4,
+        "slope": 115
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 5080,
+      "lengths": [
+       308,
+       144,
+       318,
+       341,
+       312,
+       436,
+       259,
+       282,
+       91,
+       340,
+       123,
+       303,
+       350,
+       202,
+       156,
+       331,
+       323,
+       461
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 64.4,
+        "slope": 106
+       },
+       {
+        "gender": "women",
+        "rating": 68.9,
+        "slope": 112
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/oak_hollow_golf_course_mckinney_tx/scorecard.cfm",
+    "note": "Greenskeeper.org - full per-hole grid for Blue/White/Red, par row, and separate Men's and Women's HDCP rows. Used for the per-hole grid and the gendered handicap rows."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3149-oak-hollow-golf-course/scorecard",
+    "note": "GolfPass scorecard page - confirms Blue/White/Red per-hole yardages digit-for-digit and is the ONLY source for the Gold tee (5,155) per-hole yardages. Also source of the Gold women's rating."
+   },
+   {
+    "type": "other",
+    "url": "https://18birdies.com/golf-courses/club/8ca83bd0-86ac-11e4-8c28-020000005b00/oak-hollow-golf-course",
+    "note": "18Birdies - independently confirms the GolfPass rating set and supplies women's ratings for Blue and White."
+   },
+   {
+    "type": "scorecard_image",
+    "url": "https://www.oakhollowgolf.com/wp-content/uploads/sites/8275/2022/10/Oak-Hollow-Scorecard.pdf",
+    "note": "Official course scorecard, PDF only - NOT machine-readable here. Recommended for human transcription to settle the rating-generation conflict below. The oakhollowgolf.com/course-details/ page returns 403 to automated fetches."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "RENAME CONFIRMED: this is the City of McKinney municipal course formerly listed as McKinney Municipal Golf Course; directories carry both names for the same property at 3005 N McDonald St.\n\nARITHMETIC VERIFIED - all four tees sum exactly to their published totals. Blue: 3,335 + 3,344 = 6,679. White: 2,994 + 3,083 = 6,077. Gold: 2,535 + 2,620 = 5,155. Red: 2,491 + 2,589 = 5,080. Par 35+35=70 (only two par 5s - holes 6 and 18 - and four par 3s, hence par 70). Stroke index is a complete 1-18 permutation. Greenskeeper and GolfPass agree digit-for-digit on every per-hole yardage for Blue, White and Red; the Gold tee rests on GolfPass alone, but its own out/in subtotals check out.\n\nPAR/HANDICAP GENDER: Greenskeeper prints separate Men's and Women's HDCP rows whose values are identical, so both genders are provided with the same values per the stated rule. The par row is undifferentiated and is therefore repeated for both.\n\nRATING CONFLICT RESOLVED: Greenskeeper (echoed by GolfLink) publishes an older set - Blue 72.3/121, White 69.2/118, Red 68.8/115 women. GolfPass and 18Birdies independently agree on the newer, per-gender-complete set used above (Blue men 71.6/116, White men 68.6/113, Red men 64.4/106 and women 68.9/112). Two-source agreement plus completeness across both genders and four tees is why the newer set was chosen; Greenskeeper's rating table also predates the Gold tee entirely. Flagging this because the swing on the Blue tee is material (72.3/121 vs 71.6/116).\n\nMINOR SOURCE ERROR NOTED: a search-result blurb (golfify/aggregator text) claims the No. 1 handicap is \"No. 15, a 423-yard par 4\". That is wrong on this card - hole 15 is a 204-yard par 3, and all three primary sources put the No. 1 handicap on hole 8 (421 yards, par 4). The same blurb's other claim, that hole 1 is 363 yards at the No. 17 handicap, does match. Disregarded the erroneous half."
+ },
+ {
+  "facility": {
+   "name": "WestRidge Golf Course",
+   "address": "9055 N Cotton Ridge Rd",
+   "city": "McKinney",
+   "state_province": "TX",
+   "postal_code": "75072",
+   "country": "USA",
+   "website_url": "https://www.westridgegolfcourse.com/"
+  },
+  "courses": [
+   {
+    "name": "WestRidge",
+    "hole_count": 18,
+    "pars": {
+     "unisex": {
+      "par": [
+       5,
+       4,
+       3,
+       4,
+       3,
+       5,
+       3,
+       4,
+       5,
+       4,
+       5,
+       3,
+       5,
+       3,
+       4,
+       3,
+       5,
+       4
+      ],
+      "stroke_index": [
+       6,
+       2,
+       14,
+       8,
+       18,
+       10,
+       16,
+       4,
+       12,
+       11,
+       1,
+       15,
+       3,
+       17,
+       7,
+       13,
+       9,
+       5
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 7041,
+      "lengths": [
+       575,
+       447,
+       175,
+       354,
+       157,
+       536,
+       216,
+       489,
+       616,
+       351,
+       567,
+       186,
+       567,
+       174,
+       471,
+       195,
+       509,
+       456
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 74,
+        "slope": 131
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 6651,
+      "lengths": [
+       550,
+       425,
+       154,
+       339,
+       133,
+       520,
+       190,
+       484,
+       585,
+       322,
+       550,
+       164,
+       545,
+       148,
+       450,
+       173,
+       484,
+       435
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 72,
+        "slope": 127
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 6004,
+      "lengths": [
+       503,
+       395,
+       114,
+       286,
+       110,
+       480,
+       159,
+       406,
+       525,
+       291,
+       523,
+       156,
+       510,
+       127,
+       422,
+       142,
+       452,
+       403
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 68.6,
+        "slope": 115
+       },
+       {
+        "gender": "women",
+        "rating": 75.3,
+        "slope": 137
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "published_total": 5293,
+      "lengths": [
+       481,
+       385,
+       104,
+       257,
+       87,
+       418,
+       110,
+       337,
+       490,
+       259,
+       423,
+       127,
+       453,
+       101,
+       344,
+       132,
+       431,
+       354
+      ],
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 70.8,
+        "slope": 120
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/westridge_golf_course_texas/scorecard.cfm",
+    "note": "Greenskeeper.org - primary source. Full per-hole grid for all four tees, par row, Men's HDCP row, and the complete five-line rating table including the women's rating on the White tee."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/22740-westridge-golf-course",
+    "note": "GolfPass - confirms the rating/slope table exactly for all five tee-gender combinations. Its per-hole row differs slightly (see collection_notes) and was not used."
+   },
+   {
+    "type": "other",
+    "url": "https://www.hole19golf.com/courses/westridge-golf-course",
+    "note": "Hole19 - independently confirms the par sequence and the stroke-index row digit-for-digit, breaking the tie against GolfPass's off-by-one handicap row."
+   },
+   {
+    "type": "other",
+    "url": "https://foretee.com/courses/texas/mckinney/usa/westridge-golf-course/14587",
+    "note": "ForeTee - corroborates the 5,293-to-7,041 yardage span and the 74.0/131 back-tee rating, supporting Greenskeeper's totals over competing figures."
+   },
+   {
+    "type": "scorecard_image",
+    "url": "https://www.westridgegolfcourse.com/templates/yootheme/cache/d7/scorecard-d7fb3c98.png",
+    "note": "Official scorecard published on westridgegolfcourse.com/golf/course as a PNG IMAGE only - not machine-readable. Recorded for human transcription."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC VERIFIED - all four tees sum exactly to their published totals. Black: 3,565 + 3,476 = 7,041. Blue: 3,380 + 3,271 = 6,651. White: 2,978 + 3,026 = 6,004. Red: 2,669 + 2,624 = 5,293. Par 36+36=72.\n\n6-6-6 LAYOUT CONFIRMED from the transcribed par row, which independently validates the marketing claim in the hint: six par 3s (holes 3, 5, 7, 12, 14, 16), six par 4s (holes 2, 4, 8, 10, 15, 18) and six par 5s (holes 1, 6, 9, 11, 13, 17).\n\nSTROKE-INDEX CONFLICT RESOLVED: Greenskeeper and GolfPass disagreed on the handicap row by exactly 1 on every hole - Greenskeeper puts the even indices on the front nine (SI 1 on hole 11), GolfPass puts the odd indices there (SI 1 on hole 2). A uniform off-by-one across all 18 holes indicates one provider shifted the odd/even nine allocation rather than a genuine men's/women's difference. Hole19 was fetched as a tiebreaker and matches Greenskeeper digit-for-digit (6,2,14,8,18,10,16,4,12 / 11,1,15,3,17,7,13,9,5), so Greenskeeper's row is used and GolfPass is treated as the outlier.\n\nMINOR YARDAGE CONFLICT: GolfPass lists hole 5 at 159 yards for a Black-tee total of 7,043; Greenskeeper lists 157 for 7,041. Both are internally self-consistent, differing only on that one hole. Greenskeeper's 7,041 is used because ForeTee independently cites the 5,293-7,041 span and because Greenskeeper is the only source with a verified four-tee grid. A 2-yard discrepancy on one hole is the residual uncertainty.\n\nSTALE TEE SETS IGNORED: some aggregators list a different five-tee set (Black 7043, Blue 6651, White 6153, Gold 5595, Red 5160), and golfscorekeeper lists White 6,004 / Red 5,160. Greenskeeper and GolfPass agree exactly on the rating table for the four tees reported here (7,041 / 6,651 / 6,004 / 5,293), so that configuration was kept. No per-hole data is published anywhere reachable for a Gold tee, so none was invented.\n\nPAR/HANDICAP GENDER: recorded as \"unisex\" - Greenskeeper publishes only a Men's HDCP row with no women's counterpart, and Hole19 shows a single undifferentiated Stroke Index row. Note that the White tee nonetheless carries both a men's and a women's rating over the one set of yardages, which is represented as two rating entries on a single tee rather than a duplicated tee."
+ },
+ {
+  "facility": {
+   "name": "Mesquite Golf Club",
+   "address": "825 Interstate 30",
+   "city": "Mesquite",
+   "state_province": "TX",
+   "postal_code": "75150",
+   "country": "USA",
+   "website_url": "https://www.mesquitegc.com/"
+  },
+  "courses": [
+   {
+    "name": "Mesquite Golf Club",
+    "hole_count": 18,
+    "pars": {
+     "unisex": {
+      "par": [
+       4,
+       4,
+       5,
+       3,
+       4,
+       3,
+       5,
+       4,
+       4,
+       4,
+       5,
+       3,
+       4,
+       4,
+       3,
+       5,
+       3,
+       4
+      ],
+      "stroke_index": [
+       12,
+       14,
+       10,
+       18,
+       6,
+       2,
+       8,
+       16,
+       4,
+       17,
+       11,
+       13,
+       3,
+       15,
+       7,
+       1,
+       9,
+       5
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 6885,
+      "lengths": [
+       393,
+       442,
+       529,
+       184,
+       400,
+       220,
+       532,
+       404,
+       402,
+       399,
+       520,
+       217,
+       414,
+       401,
+       184,
+       560,
+       237,
+       447
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 74.2,
+        "slope": 128
+       },
+       {
+        "gender": "women",
+        "rating": 78.5,
+        "slope": 140
+       }
+      ]
+     },
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 6434,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.8,
+        "slope": 127
+       },
+       {
+        "gender": "women",
+        "rating": 77.9,
+        "slope": 135
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 5913,
+      "lengths": [
+       334,
+       383,
+       472,
+       156,
+       363,
+       160,
+       483,
+       359,
+       358,
+       356,
+       465,
+       159,
+       363,
+       320,
+       156,
+       480,
+       201,
+       345
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 68.7,
+        "slope": 119
+       },
+       {
+        "gender": "women",
+        "rating": 73.7,
+        "slope": 126
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "published_total": 4988,
+      "lengths": [
+       255,
+       330,
+       450,
+       131,
+       335,
+       132,
+       429,
+       311,
+       302,
+       314,
+       409,
+       111,
+       259,
+       248,
+       131,
+       408,
+       144,
+       289
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 65.1,
+        "slope": 112
+       },
+       {
+        "gender": "women",
+        "rating": 68.3,
+        "slope": 123
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://18birdies.com/golf-courses/club/8be539f0-86ac-11e4-8c28-020000005b00/mesquite-golf-club",
+    "note": "18Birdies - primary source for the CURRENT configuration. Complete Black-tee per-hole grid that sums exactly to the published 6,885, plus the full four-tee rating table for both genders."
+   },
+   {
+    "type": "other",
+    "url": "https://golfscore.win/course.php?id=1",
+    "note": "golfscore.win - source of the Blue and White per-hole yardages, both of which sum exactly to the official 5,913 and 4,988. Its Black and Gold columns do NOT match current totals and were discarded."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3162-mesquite-golf-course",
+    "note": "GolfPass - confirms the four-tee sheet (6,885 / 6,434 / 5,913 / 4,988) and the men's ratings, and confirms par and stroke index. Its per-hole Black row misreads hole 6 as 200 (see collection_notes)."
+   },
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/mesquite_golf_club_mesquite_dallas/scorecard.cfm",
+    "note": "Greenskeeper.org - STALE. Documents the pre-renovation configuration under the opposite nine numbering. Not used for the reported data; retained as evidence for the renumbering finding."
+   },
+   {
+    "type": "scorecard_image",
+    "url": "https://www.mesquitegc.com/wp-content/uploads/sites/6778/2018/01/mesquite-scorecard.pdf",
+    "note": "Official scorecard, PDF only - fetched but returned unparseable binary, so NOT machine-readable here. Needed for human transcription of the Gold tee per-hole yardages, the one gap in this record."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "IDENTITY: confirmed ONE facility. 'Mesquite Municipal Golf Course' and the '825 N Hwy 67' address are the same city-owned property at 825 Interstate 30 (I-30/US-67 frontage); no duplicate created.\n\nMAJOR FINDING - THE NINES HAVE BEEN FLIPPED AND THE COURSE RE-TEED. Greenskeeper's card is stale and describes a superseded configuration. Proof: Greenskeeper's back-nine par sequence (4,4,5,3,4,3,5,4,4) is exactly the current front-nine sequence, and its front-nine sequence (4,5,3,4,4,3,5,3,4) is exactly the current back nine. Corroborating detail: GolfPass describes the signature hole as 'a 418-yard par 4 that doglegs right' at hole 13, which is Greenskeeper's hole 4 (418, par 4) - a clean +9 rotation. The course was also lengthened; Greenskeeper's back tee is 6,280 against the current 6,885. Greenskeeper's old card additionally carried a women's par of 72 (hole 9 played as a par 5); the current card publishes a single undifferentiated par row of 71, so par/handicap are recorded as unisex. All figures reported here are the CURRENT configuration.\n\nARITHMETIC VERIFIED on every tee for which per-hole data is reported. Black: 3,506 out + 3,379 in = 6,885, matching the published 6,885 exactly. Blue: 3,068 + 2,845 = 5,913, matching exactly. White: 2,675 + 2,313 = 4,988, matching exactly. Par 36 + 35 = 71. Stroke index is a complete 1-18 permutation (evens front, odds back) and is confirmed identically by three independent sources (18Birdies, golfscore.win, GolfPass).\n\nHOLE 6 DISCREPANCY RESOLVED BY ARITHMETIC: GolfPass gives hole 6 as 200 yards, which makes its own Black row sum to 6,865 against its stated 6,885 - internally inconsistent by 20. 18Birdies gives 220, which sums to exactly 6,885. The arithmetic check settles it in favor of 220; every other Black-tee value is identical between the two sources.\n\nGOLD TEE LENGTHS DELIBERATELY OMITTED. The Gold tee's published total of 6,434 is well attested (GolfPass and 18Birdies agree), but the only per-hole Gold column I could find (golfscore.win) sums to 6,284 - 150 yards short - so it is stale and was NOT used. Rather than interpolate, the tee is reported with its published total and ratings but no lengths. golfscore.win's Black column is likewise stale (sums to 6,763, not 6,885) and was discarded; its Blue and White columns were kept precisely because they sum to the current official totals to the yard, consistent with the renovation having lengthened only the two back tee sets.\n\nWOMEN'S RATINGS: taken from 18Birdies, which publishes a complete both-gender table for all four tees. GolfPass's tee sheet gives lower women's figures for Blue (70.0/118) and White (67.3/112); those look implausible for 5,913 and 4,988 yards, whereas 18Birdies' 73.7/126 and 68.3/123 are consistent with the yardages, and 18Birdies matches GolfPass exactly on every men's rating. Flagged in case a human wants to verify against the USGA/TGA database."
+ },
+ {
+  "facility": {
+   "name": "Turtle Hill Golf Course",
+   "address": "7708 N FM 373",
+   "city": "Muenster",
+   "state_province": "TX",
+   "postal_code": "76252",
+   "country": "USA",
+   "website_url": "https://playtheturtle.com/"
+  },
+  "courses": [
+   {
+    "name": "Turtle Hill",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       4,
+       5,
+       3,
+       4,
+       4,
+       5,
+       3,
+       4,
+       4,
+       3,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       5
+      ],
+      "stroke_index": [
+       9,
+       5,
+       14,
+       8,
+       4,
+       18,
+       11,
+       16,
+       1,
+       17,
+       15,
+       3,
+       10,
+       2,
+       13,
+       7,
+       12,
+       6
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       4,
+       5,
+       3,
+       4,
+       4,
+       5,
+       3,
+       4,
+       4,
+       3,
+       4,
+       3,
+       4,
+       5,
+       4,
+       4,
+       5
+      ],
+      "stroke_index": [
+       7,
+       5,
+       1,
+       11,
+       10,
+       18,
+       4,
+       15,
+       13,
+       17,
+       16,
+       8,
+       14,
+       9,
+       3,
+       12,
+       2,
+       6
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "lengths": [
+       423,
+       336,
+       505,
+       193,
+       393,
+       356,
+       561,
+       152,
+       435,
+       290,
+       197,
+       365,
+       169,
+       423,
+       505,
+       351,
+       342,
+       514
+      ],
+      "published_total": 6510,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.2,
+        "slope": 127
+       }
+      ]
+     },
+     {
+      "name": "White",
+      "unit": "yards",
+      "lengths": [
+       384,
+       310,
+       497,
+       162,
+       383,
+       331,
+       525,
+       136,
+       430,
+       280,
+       179,
+       323,
+       146,
+       399,
+       461,
+       322,
+       337,
+       473
+      ],
+      "published_total": 6078,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.4,
+        "slope": 121
+       },
+       {
+        "gender": "women",
+        "rating": 73.9,
+        "slope": 127
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "lengths": [
+       316,
+       253,
+       390,
+       124,
+       305,
+       275,
+       390,
+       97,
+       299,
+       233,
+       160,
+       247,
+       95,
+       367,
+       367,
+       228,
+       270,
+       405
+      ],
+      "published_total": 4821,
+      "ratings": [
+       {
+        "gender": "women",
+        "rating": 68.9,
+        "slope": 114
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "scorecard_image",
+    "url": "https://lightspeedweb.site/playtheturtle/wp-content/uploads/sites/45/2021/07/course_scorecard.jpg",
+    "note": "PRIMARY SOURCE. Official scanned Turtle Hill scorecard image linked from the course's own Course Details page. Downloaded and read visually (upscaled 5x with LANCZOS to resolve digits). Every per-hole yardage, par, handicap and rating in this record is transcribed from this image."
+   },
+   {
+    "type": "course_website",
+    "url": "https://playtheturtle.com/course-details/",
+    "note": "Official course website. Publishes the scorecard only as the JPG image above; no HTML scorecard table exists on the site."
+   },
+   {
+    "type": "course_website",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3190-turtle-hill-golf-course/scorecard",
+    "note": "GolfPass. Its TEE SHEET independently corroborates Blue 6510/71.2/127 (M), White 6078/69.4/121 (M) and White 6078/73.9/127 (W), and the Red total of 4821. Its Red rating (64.9/154) conflicts with the official card and was NOT used. Its per-hole yardage grid did not sum to any published total and was discarded as unreliable."
+   },
+   {
+    "type": "other",
+    "url": "https://www.allgolfholes.com/courses/texas/turtle-hill-golf-course",
+    "note": "AllGolfHoles. Returned an incomplete grid (holes 2, 5 and 15 missing) but its par and handicap values for the 15 holes it did return match the official card exactly on every hole - used only as a cross-check of the par and stroke-index rows, not as a yardage source."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/muenster/turtle-hill-golf-course",
+    "note": "GolfLink (fetch-blocked; search summary only). Claims a longest tee of 6742 yds, 72.2/123, and cites hole 9 as 457 yds and hole 11 as 204 yds. These figures match no tee on the official card and are NOT reflected in this record - see collection_notes."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "COMPLETE, fully arithmetic-verified from the official scorecard image. All three tees have complete 18-hole yardages plus separate men's and women's par/stroke-index rows.\n\nARITHMETIC SELF-CHECK (all passed against the values printed on the card):\n- Blue: front 423+336+505+193+393+356+561+152+435 = 3354 = printed FRONT; back 290+197+365+169+423+505+351+342+514 = 3156 = printed BACK; 3354+3156 = 6510 = printed TOTAL.\n- White: front = 3158 = printed; back = 2920 = printed; total 6078 = printed.\n- Red: front = 2449 = printed; back = 2372 = printed; total 4821 = printed.\n- Par: 36 front + 36 back = 72, matching the printed row for both the men's PAR row and the women's PAR/HANDICAP row.\n- Stroke index: men's {9,5,14,8,4,18,11,16,1,17,15,3,10,2,13,7,12,6} and women's {7,5,1,11,10,18,4,15,13,17,16,8,14,9,3,12,2,6} each contain 1-18 exactly once.\n- Par/length consistency confirmed: every hole marked par 3 (4, 8, 11, 13) and par 5 (3, 7, 15, 18) has yardages consistent with that par on all three tees.\n\nGENDER STRUCTURE: the card prints a men's rating block (Blue, White) and a women's rating block (White, Red). White is rated for BOTH genders over one set of yardages, so it carries two rating entries and is not duplicated as a tee. No men's rating is published for Red and no women's rating for Blue, so none is asserted.\n\nNOTABLE COINCIDENCE (verified, not a transcription error): on the Red tee, holes 14 and 15 are both 367 yards, and holes 3 and 7 are both 390 yards. I re-cropped and re-read these cells at 10x zoom to confirm, and the exact match of the Red front (2449) and back (2372) subtotals independently rules out a misread digit.\n\nSOURCE CONFLICTS:\n1. GolfLink reports a longest tee of 6742 yds / 72.2 / 123, hole 9 at 457 yds and hole 11 at 204 yds. No tee on the official card is 6742 yds (longest is Blue at 6510), and the card's hole 9 is 435/430/299 and hole 11 is 197/179/160. I did not use any GolfLink figure. It appears to describe either a different or an obsolete tee set; I flag it rather than reconcile it.\n2. GolfPass lists the Red (women's) tee as 64.9/154. The official card prints 68.9/114. I used the card. Note the GolfPass slope of 154 would be near the maximum permissible (155) for a 4821-yard par-72 forward tee, which is implausible, further supporting the card.\n\nNothing was interpolated or reconstructed; every number here appears verbatim on the official scorecard."
+ },
+ {
+  "facility": {
+   "name": "Iron Horse Golf Course",
+   "address": "6200 Skylark Circle",
+   "city": "North Richland Hills",
+   "state_province": "TX",
+   "postal_code": "76180",
+   "country": "USA",
+   "website_url": "https://ironhorsetx.com/"
+  },
+  "courses": [
+   {
+    "name": "Iron Horse",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       4,
+       3,
+       4,
+       4,
+       4,
+       4,
+       5,
+       3,
+       4,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4,
+       4,
+       3,
+       4
+      ],
+      "stroke_index": [
+       13,
+       11,
+       3,
+       9,
+       7,
+       1,
+       5,
+       17,
+       15,
+       6,
+       12,
+       14,
+       2,
+       18,
+       8,
+       10,
+       16,
+       4
+      ]
+     },
+     "women": {
+      "par": [
+       4,
+       3,
+       4,
+       4,
+       4,
+       4,
+       5,
+       3,
+       4,
+       4,
+       5,
+       4,
+       4,
+       3,
+       4,
+       4,
+       3,
+       4
+      ],
+      "stroke_index": [
+       1,
+       13,
+       11,
+       9,
+       3,
+       7,
+       15,
+       17,
+       5,
+       6,
+       8,
+       12,
+       2,
+       16,
+       14,
+       10,
+       18,
+       4
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "lengths": [
+       335,
+       182,
+       410,
+       420,
+       433,
+       465,
+       543,
+       158,
+       352,
+       382,
+       525,
+       413,
+       469,
+       218,
+       416,
+       395,
+       205,
+       425
+      ],
+      "published_total": 6746,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 73.5,
+        "slope": 132
+       },
+       {
+        "gender": "women",
+        "rating": 79.9,
+        "slope": 142
+       }
+      ]
+     },
+     {
+      "name": "Green",
+      "unit": "yards",
+      "lengths": [
+       308,
+       165,
+       380,
+       395,
+       419,
+       450,
+       518,
+       145,
+       335,
+       355,
+       503,
+       378,
+       442,
+       182,
+       395,
+       375,
+       180,
+       403
+      ],
+      "published_total": 6328,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 71.6,
+        "slope": 129
+       },
+       {
+        "gender": "women",
+        "rating": 77.6,
+        "slope": 137
+       }
+      ]
+     },
+     {
+      "name": "Horse Track",
+      "unit": "yards",
+      "lengths": [
+       308,
+       145,
+       380,
+       395,
+       419,
+       380,
+       477,
+       145,
+       314,
+       355,
+       456,
+       378,
+       425,
+       182,
+       360,
+       375,
+       140,
+       403
+      ],
+      "published_total": 6037,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 70,
+        "slope": 124
+       },
+       {
+        "gender": "women",
+        "rating": 76,
+        "slope": 134
+       }
+      ]
+     },
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "lengths": [
+       295,
+       145,
+       349,
+       379,
+       383,
+       380,
+       477,
+       133,
+       314,
+       317,
+       456,
+       363,
+       425,
+       137,
+       360,
+       354,
+       140,
+       360
+      ],
+      "published_total": 5767,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 68.6,
+        "slope": 119
+       },
+       {
+        "gender": "women",
+        "rating": 74.5,
+        "slope": 131
+       }
+      ]
+     },
+     {
+      "name": "Silver",
+      "unit": "yards",
+      "lengths": [
+       288,
+       115,
+       304,
+       329,
+       339,
+       334,
+       452,
+       115,
+       275,
+       287,
+       428,
+       337,
+       383,
+       122,
+       279,
+       333,
+       120,
+       317
+      ],
+      "published_total": 5157,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 66,
+        "slope": 114
+       },
+       {
+        "gender": "women",
+        "rating": 71.1,
+        "slope": 122
+       }
+      ]
+     },
+     {
+      "name": "Red",
+      "unit": "yards",
+      "lengths": [
+       288,
+       115,
+       279,
+       284,
+       304,
+       294,
+       325,
+       50,
+       215,
+       287,
+       358,
+       262,
+       322,
+       107,
+       222,
+       268,
+       90,
+       287
+      ],
+      "published_total": 4357,
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 63.1,
+        "slope": 107
+       },
+       {
+        "gender": "women",
+        "rating": 66.8,
+        "slope": 113
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "scorecard_image",
+    "url": "https://dev3.lightspeedweb.site/wp-content/uploads/sites/8/2025/10/2026-Scorecard-2.png",
+    "note": "PRIMARY SOURCE for the per-hole grid. Official '2026 Scorecard (2)' image linked from the course's own Course Details page - the inside panel carrying the full hole-by-hole table (all six tee rows, OUT/IN/TOT, PAR row, HANDICAP M/L row). Downloaded and read visually; the handicap row was re-cropped at 4x to confirm the M/L pairs. Card footer reads 'Golf ScoreCards, Inc. 10/2025'."
+   },
+   {
+    "type": "rating_sticker_image",
+    "url": "https://dev3.lightspeedweb.site/wp-content/uploads/sites/8/2025/10/2026-Scorecard-1.png",
+    "note": "PRIMARY SOURCE for ratings. Official '2026 Scorecard (1)' image - the outside panel printing the MEN'S RATING/SLOPE and LADIES' RATING/SLOPE blocks for all six tees. Also credits course designers Dick Phelps 1989 and Jeff Brauer 2020."
+   },
+   {
+    "type": "course_website",
+    "url": "https://ironhorsetx.com/course-details/",
+    "note": "Official course website. Publishes the 2026 scorecard only as the two PNG images above; no HTML scorecard table on the site."
+   },
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/iron_horse_golf_course_dallas/scorecard.cfm",
+    "note": "Greenskeeper.org. Carries a complete per-hole grid, but it is the PRE-2020-renovation layout (different hole numbering and lengths; tees Black/Green/White/Orange). NOT used for any value in this record - superseded by the official 2026 card. Retained here to document that the widely-mirrored third-party numbers are stale."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/3205-iron-horse-golf-course",
+    "note": "GolfPass. Independently confirms the current six-tee naming (Black, Green, Horse Track, Blue, Silver, Red) and the Blue total of 5767, but its ratings and its Black/Green totals are stale pre-renovation figures. Used only to confirm tee names."
+   },
+   {
+    "type": "other",
+    "url": "https://golfscorekeeper.com/view_course.cfm?State=TX&Course=23196&Country=210",
+    "note": "GolfScorekeeper. Independently corroborates the Blue tee as OUT 2855 / IN 2912 / TOTAL 5767 with rating 68.6 slope 119, matching the official 2026 card exactly on all five figures."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "COMPLETE, fully arithmetic-verified from the official 2026 scorecard. All six tees have complete 18-hole yardages, and both genders have published stroke indexes.\n\nARITHMETIC SELF-CHECK - every one of the six tee rows was summed and matched the card's printed OUT, IN and TOTAL columns exactly:\n- Black 3298 + 3448 = 6746; Green 3115 + 3213 = 6328; Horse Track 2963 + 3074 = 6037; Blue 2855 + 2912 = 5767; Silver 2551 + 2606 = 5157; Red 2154 + 2203 = 4357. Eighteen independent subtotal checks, all clean.\n- Par: 35 front + 35 back = 70, matching the printed row.\n- Stroke index: men's {13,11,3,9,7,1,5,17,15,6,12,14,2,18,8,10,16,4} and women's {1,13,11,9,3,7,15,17,5,6,8,12,2,16,14,10,18,4} each contain 1-18 exactly once.\n- Par/length consistency confirmed: the par-3 holes (2, 8, 14, 17) and par-5 holes (7, 11) match short/long yardages across all six tees.\n\nPAR/HANDICAP STRUCTURE: the card prints ONE undifferentiated PAR row but an explicitly gender-split 'HANDICAP M/L' row (e.g. hole 1 reads '13/1'). I therefore recorded men and women as separate entries carrying the identical shared par array with their own distinct stroke indexes, rather than collapsing to unisex, so the published women's stroke index is not lost.\n\nRENOVATION - IMPORTANT: the Jeff Brauer renovation completed September 2020 both RENUMBERED and re-lengthened the holes. The current hole 1 is 335 yds from the Black tee; the pre-renovation hole 1 was 417. Consequently nearly every third-party database is wrong for this course. Widely-mirrored stale figures include 'Black 6679 / 72.6 / 127' (GolfPass, Greenskeeper) and '6580 / 71.8 / 130' (GolfLink). The current official card reads Black 6746 yds, men's 73.5/132. I used the official card throughout and asserted none of the stale figures.\n\nGENUINE ODDITY (verified, not a typo): hole 8 from the Red tee is printed as 50 yards - an extreme forward tee on a par 3 (Black plays 158). It is on the card and the Red front subtotal of 2154 only balances with 50 in place, so it is retained as printed.\n\nAlso note the women's Black rating of 79.9/142 is unusually high but is exactly as printed and is within valid bounds.\n\nNothing was interpolated or reconstructed; every number here appears verbatim on the official 2026 scorecard."
+ }
+]
