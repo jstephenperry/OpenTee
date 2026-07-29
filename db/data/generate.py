@@ -115,8 +115,10 @@ def validate_course(facility_name, course, problems, warnings):
 
     pars = course.get("pars") or {}
     if not pars:
-        problems.append(f"{where}: no par data")
-        return False
+        # Legal and worth keeping: the schema treats per-hole par as optional, so a
+        # course whose tee sheet is published but whose card is not still yields a
+        # real facility, course, tees and ratings. Absent par is absent rows.
+        warnings.append(f"{where}: no published par data — course carries tees/ratings only")
     for gender, block in list(pars.items()):
         if gender not in GENDERS:
             problems.append(f"{where}: unknown par gender {gender!r}")
@@ -130,9 +132,10 @@ def validate_course(facility_name, course, problems, warnings):
         if any(not isinstance(p, int) or not 3 <= p <= 7 for p in par_list):
             problems.append(f"{where}: {gender} par values outside 3-7: {par_list}")
             ok = False
+        # Scale the sanity band with hole count so par-3 and short courses
+        # (6 holes x par 3 = 18) do not look anomalous.
         total_par = sum(par_list)
-        expected = (27, 80) if holes > 9 else (25, 40)
-        if not expected[0] <= total_par <= expected[1]:
+        if not 3 * holes <= total_par <= int(4.6 * holes):
             warnings.append(f"{where}: {gender} par total {total_par} is unusual for {holes} holes")
 
         si = block.get("stroke_index")
