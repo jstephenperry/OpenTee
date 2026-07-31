@@ -22,6 +22,38 @@ COUNTRIES = {
     "USA": "US", "US": "US", "UNITED STATES": "US", "": "US", None: "US",
 }
 
+# Facilities the discovery pass explicitly rejected — private member-only clubs,
+# permanently closed courses, and practice-only sites. A later completeness pass
+# can legitimately re-surface a name that an earlier pass rejected, so this
+# blocklist is enforced here at the point data enters the dataset rather than
+# relying on every upstream step to remember. Keyed by normalized facility name;
+# the reason is kept so the exclusion is auditable rather than mysterious.
+BLOCKLIST = {
+    "heathgolfyachtclub": "private member-only (Roy Bechtol course inside a residential club)",
+    "losriscountryclub": "permanently closed — now a city park",
+    "theclubatlosrios": "permanently closed — now a city park",
+    "gentlecreekcountryclub": "now private, member-only (Arcis)",
+    "gentlecreekgolfclub": "now private, member-only (Arcis)",
+    "cedarcreekcountryclub": "private",
+    "theoakscountryclub": "private/member, no confirmable public tee times",
+    "leonardgolflinks": "practice and instruction facility, no rated course",
+    "leatherwoodranchgolfcourse": "permanently closed",
+    "pecantrailsgolfcourse": "permanently closed",
+    "northmesquitegolfcourse": "permanently closed",
+    "hankhaneygolfranchatvistaridge": "permanently closed",
+    "threeoakspar3golfcourse": "permanently closed",
+    "funcitygolfcourse": "closed",
+    "icarefitnesscentergolfcourse": "not verifiable as a real rated course",
+}
+
+
+def blocked(name):
+    key = "".join(ch for ch in (name or "").lower() if ch.isalnum())
+    for bad, reason in BLOCKLIST.items():
+        if key == bad or key.startswith(bad) or bad.startswith(key):
+            return reason
+    return None
+
 
 def norm_facility(f):
     state = (f.get("state_province") or "").strip()
@@ -110,6 +142,10 @@ def main(paths):
                 f = norm_facility(entry.get("facility") or {})
                 if not f["name"]:
                     dropped.append(("<unnamed facility>", path))
+                    continue
+                reason = blocked(f["name"])
+                if reason:
+                    dropped.append((f["name"], f"blocklisted: {reason}"))
                     continue
                 key = (f["name"].lower(), (f["city"] or "").lower())
                 courses = [norm_course(c) for c in entry.get("courses") or []]
