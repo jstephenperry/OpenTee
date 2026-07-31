@@ -124,9 +124,49 @@ public sealed class ScorecardRepository
         static int? Int(NpgsqlDataReader r, int i) => r.IsDBNull(i) ? null : r.GetInt16(i);
     }
 
+    /// <summary>
+    /// Looks a course up by slug directly. Deliberately NOT built on SearchCoursesAsync,
+    /// which is LIMITed for the UI list and would silently fail to find courses beyond
+    /// that limit. Slugs are unique per facility, so an unqualified slug can legitimately
+    /// match more than once; pass "facility-slug/course-slug" to disambiguate.
+    /// </summary>
     public async Task<CourseSummary?> FindCourseBySlugAsync(string slug, CancellationToken ct = default)
     {
-        var all = await SearchCoursesAsync("", ct);
-        return all.FirstOrDefault(c => c.CourseSlug == slug);
+        string? facilitySlug = null;
+        var parts = slug.Split('/', 2);
+        if (parts.Length == 2) { facilitySlug = parts[0]; slug = parts[1]; }
+
+        const string sql = """
+            SELECT c.id, c.name, c.slug, f.name, f.city, f.state_province, f.country, c.hole_count
+            FROM courses c
+            JOIN facilities f ON f.id = c.facility_id
+            WHERE c.slug = $1 AND c.status = 'active' AND f.status = 'active'
+              AND ($2::text IS NULL OR f.slug = $2)
+            ORDER BY f.name
+            """;
+        await using var cmd = _dataSource.CreateCommand(sql);
+        cmd.Parameters.AddWithValue(slug);
+        cmd.Parameters.AddWithValue((object?)facilitySlug ?? DBNull.Value);
+
+        var matches = new List<CourseSummary>();
+        await using var reader = await cmd.ExecuteReaderAsync(ct);
+        while (await reader.ReadAsync(ct))
+        {
+            matches.Add(new CourseSummary(
+                reader.GetGuid(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),
+                reader.IsDBNull(4) ? null : reader.GetString(4),
+                reader.IsDBNull(5) ? null : reader.GetString(5),
+                reader.GetString(6), reader.GetInt16(7)));
+        }
+
+        if (matches.Count > 1)
+        {
+            Console.Error.WriteLine(
+                $"note: '{slug}' matches {matches.Count} courses; using {matches[0].Title}. " +
+                "Qualify it as <facility-slug>/<course-slug> to pick a different one:");
+            foreach (var m in matches)
+                Console.Error.WriteLine($"  {m.CourseSlug} @ {m.FacilityName} ({m.City})");
+        }
+        return matches.FirstOrDefault();
     }
 }
