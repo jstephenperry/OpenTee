@@ -1,0 +1,93 @@
+{
+ "_comment": [
+  "Corrections applied to harvested collector output before SQL generation.",
+  "The files in db/data/collected/ are kept exactly as harvested — the raw record of what each",
+  "source said. Every change to that record lives here instead, with the evidence that justified",
+  "it, so any value in the database can be traced back to either a source or a documented",
+  "correction. Produced by the adversarial verification pass (workflow wf_7706e3c3-c33), which",
+  "re-checked a sample of courses against published cards and tried to refute them."
+ ],
+ "remove_facilities": [
+  {
+   "name": "The Nelson Golf & Sports Club",
+   "reason": "PRIVATE, not publicly playable. The operator's own page calls it 'one of Dallas' top private clubs' and its golf page is titled 'Private Golf at The Nelson Golf and Sports Club': private members and Ritz-Carlton hotel guests may play TPC Las Colinas, while Cottonwood Valley is members-only. Removes both courses. Geography (Irving, Dallas County) was fine; the access classification was wrong.",
+   "evidence": "https://centurygolf.com/club/the-nelson-golf-sports-club/"
+  },
+  {
+   "name": "Tanglewood Resort Hotel and Conference Center",
+   "reason": "Genuinely public daily-fee, but OUTSIDE the DFW metropolitan area. Pottsboro is in Grayson County, which constitutes the entire Sherman-Denison MSA — a separate MSA from Dallas-Fort Worth-Arlington. It qualifies only under the looser Combined Statistical Area definition, so it falls outside this dataset's scope.",
+   "evidence": "https://www.tanglewoodresort.com/golfcourse ; Texas Comptroller Metroplex region definition"
+  },
+  {
+   "name": "The Country Place",
+   "reason": "Public access UNVERIFIABLE and contradicted. Golf Digest types it Private; it is an HOA-owned amenity of a 742-home gated residential community whose own materials frame the course as a resident amenity. The 'public' claim traces to a single unsourced directory entry. Removed rather than asserting public playability we cannot support; re-add if the pro shop confirms non-resident green fees.",
+   "evidence": "https://www.golfdigest.com/courses/tx/the-country-place-country-place"
+  }
+ ],
+ "replace_courses": [
+  {
+   "facility": "The Westin Dallas Stonebriar Golf Resort & Spa",
+   "course": "Fazio Course",
+   "reason": "WRONG COURSE ENTIRELY. Stonebriar has two 18s — the Fazio Course (Tom Fazio, 2000; the one the Westin sells to guests) and the private Country Club Course (Finger/Dye, 1988). Every harvested number — pars, stroke indexes, all per-hole lengths, all tee totals — belonged to the Country Club Course, because greenskeeper.org publishes that card under a Westin/Fazio title. Replaced with the Fazio card published by the operator. Stroke indexes are omitted rather than carried over: no accessible publisher prints a handicap row for the Fazio Course, and the harvested row was the other course's.",
+   "evidence": "https://www.invitedclubs.com/clubs/stonebriar-country-club/golf/fazio",
+   "course_data": {
+    "name": "Fazio Course",
+    "hole_count": 18,
+    "pars": {
+     "unisex": {
+      "par": [4, 4, 5, 4, 4, 3, 5, 3, 4, 3, 4, 5, 4, 4, 3, 4, 4, 5]
+     }
+    },
+    "tees": [
+     {
+      "name": "Blue",
+      "unit": "yards",
+      "published_total": 7021,
+      "lengths": [366, 408, 578, 445, 430, 136, 546, 210, 412, 190, 412, 553, 449, 421, 165, 323, 429, 547],
+      "ratings": [{"gender": "men", "rating": 73.7, "slope": 137}]
+     },
+     {"name": "White", "unit": "yards", "published_total": 6610, "ratings": []},
+     {"name": "Green (W)", "unit": "yards", "published_total": 5896, "ratings": []},
+     {"name": "Green", "unit": "yards", "published_total": 5647, "ratings": []},
+     {"name": "Red (W)", "unit": "yards", "published_total": 5208, "ratings": []}
+    ]
+   }
+  }
+ ],
+ "rotate_nines": [
+  {
+   "facility": "Waterview Golf Club",
+   "course": "Waterview",
+   "reason": "THE TWO NINES ARE TRANSPOSED. The harvested card (from greenskeeper.org) uses a stale hole numbering: its front nine is the club's current back nine and vice versa. The club's own 2023 scorecard PDF gives Black OUT 3543 / IN 3648, while the harvested data has OUT 3648 / IN 3543, and GolfPass confirms the club's numbering hole-for-hole. Rotating every par and per-hole length array by 9 restores the current numbering. Stroke indexes are NOT fixed by the rotation and are replaced outright; tee names are replaced with the card's colour names (the harvested Professional/Championship/Back/Middle/Forward are greenskeeper's generic category labels).",
+   "evidence": "https://www.waterviewgc.com/wp-content/uploads/sites/48/2024/02/Scorecard-Waterview-Back-3.pdf",
+   "replace_stroke_index": {"unisex": [3, 11, 15, 1, 17, 13, 9, 7, 5, 12, 6, 16, 2, 18, 10, 4, 14, 8]},
+   "rename_tees": {
+    "Professional": "Black",
+    "Championship": "Blue",
+    "Back": "White",
+    "Middle": "Gold",
+    "Forward": "Green"
+   }
+  }
+ ],
+ "hole_length_patches": [
+  {
+   "facility": "Iron Horse Golf Course",
+   "course": "Iron Horse",
+   "tee": "Red",
+   "hole": 8,
+   "length": 115,
+   "reason": "Row-offset ingestion error. Hole 8 is a par 3 playing 115 yards from the forward tee; the harvested 50 belongs to hole 5, whose Red tee genuinely plays 50 yards. Both holes are par 3 with a 115-yard Silver tee, which is likely what let the rows collide.",
+   "evidence": "https://www.golfpass.com/travel-advisor/courses/2803-iron-horse-golf-course ; greenskeeper.org"
+  },
+  {
+   "facility": "Cleburne Golf Links",
+   "course": "Cleburne Golf Links",
+   "tee": "Gold",
+   "hole": 12,
+   "length": 337,
+   "reason": "Misprint on the source card read as 387. The Gold row sits 5-10 yards above Red on every other hole, but 387 would put it 60 yards beyond Red's 327. Reading 337 makes the Gold back nine sum to the printed IN of 2695 and the total to the printed 5493, resolving a 50-yard contradiction between the stored total and the card.",
+   "evidence": "City of Cleburne official scorecard PDF (cleburne.net)"
+  }
+ ]
+}

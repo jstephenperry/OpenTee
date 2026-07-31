@@ -36,6 +36,10 @@ The schema is built around how golf data actually works, including the awkward c
 | `db/schema.sql` | Canonical PostgreSQL 16 schema (documented inline) |
 | `db/seed/example_seed.sql` | Fictional demo data exercising every schema feature |
 | `db/data/arlington_tx.sql` | Real course data: Arlington, TX public courses, transcribed from cited public sources (awaiting verification against official cards) |
+| `db/data/dfw_tx.sql` | Real course data: 97 public facilities / 120 courses across the Dallas-Fort Worth Metroplex |
+| `db/data/collected/` | Raw harvested scorecard JSON, kept exactly as collected |
+| `db/data/corrections.json` | Documented corrections applied to the raw data, each with its evidence |
+| `db/data/generate.py`, `normalize.py` | Validating pipeline: harvested JSON → schema-conformant SQL |
 | `db/tests/constraint_tests.sql` | Self-rolling-back test suite for the integrity rails |
 | `app/OpenTee.Scorecard/` | Avalonia desktop app: search courses, pick tees, print custom scorecards |
 | `docs/schema-design.md` | Full design rationale, ERD, decisions, example queries |
@@ -47,8 +51,42 @@ Requires PostgreSQL 16+ (uses the bundled `pg_trgm` extension).
 ```bash
 createdb opentee_dev
 psql -v ON_ERROR_STOP=1 -d opentee_dev -f db/schema.sql
-psql -v ON_ERROR_STOP=1 -d opentee_dev -f db/seed/example_seed.sql
+psql -v ON_ERROR_STOP=1 -d opentee_dev -f db/seed/example_seed.sql   # fictional demo data
+psql -v ON_ERROR_STOP=1 -d opentee_dev -f db/data/arlington_tx.sql   # real courses
+psql -v ON_ERROR_STOP=1 -d opentee_dev -f db/data/dfw_tx.sql         # real courses
 psql -v ON_ERROR_STOP=1 -d opentee_dev -f db/tests/constraint_tests.sql
+```
+
+## Course data
+
+The `db/data/` files hold real, cited course data for the Dallas-Fort Worth Metroplex —
+**101 public facilities, 124 courses, 7,000+ per-hole yardages**. They load in any
+combination alongside the fictional example seed.
+
+How the data is produced, and why it is trustworthy:
+
+1. **Discovery** enumerated every public course in the metro area, recording the ones it
+   *rejected* and why (`db/data/dfw_courses.json`), so stale directory listings for closed
+   or private courses cannot creep back in.
+2. **Collection** transcribed published scorecards, under a standing rule never to invent a
+   number. A tee whose per-hole card is not published is stored with its total only and
+   reads as incomplete — that is the honest answer, and the schema is built to express it.
+3. **Normalization and generation** (`normalize.py` → `generate.py`) validate every course
+   against the schema's own constraints plus golf-domain sanity, and refuse to emit anything
+   inconsistent.
+4. **Verification** adversarially re-checked a sample against the published cards, trying to
+   refute rather than confirm. Its corrections live in `corrections.json` with the evidence
+   for each, applied on top of the untouched raw harvest in `collected/`.
+
+So every value in the database traces to either a cited source or a documented correction.
+Nothing here has been checked against an official printed card in hand, so it is community
+data awaiting verification — which is exactly what the submission model in the schema is for.
+
+To regenerate after editing the raw data or corrections:
+
+```bash
+python3 db/data/normalize.py db/data/collected/*.json > db/data/dfw_tx.json
+python3 db/data/generate.py db/data/dfw_tx.json > db/data/dfw_tx.sql
 ```
 
 Then print your first scorecard:

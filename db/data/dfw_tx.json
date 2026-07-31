@@ -2203,126 +2203,6 @@
   },
   {
    "facility": {
-    "name": "The Country Place",
-    "address": "2727 Country Place Dr, Carrollton, TX 75006",
-    "city": "Carrollton",
-    "state_province": "Texas",
-    "country": "US",
-    "postal_code": "75006",
-    "website_url": "http://www.thecountryplace.org/"
-   },
-   "courses": [
-    {
-     "name": "Country Place Golf Course",
-     "hole_count": 9,
-     "pars": {
-      "unisex": {
-       "par": [
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3
-       ],
-       "stroke_index": [
-        6,
-        8,
-        16,
-        18,
-        4,
-        14,
-        12,
-        10,
-        2
-       ]
-      }
-     },
-     "tees": [
-      {
-       "name": "Blue",
-       "unit": "yards",
-       "published_total": 1250,
-       "lengths": [
-        110,
-        135,
-        140,
-        210,
-        115,
-        180,
-        140,
-        115,
-        105
-       ],
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 27.3,
-         "slope": 85
-        }
-       ]
-      },
-      {
-       "name": "White",
-       "unit": "yards",
-       "published_total": 1145,
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 26.7,
-         "slope": 82
-        }
-       ]
-      },
-      {
-       "name": "Red",
-       "unit": "yards",
-       "published_total": 1061,
-       "lengths": [
-        90,
-        130,
-        130,
-        150,
-        100,
-        140,
-        130,
-        100,
-        91
-       ],
-       "ratings": [
-        {
-         "gender": "women",
-         "rating": 27.6,
-         "slope": 86
-        }
-       ]
-      }
-     ]
-    }
-   ],
-   "sources": [
-    {
-     "type": "other",
-     "url": "https://www.golfpass.com/travel-advisor/courses/22666-country-place-golf-course",
-     "note": "GolfPass - per-hole par, handicap and yardages for Blue and Red tees. Red per-hole column sums exactly to the published 1061."
-    },
-    {
-     "type": "other",
-     "url": "https://18birdies.com/golf-courses/club/bcb77630-51f6-11f0-bda3-06780482e2ce/country-place-golf-course",
-     "note": "18Birdies - independently confirms the same Blue per-hole yardages and the same handicap row, and gives Blue total 1250, White 1145, Red 1061 plus rating/slope figures (printed transposed)."
-    },
-    {
-     "type": "course_website",
-     "url": "http://www.thecountryplace.org/",
-     "note": "Homeowners-association site for the gated community. Returned HTTP 503 on fetch; no scorecard located. Recorded for later human check."
-    }
-   ]
-  },
-  {
-   "facility": {
     "name": "Cleburne Golf Links",
     "address": "2501 Country Club Rd, Cleburne, TX 76033",
     "city": "Cleburne",
@@ -2539,7 +2419,7 @@
         317,
         288,
         472,
-        387,
+        337,
         265,
         118,
         316,
@@ -11416,88 +11296,26 @@
      "name": "Fazio Course",
      "hole_count": 18,
      "pars": {
-      "men": {
+      "unisex": {
        "par": [
         4,
+        4,
+        5,
+        4,
+        4,
         3,
+        5,
+        3,
+        4,
+        3,
+        4,
         5,
         4,
         4,
         3,
         4,
-        5,
         4,
-        4,
-        4,
-        4,
-        4,
-        3,
-        4,
-        5,
-        3,
         5
-       ],
-       "stroke_index": [
-        13,
-        17,
-        3,
-        5,
-        7,
-        15,
-        11,
-        9,
-        1,
-        14,
-        8,
-        12,
-        4,
-        16,
-        2,
-        10,
-        18,
-        6
-       ]
-      },
-      "women": {
-       "par": [
-        4,
-        3,
-        5,
-        4,
-        4,
-        3,
-        4,
-        5,
-        4,
-        4,
-        4,
-        4,
-        4,
-        3,
-        4,
-        5,
-        3,
-        5
-       ],
-       "stroke_index": [
-        13,
-        17,
-        3,
-        5,
-        7,
-        15,
-        11,
-        9,
-        1,
-        14,
-        8,
-        12,
-        4,
-        16,
-        2,
-        10,
-        18,
-        6
        ]
       }
      },
@@ -11505,98 +11323,58 @@
       {
        "name": "Blue",
        "unit": "yards",
-       "published_total": 7064,
+       "published_total": 7021,
        "lengths": [
-        382,
-        215,
-        568,
-        465,
-        443,
-        148,
-        327,
-        577,
-        438,
         366,
-        442,
-        363,
-        436,
-        218,
-        423,
-        509,
-        188,
-        556
+        408,
+        578,
+        445,
+        430,
+        136,
+        546,
+        210,
+        412,
+        190,
+        412,
+        553,
+        449,
+        421,
+        165,
+        323,
+        429,
+        547
        ],
        "ratings": [
         {
          "gender": "men",
-         "rating": 74.8,
-         "slope": 140
+         "rating": 73.7,
+         "slope": 137
         }
        ]
       },
       {
        "name": "White",
        "unit": "yards",
-       "published_total": 6637,
-       "lengths": [
-        365,
-        194,
-        546,
-        444,
-        422,
-        123,
-        310,
-        541,
-        411,
-        344,
-        422,
-        328,
-        416,
-        186,
-        399,
-        491,
-        168,
-        527
-       ],
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 72.6,
-         "slope": 132
-        }
-       ]
+       "published_total": 6610,
+       "ratings": []
       },
       {
-       "name": "Red",
+       "name": "Green (W)",
        "unit": "yards",
-       "published_total": 5707,
-       "lengths": [
-        347,
-        138,
-        455,
-        363,
-        383,
-        103,
-        284,
-        492,
-        306,
-        319,
-        361,
-        295,
-        354,
-        170,
-        352,
-        436,
-        108,
-        441
-       ],
-       "ratings": [
-        {
-         "gender": "women",
-         "rating": 74.1,
-         "slope": 130
-        }
-       ]
+       "published_total": 5896,
+       "ratings": []
+      },
+      {
+       "name": "Green",
+       "unit": "yards",
+       "published_total": 5647,
+       "ratings": []
+      },
+      {
+       "name": "Red (W)",
+       "unit": "yards",
+       "published_total": 5208,
+       "ratings": []
       }
      ]
     }
@@ -15836,398 +15614,6 @@
   },
   {
    "facility": {
-    "name": "The Nelson Golf & Sports Club",
-    "address": "4150 N MacArthur Blvd, Irving, TX 75038",
-    "city": "Irving",
-    "state_province": "Texas",
-    "country": "US",
-    "postal_code": "75038",
-    "website_url": "https://www.thenelsongolfandsportsclub.com"
-   },
-   "courses": [
-    {
-     "name": "Cottonwood Valley",
-     "hole_count": 18,
-     "pars": {
-      "men": {
-       "par": [
-        4,
-        3,
-        5,
-        4,
-        4,
-        4,
-        4,
-        4,
-        3,
-        4,
-        5,
-        3,
-        4,
-        4,
-        4,
-        5,
-        3,
-        4
-       ],
-       "stroke_index": [
-        3,
-        17,
-        15,
-        7,
-        1,
-        9,
-        13,
-        5,
-        11,
-        4,
-        14,
-        12,
-        8,
-        10,
-        2,
-        18,
-        16,
-        6
-       ]
-      }
-     },
-     "tees": [
-      {
-       "name": "Black",
-       "unit": "yards",
-       "published_total": 7120,
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 74.9,
-         "slope": 136
-        }
-       ]
-      },
-      {
-       "name": "Blue",
-       "unit": "yards",
-       "published_total": 6410,
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 71.2,
-         "slope": 134
-        }
-       ]
-      },
-      {
-       "name": "Gold",
-       "unit": "yards",
-       "published_total": 6260,
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 70.3,
-         "slope": 132
-        }
-       ]
-      },
-      {
-       "name": "White",
-       "unit": "yards",
-       "published_total": 5940,
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 69.3,
-         "slope": 130
-        },
-        {
-         "gender": "women",
-         "rating": 75.5,
-         "slope": 137
-        }
-       ]
-      },
-      {
-       "name": "Diamond",
-       "unit": "yards",
-       "published_total": 5560,
-       "ratings": [
-        {
-         "gender": "women",
-         "rating": 72.8,
-         "slope": 127
-        }
-       ]
-      },
-      {
-       "name": "Red",
-       "unit": "yards",
-       "published_total": 5265,
-       "ratings": [
-        {
-         "gender": "women",
-         "rating": 71.2,
-         "slope": 125
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "name": "TPC Las Colinas",
-     "hole_count": 18,
-     "pars": {
-      "men": {
-       "par": [
-        4,
-        3,
-        4,
-        4,
-        3,
-        4,
-        5,
-        4,
-        4,
-        4,
-        4,
-        4,
-        3,
-        4,
-        4,
-        5,
-        3,
-        4
-       ],
-       "stroke_index": [
-        13,
-        15,
-        1,
-        5,
-        17,
-        9,
-        11,
-        3,
-        7,
-        6,
-        12,
-        4,
-        18,
-        2,
-        8,
-        16,
-        14,
-        10
-       ]
-      },
-      "women": {
-       "par": [
-        4,
-        3,
-        4,
-        4,
-        3,
-        4,
-        5,
-        4,
-        4,
-        4,
-        4,
-        4,
-        3,
-        4,
-        4,
-        5,
-        3,
-        4
-       ],
-       "stroke_index": [
-        13,
-        15,
-        1,
-        5,
-        17,
-        9,
-        11,
-        3,
-        7,
-        6,
-        12,
-        4,
-        18,
-        2,
-        8,
-        16,
-        14,
-        10
-       ]
-      }
-     },
-     "tees": [
-      {
-       "name": "Black",
-       "unit": "yards",
-       "published_total": 7166,
-       "lengths": [
-        458,
-        221,
-        528,
-        431,
-        174,
-        448,
-        542,
-        461,
-        427,
-        435,
-        323,
-        455,
-        180,
-        406,
-        504,
-        546,
-        198,
-        429
-       ],
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 76.0,
-         "slope": 142
-        }
-       ]
-      },
-      {
-       "name": "Blue",
-       "unit": "yards",
-       "published_total": 6548,
-       "lengths": [
-        425,
-        191,
-        464,
-        415,
-        148,
-        412,
-        482,
-        432,
-        404,
-        394,
-        290,
-        423,
-        160,
-        371,
-        443,
-        517,
-        176,
-        401
-       ],
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 73.2,
-         "slope": 136
-        }
-       ]
-      },
-      {
-       "name": "White",
-       "unit": "yards",
-       "published_total": 5866,
-       "lengths": [
-        370,
-        141,
-        412,
-        369,
-        128,
-        365,
-        461,
-        427,
-        348,
-        342,
-        249,
-        389,
-        149,
-        346,
-        410,
-        441,
-        153,
-        366
-       ],
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 69.8,
-         "slope": 127
-        },
-        {
-         "gender": "women",
-         "rating": 76.8,
-         "slope": 145
-        }
-       ]
-      },
-      {
-       "name": "Red",
-       "unit": "yards",
-       "published_total": 5030,
-       "lengths": [
-        343,
-        123,
-        380,
-        333,
-        91,
-        294,
-        421,
-        365,
-        257,
-        333,
-        201,
-        331,
-        114,
-        296,
-        303,
-        409,
-        132,
-        304
-       ],
-       "ratings": [
-        {
-         "gender": "women",
-         "rating": 71.5,
-         "slope": 135
-        }
-       ]
-      }
-     ]
-    }
-   ],
-   "sources": [
-    {
-     "type": "other",
-     "url": "https://greenskeeper.org/texas/Dallas_Fort_Worth/tpc_four_seasons_las_colinas/scorecard.cfm",
-     "note": "Greenskeeper.org - PRIMARY source for the TPC Las Colinas per-hole grid (4 tees), par row, per-gender stroke index and all ratings. Published under the pre-rebrand 'TPC Four Seasons Las Colinas' name."
-    },
-    {
-     "type": "other",
-     "url": "https://www.allgolfholes.com/courses/texas/tpc-at-four-seasons-resort-las-colinas-course",
-     "note": "AllGolfHoles - INDEPENDENT confirmation of the TPC per-hole yardages and, critically, the par row. Agrees exactly on the Black (7,166) and White (5,866) tees; differs by one hole each on Blue and Red (see notes)."
-    },
-    {
-     "type": "other",
-     "url": "https://www.golfpass.com/travel-advisor/courses/12713-the-sports-club-at-four-seasons-resort-cottonwood-valley",
-     "note": "GolfPass - source of the Cottonwood Valley tee sheet (6 tees with per-gender ratings) and of its per-hole par and stroke index. Its per-hole YARDAGES were rejected as rounded (see notes)."
-    },
-    {
-     "type": "other",
-     "url": "https://www.hole19golf.com/courses/four-seasons-resort-club-cottonwood-valley",
-     "note": "Hole19 - independent confirmation of the Cottonwood Valley per-hole PAR row. Its yardage set belongs to an unmatched 5,860-yard tee and its stroke index conflicts with GolfPass."
-    },
-    {
-     "type": "other",
-     "url": "https://course.bluegolf.com/bluegolf/course/course/cottonwoodvalley/detailedscorecard.htm",
-     "note": "BlueGolf detailed scorecard for Cottonwood Valley - NOT fetched (405 blocked). Recorded for later human transcription; this is the most likely home of the real per-hole yardages that are still missing."
-    }
-   ]
-  },
-  {
-   "facility": {
     "name": "Mountain Valley Country Club",
     "address": "391 Clubhouse Dr, Joshua, TX 76058",
     "city": "Joshua",
@@ -19577,7 +18963,7 @@
         304,
         294,
         325,
-        50,
+        115,
         215,
         287,
         358,
@@ -20612,123 +19998,6 @@
      "type": "other",
      "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/chase_oaks_golf_club_texas_sawtooth/scorecard.cfm",
      "note": "REJECTED AS STALE for The Players Course - the legacy Chase Oaks 'Sawtooth' nine at par 36 / 3012 yards (rating 35.1/130). That is a completely different golf course from the current par-30, 1941-yard Players Course."
-    }
-   ]
-  },
-  {
-   "facility": {
-    "name": "Tanglewood Resort Hotel and Conference Center",
-    "address": "586 Country Club Dr, Pottsboro, TX 75076",
-    "city": "Pottsboro",
-    "state_province": "Texas",
-    "country": "US",
-    "postal_code": "75076",
-    "website_url": "https://www.tanglewoodresort.com/golfcourse"
-   },
-   "courses": [
-    {
-     "name": "Tanglewood",
-     "hole_count": 18,
-     "pars": {},
-     "tees": [
-      {
-       "name": "Championship",
-       "unit": "yards",
-       "published_total": 6993,
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 73.5,
-         "slope": 128
-        }
-       ]
-      },
-      {
-       "name": "Back",
-       "unit": "yards",
-       "published_total": 6536,
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 71.1,
-         "slope": 125
-        },
-        {
-         "gender": "women",
-         "rating": 76.6,
-         "slope": 134
-        }
-       ]
-      },
-      {
-       "name": "Middle",
-       "unit": "yards",
-       "published_total": 5986,
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 68.3,
-         "slope": 118
-        }
-       ]
-      },
-      {
-       "name": "Senior",
-       "unit": "yards",
-       "published_total": 5423,
-       "ratings": [
-        {
-         "gender": "men",
-         "rating": 67.1,
-         "slope": 111
-        }
-       ]
-      },
-      {
-       "name": "Forward",
-       "unit": "yards",
-       "published_total": 5017,
-       "ratings": [
-        {
-         "gender": "women",
-         "rating": 70.5,
-         "slope": 123
-        }
-       ]
-      }
-     ]
-    }
-   ],
-   "sources": [
-    {
-     "type": "course_website",
-     "url": "https://www.tanglewoodresort.com/golfcourse",
-     "note": "Official golf page. Marketing copy only ('18-hole championship course', 'stretching 7,000 yards'). No scorecard table, no scorecard PDF or image link, no per-hole data."
-    },
-    {
-     "type": "other",
-     "url": "https://www.golfpass.com/travel-advisor/courses/3249-tanglewood-resort-hotel-and-conference-center",
-     "note": "GolfPass tee sheet. Source of every tee name, total, par 72, rating and slope recorded above. GolfPass's page did NOT expose a readable per-hole grid to WebFetch (only prose about front nine 3,515 / back nine 3,478 from the Championship tee, which I did not use because I could not see the underlying hole cells)."
-    },
-    {
-     "type": "other",
-     "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/tanglewood_resort_golf_club/scorecard.cfm",
-     "note": "Greenskeeper listing exists but explicitly reports 'Scorecard (No)' - no scorecard has been submitted for this course. Correct slug is tanglewood_resort_golf_club (the Tanglewood_Resort slug 404s)."
-    },
-    {
-     "type": "other",
-     "url": "https://foretee.com/courses/texas/pottsboro/usa/tanglewood-on-texoma-golf-course/14493",
-     "note": "ForeTee (listed as 'Tanglewood On Texoma'). Gives par 72, back 6,993, forward 4,925, and hole descriptions: #1 414 yd par 4 handicap 1; #2 444 yd; #12 par 3, 177 yd shortest from the back; #14 230 yd; #17 par 5, 555 yd longest; #18 par 5. Not a full grid - not transcribed."
-    },
-    {
-     "type": "other",
-     "url": "https://www.hole19golf.com/texas/tanglewood-golf-club",
-     "note": "REJECTED as unreliable, flagged for human review. Hole19 publishes an 18-hole grid for this address (290 Tanglewood Circle, Pottsboro) - par 4,4,5,3,4,5,3,4,4 / 4,4,3,4,3,4,5,4,5 with S.I. 1,3,15,11,5,17,13,7,9 / 8,10,16,18,14,4,12,2,6 and one unnamed 'Back' set summing to 5,973 against a stated total of 5,976. It fails arithmetic by 3 yards, its total matches none of the five published tees, and its par for #17 (par 4) contradicts ForeTee and GolfPass, which both call #17 a 555-yard par 5. Not used."
-    },
-    {
-     "type": "other",
-     "url": "https://smclubsg.skygolf.com/courses/course/15420/Tanglewood_Resort.html?site=clubsg",
-     "note": "SkyGolf page has a Scorecard tab but the grid is not present in the served HTML."
     }
    ]
   },
@@ -21833,17 +21102,17 @@
       "men": {
        "par": [
         4,
+        3,
         5,
+        4,
+        4,
+        5,
+        4,
         3,
         4,
         4,
         5,
-        4,
         3,
-        4,
-        4,
-        3,
-        5,
         4,
         4,
         5,
@@ -21852,40 +21121,40 @@
         4
        ],
        "stroke_index": [
-        17,
-        5,
-        15,
-        7,
-        13,
-        9,
         3,
         11,
+        15,
         1,
-        6,
-        18,
-        8,
-        10,
-        16,
+        17,
+        13,
+        9,
+        7,
+        5,
         12,
-        14,
+        6,
+        16,
         2,
-        4
+        18,
+        10,
+        4,
+        14,
+        8
        ]
       },
       "women": {
        "par": [
         4,
+        3,
         5,
+        4,
+        4,
+        5,
+        4,
         3,
         4,
         4,
         5,
-        4,
         3,
-        4,
-        4,
-        3,
-        5,
         4,
         4,
         5,
@@ -21894,42 +21163,33 @@
         4
        ],
        "stroke_index": [
-        17,
-        5,
-        15,
-        7,
-        13,
-        9,
         3,
         11,
+        15,
         1,
-        6,
-        18,
-        8,
-        10,
-        16,
+        17,
+        13,
+        9,
+        7,
+        5,
         12,
-        14,
+        6,
+        16,
         2,
-        4
+        18,
+        10,
+        4,
+        14,
+        8
        ]
       }
      },
      "tees": [
       {
-       "name": "Professional",
+       "name": "Black",
        "unit": "yards",
        "published_total": 7191,
        "lengths": [
-        375,
-        602,
-        179,
-        436,
-        353,
-        556,
-        480,
-        206,
-        461,
         466,
         162,
         532,
@@ -21938,7 +21198,16 @@
         564,
         383,
         235,
-        446
+        446,
+        375,
+        602,
+        179,
+        436,
+        353,
+        556,
+        480,
+        206,
+        461
        ],
        "ratings": [
         {
@@ -21949,19 +21218,10 @@
        ]
       },
       {
-       "name": "Championship",
+       "name": "Blue",
        "unit": "yards",
        "published_total": 6762,
        "lengths": [
-        338,
-        576,
-        162,
-        408,
-        331,
-        534,
-        453,
-        182,
-        431,
         447,
         152,
         508,
@@ -21970,7 +21230,16 @@
         536,
         364,
         213,
-        423
+        423,
+        338,
+        576,
+        162,
+        408,
+        331,
+        534,
+        453,
+        182,
+        431
        ],
        "ratings": [
         {
@@ -21981,19 +21250,10 @@
        ]
       },
       {
-       "name": "Back",
+       "name": "White",
        "unit": "yards",
        "published_total": 6355,
        "lengths": [
-        314,
-        555,
-        147,
-        380,
-        307,
-        509,
-        433,
-        163,
-        408,
         417,
         147,
         486,
@@ -22002,7 +21262,16 @@
         510,
         345,
         189,
-        404
+        404,
+        314,
+        555,
+        147,
+        380,
+        307,
+        509,
+        433,
+        163,
+        408
        ],
        "ratings": [
         {
@@ -22013,19 +21282,10 @@
        ]
       },
       {
-       "name": "Middle",
+       "name": "Gold",
        "unit": "yards",
        "published_total": 5906,
        "lengths": [
-        277,
-        525,
-        142,
-        344,
-        285,
-        486,
-        410,
-        141,
-        387,
         387,
         122,
         463,
@@ -22034,7 +21294,16 @@
         483,
         326,
         161,
-        381
+        381,
+        277,
+        525,
+        142,
+        344,
+        285,
+        486,
+        410,
+        141,
+        387
        ],
        "ratings": [
         {
@@ -22050,19 +21319,10 @@
        ]
       },
       {
-       "name": "Forward",
+       "name": "Green",
        "unit": "yards",
        "published_total": 5472,
        "lengths": [
-        260,
-        493,
-        136,
-        317,
-        259,
-        456,
-        374,
-        121,
-        353,
         350,
         112,
         435,
@@ -22071,7 +21331,16 @@
         462,
         306,
         142,
-        359
+        359,
+        260,
+        493,
+        136,
+        317,
+        259,
+        456,
+        374,
+        121,
+        353
        ],
        "ratings": [
         {
