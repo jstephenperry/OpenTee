@@ -1,0 +1,126 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:OpenTee.Scorecard.ViewModels"
+        xmlns:m="using:OpenTee.Scorecard.Models"
+        x:Class="OpenTee.Scorecard.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Title="OpenTee — Custom Scorecard"
+        Width="1180" Height="760"
+        Background="#fafafa">
+
+    <DockPanel>
+        <!-- Status bar -->
+        <Border DockPanel.Dock="Bottom" Background="#eeeeee" Padding="10,4">
+            <TextBlock Text="{Binding Status}" FontSize="11" Foreground="#555555" />
+        </Border>
+
+        <!-- Search / course list -->
+        <Border DockPanel.Dock="Left" Width="320" Background="White"
+                BorderBrush="#dddddd" BorderThickness="0,0,1,0">
+            <DockPanel Margin="12">
+                <TextBox DockPanel.Dock="Top" Text="{Binding SearchText}"
+                         Watermark="Search course, club, or city…" Margin="0,0,0,10" />
+                <ListBox ItemsSource="{Binding Results}"
+                         SelectedItem="{Binding SelectedCourse}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="m:CourseSummary">
+                            <StackPanel Margin="2">
+                                <TextBlock Text="{Binding Title}" FontWeight="SemiBold" TextWrapping="Wrap" />
+                                <TextBlock Text="{Binding Subtitle}" FontSize="11" Foreground="#777777" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Border>
+
+        <!-- Course detail -->
+        <Grid Margin="16" RowDefinitions="Auto,Auto,*,Auto" IsVisible="{Binding HasCourse}">
+
+            <StackPanel Grid.Row="0" Margin="0,0,0,10">
+                <TextBlock Text="{Binding SelectedCourse.Title, FallbackValue=''}"
+                           FontSize="22" FontWeight="Bold" />
+                <TextBlock Text="{Binding SelectedCourse.Subtitle, FallbackValue=''}"
+                           FontSize="12" Foreground="#777777" />
+            </StackPanel>
+
+            <!-- Tee pickers -->
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding Tees}" Margin="0,0,0,12">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="vm:TeeOptionViewModel">
+                        <Border Background="White" BorderBrush="#dddddd" BorderThickness="1"
+                                CornerRadius="6" Padding="10,6" Margin="0,0,8,8">
+                            <CheckBox IsChecked="{Binding IsSelected}" IsEnabled="{Binding IsEnabled}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <Border Width="14" Height="14" CornerRadius="3"
+                                            Background="{Binding Swatch}"
+                                            BorderBrush="#999999" BorderThickness="1"
+                                            VerticalAlignment="Center" />
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                                        <TextBlock Text="{Binding Subtitle}" FontSize="11" Foreground="#777777" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </CheckBox>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- Card preview -->
+            <Border Grid.Row="2" Background="White" BorderBrush="#dddddd" BorderThickness="1" CornerRadius="6">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Padding="10">
+                    <ItemsControl ItemsSource="{Binding CardRows}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="vm:CardRowViewModel">
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Width="130" Background="{Binding Background}"
+                                            BorderBrush="#cccccc" BorderThickness="0,0,1,1" Padding="6,3">
+                                        <StackPanel Orientation="Horizontal" Spacing="5">
+                                            <Border Width="9" Height="9" CornerRadius="2"
+                                                    Background="{Binding Swatch}"
+                                                    IsVisible="{Binding HasSwatch}"
+                                                    VerticalAlignment="Center" />
+                                            <TextBlock Text="{Binding Label}" FontSize="11"
+                                                       FontWeight="{Binding FontWeight}" />
+                                        </StackPanel>
+                                    </Border>
+                                    <ItemsControl ItemsSource="{Binding Cells}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate x:DataType="x:String">
+                                                <Border Width="42" Background="Transparent"
+                                                        BorderBrush="#e0e0e0" BorderThickness="0,0,1,1"
+                                                        Padding="0,3">
+                                                    <TextBlock Text="{Binding}" FontSize="11"
+                                                               HorizontalAlignment="Center" />
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+
+            <!-- Actions -->
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Spacing="12" Margin="0,12,0,0">
+                <Button Content="Save print-ready PDF…" Click="OnPrintClicked"
+                        IsEnabled="{Binding CanPrint}" Classes="accent" />
+                <TextBlock VerticalAlignment="Center" FontSize="11" Foreground="#777777"
+                           Text="The PDF opens in your viewer — print from there (landscape Letter)." />
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

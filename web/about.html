@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About the data — OpenTee</title>
+<meta name="description" content="How OpenTee's golf course data is collected, verified and published.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21V3l11 4-11 4" fill="currentColor"/><circle cx="7" cy="21" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    <span>OpenTee</span>
+  </a>
+  <nav>
+    <a href="./">Search</a>
+    <a href="https://github.com/jstephenperry/OpenTee">GitHub</a>
+  </nav>
+</header>
+
+<main>
+<article class="prose">
+  <h1>About the data</h1>
+
+  <p>
+    OpenTee is an open database of golf course scorecard data — yardages, pars, stroke
+    indexes and ratings per tee, <strong>as published by courses</strong>. This site is a
+    static view of that database: every page here is generated from the same PostgreSQL
+    schema the project uses, so what you read is what the database holds.
+  </p>
+
+  <h2>What is in it today</h2>
+  <p>
+    Public courses across the Dallas–Fort Worth Metroplex: municipal, daily-fee, resort and
+    public-access semi-private facilities. Private clubs are deliberately out of scope, and
+    the discovery pass recorded what it rejected and why, so stale directory listings for
+    closed or private courses cannot creep back in.
+  </p>
+
+  <h2>How a number gets here</h2>
+  <ul>
+    <li><strong>Discovery</strong> enumerated every public course in the metro area, keeping a record of rejections.</li>
+    <li><strong>Collection</strong> transcribed published scorecards under a standing rule: never invent a number.</li>
+    <li><strong>Normalization and generation</strong> validate every course against the schema's own constraints plus golf-domain sanity, and refuse to emit anything inconsistent.</li>
+    <li><strong>Verification</strong> adversarially re-checked a sample against the published cards, trying to refute rather than confirm. Its corrections are stored with their evidence, applied on top of the untouched raw harvest.</li>
+  </ul>
+  <p>
+    Every course page lists the sources behind its data. Nothing here has been checked
+    against an official printed card in hand, so treat it as community data awaiting
+    verification.
+  </p>
+
+  <h2>Missing numbers stay missing</h2>
+  <p>
+    A tee whose per-hole card is not published is stored with its total only, and shows on
+    this site as <em>incomplete</em> — it cannot be added to a printed card. An unrated
+    course has no rating, not a plausible-looking one. Par-3 and executive courses without
+    ratings are first-class citizens here.
+  </p>
+  <p>
+    Where a course's own printed total disagrees with the sum of its holes, the card says
+    so rather than quietly picking a winner. That is usually a transcription error, and
+    occasionally a genuine misprint on the course's card.
+  </p>
+
+  <h2>Men's, women's and unisex rows</h2>
+  <p>
+    Real cards print par and stroke index per gender, and the same physical tee is often
+    rated separately for men and women. The database stores one set of yardages with as many
+    rating rows as the course publishes, so a card here shows every row the course prints —
+    no duplicated tees, no averaged ratings.
+  </p>
+
+  <h2>Corrections welcome</h2>
+  <p>
+    If a card here disagrees with the one in the pro shop, the card in the pro shop wins.
+    Open an issue on
+    <a href="https://github.com/jstephenperry/OpenTee/issues">GitHub</a> with the course and
+    what it should say — ideally with a photo of the printed card.
+  </p>
+</article>
+</main>
+
+<footer class="site-footer">
+  <p class="muted">OpenTee is free software under the AGPL-3.0.</p>
+</footer>
+</body>
+</html>

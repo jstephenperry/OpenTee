@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scorecard — OpenTee</title>
+<meta name="description" content="Build and print a custom golf scorecard for exactly the tees you play.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="course-page">
+<a class="skip" href="#card">Skip to scorecard</a>
+
+<header class="topbar no-print">
+  <a class="brand" href="./">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21V3l11 4-11 4" fill="currentColor"/><circle cx="7" cy="21" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    <span>OpenTee</span>
+  </a>
+  <nav>
+    <a href="./">Search</a>
+    <a href="about.html">About the data</a>
+    <a href="https://github.com/jstephenperry/OpenTee">GitHub</a>
+  </nav>
+</header>
+
+<main id="main">
+  <p class="loading no-print" id="loading">Loading course…</p>
+
+  <div class="course" id="course" hidden>
+    <header class="course-head no-print">
+      <h1 id="title"></h1>
+      <p class="course-meta" id="meta"></p>
+      <div class="course-links" id="links"></div>
+    </header>
+
+    <div class="layout">
+      <aside class="panel no-print" aria-label="Card options">
+        <section class="panel-block">
+          <h2>Tees</h2>
+          <p class="hint">Pick any combination — the card prints one row per tee, in the order the course lists them.</p>
+          <ul class="tee-list" id="tees"></ul>
+        </section>
+
+        <section class="panel-block">
+          <h2>Card</h2>
+          <label class="field">Blank score rows
+            <select id="scoreRows">
+              <option value="0">none</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="4" selected>4</option>
+              <option value="6">6</option>
+            </select>
+          </label>
+          <label class="check"><input type="checkbox" id="showNames" checked> Hole names, when published</label>
+          <div class="actions">
+            <button type="button" id="print" class="btn primary">Print card</button>
+            <button type="button" id="share" class="btn">Copy link</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="card-area" id="card">
+        <div class="card-sheet" id="sheet">
+          <header class="sheet-head">
+            <h2 id="sheetTitle"></h2>
+            <p id="sheetSub"></p>
+          </header>
+          <div class="table-scroll">
+            <table class="scorecard" id="table"></table>
+          </div>
+          <footer class="sheet-foot">
+            <p id="ratingsNote"></p>
+            <p class="muted" id="unitNote"></p>
+            <p class="warn" id="discrepancyNote"></p>
+            <p class="muted fine" id="provenanceNote"></p>
+          </footer>
+        </div>
+        <p class="empty no-print" id="empty" hidden>Select at least one tee to build a card.</p>
+      </section>
+    </div>
+
+    <section class="sources no-print" id="sourcesBlock">
+      <h2>Where this data came from</h2>
+      <ul class="source-list" id="sources"></ul>
+    </section>
+  </div>
+
+  <p class="error no-print" id="error" hidden></p>
+</main>
+
+<footer class="site-footer no-print">
+  <p class="muted">Community data, awaiting verification against printed cards. Play it as it lies.</p>
+</footer>
+
+<script type="module" src="assets/course.js"></script>
+</body>
+</html>

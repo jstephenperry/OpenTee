@@ -1,0 +1,7 @@
+bin/
+obj/
+*.user
+*.pdf
+
+# Website data is exported from the database at build time (web/export.py).
+web/data/

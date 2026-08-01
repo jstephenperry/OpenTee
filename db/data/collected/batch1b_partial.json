@@ -1,0 +1,338 @@
+[
+ {
+  "facility": {
+   "name": "Cleburne Golf Ranch",
+   "address": "920 E Katherine P Rains Rd",
+   "city": "Cleburne",
+   "state_province": "TX",
+   "postal_code": "76031",
+   "country": "USA",
+   "website_url": "https://golf-ranch.com/"
+  },
+  "courses": [
+   {
+    "name": "Cleburne Golf Ranch",
+    "hole_count": 9,
+    "pars": {
+     "unisex": {
+      "par": [
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ],
+      "stroke_index": [
+       1,
+       3,
+       5,
+       7,
+       9,
+       11,
+       13,
+       15,
+       17
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 1073,
+      "lengths": [
+       100,
+       95,
+       100,
+       150,
+       115,
+       115,
+       134,
+       82,
+       182
+      ],
+      "ratings": []
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://18birdies.com/golf-courses/club/8b234980-86ac-11e4-8c28-020000005b00/cleburne-golf-ranch",
+    "note": "18Birdies \u2014 PRIMARY per-hole source. Full 9-hole grid fetched successfully: tee labeled 'Black', per-hole yardage, par 3 on every hole, and handicap row 1/3/5/7/9/11/13/15/17. OUT row printed as par 27, 1073 yards. Also displays a doubled 18-hole total of 2146 yards and a 'rating 70 / slope 110' pair that I rejected \u2014 see collection_notes."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/cleburne/cleburne-golf-ranch",
+    "note": "GolfLink \u2014 INDEPENDENT CORROBORATION via WebSearch result summaries only (domain is fetch-blocked per instructions, never fetched). Two separate searches returned the identical per-hole yardage set (100/95/100/150/115/115/134/82/182) and confirmed hole 1 = par 3 / HCP 1 / 100 yds, hole 2 = par 3 / HCP 3 / 95 yds, hole 7 = par 3 / HCP 13 / 134 yds, hole 9 = par 3 / HCP 17 / 182 yds 'from the Black tees'. A third search returned GolfLink's own rating/slope fields as '0.0' and '0'."
+   },
+   {
+    "type": "course_website",
+    "url": "https://golf-ranch.com/",
+    "note": "Official site returned HTTP 403 to WebFetch \u2014 no data extracted. Recorded for later human transcription; may carry a printed scorecard."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/22668-cleburne-golf-ranch",
+    "note": "GolfPass \u2014 confirms address, 9 holes, par 27, 1073 yards, built 2003, and 'Open to the public, year-round (weather permitting)', supporting the assignment hint that this facility is OPEN. Publishes no per-hole grid and no rating/slope. NOTE: labels the single tee 'White', conflicting with 18Birdies/GolfLink which call it 'Black'."
+   },
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/cleburne_golf_ranch/scorecard.cfm",
+    "note": "Greenskeeper.org \u2014 HTTP 404, no page exists for this facility. (Do not confuse with Cleburne Golf Links, a separate 18-hole par-72 course in the same town that DOES have a Greenskeeper page.)"
+   },
+   {
+    "type": "other",
+    "url": "https://www.allgolfholes.com/courses/texas/cleburne-golf-ranch",
+    "note": "AllGolfHoles \u2014 HTTP 404, no page for this course."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC CHECK PASSED: per-hole lengths 100+95+100+150+115+115+134+82+182 = 1073, matching the published total of 1,073 exactly. Par 3 x 9 = 27, matching published par 27. Stroke index set is the nine odd values 1-17 with no repeats \u2014 the standard convention for a 9-hole card intended to be played twice around; all values are within the legal 1-18 range. Confidence is high because two independent sources (18Birdies fetched directly, GolfLink via search summary) returned byte-identical per-hole yardages and matching handicaps at the four holes I could spot-check.\n\nRATING/SLOPE DELIBERATELY OMITTED. Sources conflict and all candidate values are implausible: 18Birdies shows 70/110 (against its doubled 2146-yard/18-hole line) and one search summary quoted 36/110 for the nine. A course rating of 70 against par 54, or 36 against par 27, would mean a scratch golfer averages 9 over par on nine par-3s \u2014 not credible. Decisive evidence: GolfLink's own rating and slope fields for this course read 0.0 and 0, i.e. the course carries NO official USGA/TGA rating. This is normal for a short par-3 practice course. Rather than propagate an aggregator's default-value artifact I recorded no ratings; the tee's ratings array is empty. If a real rating is ever needed it must come from the Texas Golf Association database or the printed card.\n\nTEE NAME CONFLICT (unresolved): 18Birdies and GolfLink both label the single tee set 'Black'; GolfPass labels it 'White'. I used 'Black' because that is the name attached to the source that actually published the per-hole grid. Only one tee set is published anywhere, which is consistent with a 1,073-yard par-3 layout. Flagging for human verification against the physical card.\n\nPar/handicap recorded as 'unisex' \u2014 no source printed separate men's and women's rows for this course.\n\nSTATUS: consistent with the assignment hint, evidence supports the course being OPEN (GolfPass lists it as open to the public year-round)."
+ },
+ {
+  "facility": {
+   "name": "Riverchase Golf Club",
+   "address": "700 Riverchase Dr",
+   "city": "Coppell",
+   "state_province": "TX",
+   "postal_code": "75019",
+   "country": "USA",
+   "website_url": "https://www.riverchasegc.com"
+  },
+  "courses": [
+   {
+    "name": "Riverchase",
+    "hole_count": 18,
+    "pars": {
+     "men": {
+      "par": [
+       5,
+       4,
+       3,
+       5,
+       4,
+       4,
+       4,
+       3,
+       4,
+       4,
+       5,
+       4,
+       3,
+       4,
+       4,
+       3,
+       4,
+       4
+      ],
+      "stroke_index": [
+       5,
+       11,
+       15,
+       13,
+       1,
+       7,
+       9,
+       17,
+       3,
+       6,
+       2,
+       12,
+       18,
+       4,
+       10,
+       14,
+       8,
+       16
+      ]
+     },
+     "women": {
+      "par": [
+       5,
+       4,
+       3,
+       5,
+       4,
+       4,
+       4,
+       3,
+       4,
+       4,
+       5,
+       4,
+       3,
+       4,
+       4,
+       3,
+       4,
+       4
+      ],
+      "stroke_index": [
+       5,
+       11,
+       15,
+       13,
+       1,
+       7,
+       9,
+       17,
+       3,
+       6,
+       2,
+       12,
+       18,
+       4,
+       10,
+       14,
+       8,
+       16
+      ]
+     }
+    },
+    "tees": [
+     {
+      "name": "Gold",
+      "unit": "yards",
+      "published_total": 6593,
+      "lengths": [
+       527,
+       349,
+       176,
+       509,
+       396,
+       369,
+       374,
+       165,
+       441,
+       394,
+       529,
+       381,
+       224,
+       439,
+       373,
+       185,
+       409,
+       353
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 72.5,
+        "slope": 133
+       }
+      ]
+     },
+     {
+      "name": "Black",
+      "unit": "yards",
+      "published_total": 6041,
+      "lengths": [
+       487,
+       319,
+       141,
+       475,
+       379,
+       351,
+       349,
+       147,
+       406,
+       385,
+       518,
+       344,
+       160,
+       381,
+       350,
+       158,
+       354,
+       337
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 69.8,
+        "slope": 127
+       },
+       {
+        "gender": "women",
+        "rating": 76.6,
+        "slope": 142
+       }
+      ]
+     },
+     {
+      "name": "Silver",
+      "unit": "yards",
+      "published_total": 5125,
+      "lengths": [
+       431,
+       300,
+       93,
+       428,
+       302,
+       293,
+       316,
+       116,
+       324,
+       367,
+       383,
+       300,
+       100,
+       324,
+       335,
+       130,
+       327,
+       256
+      ],
+      "ratings": [
+       {
+        "gender": "men",
+        "rating": 65.6,
+        "slope": 117
+       },
+       {
+        "gender": "women",
+        "rating": 70.5,
+        "slope": 119
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "sources": [
+   {
+    "type": "other",
+    "url": "https://www.greenskeeper.org/texas/Dallas_Fort_Worth/riverchase_golf_club/scorecard.cfm",
+    "note": "Greenskeeper.org \u2014 PRIMARY SOURCE, fetched successfully. Complete per-hole grid for all three tees (Gold/Black/Silver) plus par and handicap rows, and the full rating/slope table: Gold 71 / 72.5 / 133 / 6593; Black 71 / 69.8 / 127 / 6041; Silver 71 / 65.6 / 117 / 5125; Black-Ladies 71 / 76.6 / 142 / 6041; Silver-Ladies 71 / 70.5 / 119 / 5125. Confirms address 700 Riverchase Drive, Coppell, TX 75019. Reported that men's and women's par/handicap rows are printed separately and carry identical values."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golfpass.com/travel-advisor/courses/14579-riverchase-golf-club",
+    "note": "GolfPass \u2014 INDEPENDENT TEE-SHEET CORROBORATION. Back 6593 par 71 M 72.5/133; Middle 69.8/127 M; Forward 5125 M 65.6/113 and W 70.5/118. Confirms the three-tee structure and the men's Gold and Black ratings exactly. Uses generic tee names (Back/Middle/Forward) and shows minor slope variance on the Forward tee \u2014 see collection_notes. Also surfaced an older rating revision noted on the page as M 72.4/131 (back) and M 69.8/128 (middle)."
+   },
+   {
+    "type": "other",
+    "url": "https://golfscorekeeper.com/view_course.cfm?State=TX&Course=10665&Country=210",
+    "note": "GolfScorekeeper \u2014 summary only; per-hole scorecard is gated behind HTML/PDF selection links that WebFetch could not follow. Lists 'Mens 6593 par 71 rating 68.9 slope 114' and 'Mens White-NEW 6041 par 71 rating 69.8 slope 127'. The 68.9/114 figure for the 6593-yard tee is a stale/erroneous outlier contradicted by two better sources and was NOT used."
+   },
+   {
+    "type": "other",
+    "url": "https://foretee.com/courses/texas/coppell/usa/riverchase-golf-club/14372",
+    "note": "ForeTee \u2014 no per-tee breakdown. Gives only a single composite line: 6,593 yards, par 71, rating 72.0, slope 124. Not used for ratings; contradicted by the two primary sources. Confirms the course phone and that it is operating."
+   },
+   {
+    "type": "other",
+    "url": "https://www.golflink.com/golf-courses/tx/coppell/riverchase-golf-club",
+    "note": "GolfLink \u2014 fetch-blocked per instructions, never fetched. WebSearch summary quoted 'Back 6600 yds (131/72.4), Middle 6040 yds (128/69.8), Forward 5125 yds (113/65.6)' for men plus corresponding women's tees, and confirms Jim Fazio design, opened 1988, par 71, Bermuda greens. Corroborates tee structure and totals; its slightly different numbers appear to be an older rating cycle."
+   }
+  ],
+  "data_tier": "full",
+  "collection_notes": "ARITHMETIC CHECK PASSED ON ALL THREE TEES \u2014 every one sums exactly to its published total, so I am confident no digit was misread:\n  Gold: OUT 3306 + IN 3287 = 6593 (published 6,593) MATCH\n  Black: OUT 3054 + IN 2987 = 6041 (published 6,041) MATCH\n  Silver: OUT 2603 + IN 2522 = 5125 (published 5,125) MATCH\nPar check: OUT 36 + IN 35 = 71, matching the published par 71 on every tee. Stroke-index check: the front nine carries the nine odd values (5,11,15,13,1,7,9,17,3) and the back nine the nine even values (6,2,12,18,4,10,14,8,16); all of 1-18 appear exactly once with no duplicates or gaps.\n\nTEE NAMING: used Greenskeeper's Gold/Black/Silver, which read as the names actually printed on the card, rather than GolfPass's generic Back/Middle/Forward. The two map cleanly onto each other by yardage (Gold=Back 6593, Black=Middle 6041, Silver=Forward 5125).\n\nGENDER RATINGS: per the one-tee/two-ratings rule, Greenskeeper's 'Black - Ladies' and 'Silver - Ladies' rows were folded into the existing Black and Silver tees as women's rating entries over a single shared set of yardages \u2014 they are NOT separate tees, since both carry yardages identical to their men's counterparts (6041 and 5125). The Gold tee has a men's rating only; no source publishes a women's rating from 6,593 yards.\n\nSOURCE CONFLICTS (Greenskeeper preferred throughout, because it is the only source whose per-hole grid I could verify by summation, and its totals reconcile perfectly):\n  - Silver men's slope: Greenskeeper 117 vs GolfPass 113. Used 117.\n  - Silver women's slope: Greenskeeper 119 vs GolfPass 118. Used 119.\n  - Black tee total: Greenskeeper/GolfLink 6041 vs one GolfPass line reading 6031. Used 6041, which is what the per-hole yardages actually sum to.\n  - Gold rating: 72.5/133 (Greenskeeper + GolfPass, agreeing) vs an older 72.4/131 revision vs ForeTee's composite 72.0/124 vs GolfScorekeeper's 68.9/114. Used 72.5/133 on the strength of two-source agreement.\nThe minor slope discrepancies are consistent with different USGA rating cycles rather than transcription error, and none affect the per-hole data.\n\nPAR/HANDICAP GENDER ROWS: Greenskeeper reports the card printing separate men's and women's par and handicap rows whose values are identical. Following the rule to supply both when both are printed, I populated 'men' and 'women' with the same values rather than collapsing to 'unisex'. Worth a human spot-check against the physical card, since women's stroke indexes usually differ from men's and identical rows can indicate the aggregator simply mirrored one row.\n\nNo per-hole data was invented or interpolated anywhere in this entry."
+ }
+]

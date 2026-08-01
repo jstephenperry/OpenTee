@@ -1,0 +1,90 @@
+name: Deploy website
+
+# The website is a static view of the database, so it is built the same way a
+# reader would build it locally: load the schema and the data files into a real
+# PostgreSQL, then export JSON out of the schema's own views. Nothing derived is
+# committed, so the site cannot drift from db/.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - 'db/**'
+      - '.github/workflows/pages.yml'
+  pull_request:
+    paths:
+      - 'web/**'
+      - 'db/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; let an in-flight one finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      PGHOST: localhost
+      PGPORT: 5432
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGDATABASE: opentee
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Load schema and course data
+        run: |
+          createdb opentee
+          psql -v ON_ERROR_STOP=1 -q -f db/schema.sql
+          psql -v ON_ERROR_STOP=1 -q -f db/data/arlington_tx.sql
+          psql -v ON_ERROR_STOP=1 -q -f db/data/dfw_tx.sql
+
+      # The example seed is deliberately not loaded: it is fictional data, and
+      # the exporter publishes every active course it finds.
+      - name: Export site data
+        run: python3 web/export.py --database opentee
+
+      # Pull requests stop at the export: it is the step that can break, and a
+      # fork's token cannot touch Pages anyway.
+      - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
+        # Turns Pages on the first time this runs, so no manual setup is needed.
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: web
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
