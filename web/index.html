@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenTee — open golf scorecard data</title>
+<meta name="description" content="An open, community-contributed database of golf course scorecard data. Look up any course, pick the tees you play, print a clean card.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#search">Skip to search</a>
+
+<header class="topbar">
+  <a class="brand" href="./">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21V3l11 4-11 4" fill="currentColor"/><circle cx="7" cy="21" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    <span>OpenTee</span>
+  </a>
+  <nav>
+    <a href="about.html">About the data</a>
+    <a href="https://github.com/jstephenperry/OpenTee">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Golf scorecards, exactly as the course publishes them.</h1>
+    <p class="lede">
+      Course websites bury scorecard data in PDFs and booking widgets, and it disappears
+      when sites are redesigned. OpenTee keeps it in the open — yardages, pars, stroke
+      indexes and ratings per tee. Find your course, pick the tees you play, print a card.
+    </p>
+    <dl class="stats" id="stats" aria-label="Database contents"></dl>
+  </section>
+
+  <section id="search" class="search">
+    <div class="search-bar">
+      <label class="sr-only" for="q">Search courses</label>
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16.5 16.5 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="Search by course, club or city — try “Tenison” or “Fort Worth”">
+    </div>
+
+    <div class="filters" role="group" aria-label="Filters">
+      <label>Holes
+        <select id="holes">
+          <option value="">any</option>
+          <option value="18">18</option>
+          <option value="9">9</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="sort">
+          <option value="name">Club name</option>
+          <option value="city">City</option>
+          <option value="long">Longest tee</option>
+          <option value="short">Shortest tee</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="ratedOnly"> Rated only</label>
+      <label class="check"><input type="checkbox" id="completeOnly"> Full per-hole data</label>
+    </div>
+
+    <p class="result-count" id="count" role="status" aria-live="polite">Loading courses…</p>
+    <ul class="results" id="results"></ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>
+    Community data, awaiting verification against printed cards.
+    Every value traces to a cited source or a documented correction —
+    <a href="about.html">how the data is made</a>.
+  </p>
+  <p class="muted">OpenTee is free software under the AGPL-3.0.</p>
+</footer>
+
+<script type="module" src="assets/search.js"></script>
+</body>
+</html>

@@ -42,6 +42,7 @@ The schema is built around how golf data actually works, including the awkward c
 | `db/data/generate.py`, `normalize.py` | Validating pipeline: harvested JSON → schema-conformant SQL |
 | `db/tests/constraint_tests.sql` | Self-rolling-back test suite for the integrity rails |
 | `app/OpenTee.Scorecard/` | Avalonia desktop app: search courses, pick tees, print custom scorecards |
+| `web/` | The website (GitHub Pages): static search, tee picker and printable card |
 | `docs/schema-design.md` | Full design rationale, ERD, decisions, example queries |
 
 ## Quick start
@@ -119,11 +120,31 @@ dotnet run -- --pdf texas-rangers                 # headless: PDF for a course s
 dotnet run -- --pdf dunes --tees Blue,White,Red   # headless: custom tee subset
 ```
 
+## Website
+
+**<https://jstephenperry.github.io/OpenTee/>** — search every course, tick the tees you
+play, print the card. It is a static site with no framework and no build step: the pages
+are plain HTML/CSS/ES modules, and the data they read is exported straight out of the
+schema's own views by `web/export.py`.
+
+Nothing derived is committed. `.github/workflows/pages.yml` loads `db/schema.sql` and the
+data files into a real PostgreSQL on every push, exports the JSON, and deploys `web/` to
+GitHub Pages — so the site cannot drift from `db/`. To run it locally:
+
+```bash
+python3 web/export.py --database opentee_dev
+python3 -m http.server 8000 --directory web       # http://localhost:8000
+```
+
+Card layout, completeness rules and the ratings footer follow the desktop app's
+`CardBuilder` exactly, so the two never disagree about what the data says. See
+[web/README.md](web/README.md).
+
 ## Status
 
-Early days: the database schema is designed, validated, and tested, and a desktop
-scorecard app covers the primary read path; the community submission API and web
-application are not built yet. Contributions and design feedback are welcome.
+Early days: the database schema is designed, validated, and tested; a desktop app and a
+published website cover the primary read path; the community submission API is not built
+yet. Contributions and design feedback are welcome.
 
 ## License
 
