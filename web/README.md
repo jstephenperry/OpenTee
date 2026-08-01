@@ -38,6 +38,11 @@ PostgreSQL 16, loads `db/schema.sql` and the data files, runs `export.py`, and d
 `web/` to GitHub Pages. Nothing derived is committed, so the published site can never
 disagree with `db/`.
 
+One-time setup, in the repository settings: **Settings → Pages → Build and deployment →
+Source: GitHub Actions**. A workflow's `GITHUB_TOKEN` is not allowed to create the Pages
+site, so this switch has to be thrown by hand once; after that every push to `main`
+republishes on its own.
+
 ## Design notes
 
 - **The database decides what is printable.** Completeness, OUT/IN totals and

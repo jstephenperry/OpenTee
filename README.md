@@ -129,7 +129,9 @@ schema's own views by `web/export.py`.
 
 Nothing derived is committed. `.github/workflows/pages.yml` loads `db/schema.sql` and the
 data files into a real PostgreSQL on every push, exports the JSON, and deploys `web/` to
-GitHub Pages — so the site cannot drift from `db/`. To run it locally:
+GitHub Pages — so the site cannot drift from `db/`. Publishing needs Pages switched on
+once under Settings → Pages → Source: GitHub Actions; a workflow token is not permitted to
+do that itself. To run it locally:
 
 ```bash
 python3 web/export.py --database opentee_dev
